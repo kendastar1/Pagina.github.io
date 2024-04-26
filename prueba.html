@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrada Suave</title>
+<link rel="stylesheet" href="styles.css"> <!-- Agrega tu archivo de estilos si lo tienes -->
+<style>
+  .animacion {
+    opacity: 0; /* El contenido estará oculto al principio */
+    transform: translateY(50px); /* El contenido se moverá hacia arriba */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones suaves para la opacidad y la transformación */
+  }
+
+  /* Estilos para el cuerpo cuando la página está completamente cargada */
+  body.loaded .animacion {
+    opacity: 1; /* Mostrar el contenido */
+    transform: translateY(0); /* Restaurar la posición original */
+  }
+</style>
+</head>
+<body>
+
+<!-- Contenido de la página -->
+<div class="animacion">
+  <h1>¡Bienvenido a mi página!</h1>
+  <p>Este es un ejemplo de entrada suave al cargar la página.</p>
+</div>
+
+<script>
+// Agrega una clase al cuerpo después de un cierto tiempo después de que la página se carga completamente
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.body.classList.add('loaded');
+  }, 2000); // Ajusta el tiempo en milisegundos según lo desees
+});
+</script>
+
+</body>
+</html>
