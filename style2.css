@@ -245,7 +245,7 @@ body{
   font-weight: 600;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 600px){
   .sidebar{
     width: 240px;
   }
@@ -270,4 +270,7 @@ body{
     width: calc(100% - 78px);
   }
 
+}
+@media screen and (max-width: 600px) {
+  /* Estilos específicos para dispositivos móviles */
 }

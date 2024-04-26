@@ -221,3 +221,6 @@ nav ul li:hover::after {
         font-size: 2em;
     }
 }
+@media screen and (max-width: 600px) {
+  /* Estilos específicos para dispositivos móviles */
+}
