@@ -206,7 +206,7 @@ nav ul li:hover::after {
     color: #03a9f4;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 600px) {
 
     .showcase,
     .showcase header {
@@ -220,7 +220,4 @@ nav ul li:hover::after {
     .text h3 {
         font-size: 2em;
     }
-}
-@media screen and (max-width: 600px) {
-  /* Estilos específicos para dispositivos móviles */
 }
