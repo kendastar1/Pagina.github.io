@@ -166,17 +166,6 @@
       stroke-dashoffset: 275;
     }
   }
-  .animacion {
-    opacity: 0; /* El contenido estará oculto al principio */
-    transform: translateY(50px); /* El contenido se moverá hacia arriba */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones suaves para la opacidad y la transformación */
-  }
-
-  /* Estilos para el cuerpo cuando la página está completamente cargada */
-  body.loaded2 .animacion {
-    opacity: 1; /* Mostrar el contenido */
-    transform: translateY(0); /* Restaurar la posición original */
-  }
 </style>
 
 </head>
@@ -205,7 +194,6 @@
     <section class="showcase">
         <header>
             <h2 class="logo">LOGO EMPRESA</h2>
-            <div class="animacion">
             <div class="container">
                 <nav>
                     <ul>
@@ -217,7 +205,6 @@
                     </ul>
                 </nav>
             </div>
-          </div>
         </header>
         <video src="YouCut_20240421_000249898.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
@@ -242,14 +229,6 @@ window.addEventListener('load', function() {
     document.querySelector('.loader-wrapper').style.display = 'none';
     document.getElementById('content').style.display = 'block';
   }, 3000); 
-});
-</script>
-<script>
-// Agrega una clase al cuerpo después de un cierto tiempo después de que la página se carga completamente
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    document.body.classList.add('loaded2');
-  }, 4000); // Ajusta el tiempo en milisegundos según lo desees
 });
 </script>
 

@@ -5,41 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entrada Suave</title>
 <link rel="stylesheet" href="styles.css"> <!-- Agrega tu archivo de estilos si lo tienes -->
-<style >
-	#menu {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: -250px; /* Oculta el menú desplegable inicialmente */
-  width: 250px; /* Ancho del menú desplegable */
-  height: 100%; /* Altura del menú desplegable */
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: left 0.3s ease; /* Agrega una transición suave */
-}
 
-#menu ul {
-  list-style: none;
-  padding: 20px;
-  margin: 0;
-}
-
-#menu ul li {
-  margin-bottom: 10px;
-}
-
-#menu ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
-#toggle-menu {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 9999; /* Asegura que el botón esté sobre el menú desplegable */
-}
-</style>
 </head>
 <body>
 
@@ -51,16 +17,7 @@
     <li><a href="#">Opción 3</a></li>
   </ul>
 </nav>
-<script >
-	document.getElementById('toggle-menu').addEventListener('click', function() {
-  var menu = document.getElementById('menu');
-  if (menu.style.left === '-250px') {
-    menu.style.left = '0'; // Muestra el menú desplegable
-  } else {
-    menu.style.left = '-250px'; // Oculta el menú desplegable
-  }
-});
-</script>
+
 
 </body>
 </html>
