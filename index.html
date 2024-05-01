@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bienvendios</title>
     <link rel="stylesheet" href="styles.css">
     
 <style>
@@ -188,6 +188,20 @@
             font-weight: bold;
             font-size: 20px;
         }
+        @keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h3, h2,p,h5 {
+  animation: slideUp 1s forwards;
+}
 </style>
 
 </head>
