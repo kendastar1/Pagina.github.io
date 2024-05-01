@@ -166,6 +166,28 @@
       stroke-dashoffset: 275;
     }
   }
+ .hola {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hola1 {
+            width: 50px;
+            height: 50px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            margin-right: 5px;
+            
+        }
+        .logo span {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
 </style>
 
 </head>
@@ -192,11 +214,15 @@
 </div>
 <div id="content" style="display: none;">
     <section class="showcase">
-        <header>
-            <h2 class="logo">LOGO EMPRESA</h2>
-            
-        </header>
-        <video src="YouCut_20240421_000249898.mp4" muted loop autoplay></video>
+        <header class="hola">
+        <div class="logo">
+    <img class="hola1" src="noble.png" alt="logo">
+    <span class="team">Equipo/</span>
+    <span>KLRP</span>
+    
+</div>
+    </header>
+       <video src="YouCut_20240421_000249898.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
         <div class="text">
             <h2>BIENVENIDOS</h2>
