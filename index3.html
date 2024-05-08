@@ -1,141 +1,894 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Music Player with Slider</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./style1.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> ho </title>
+    <link rel="stylesheet" href="style2.css">
+  
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
+    rel='stylesheet'>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
 
-  </head>
-  <body>
-    <body>
+  .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loader {
+    --path: #2f3545;
+    --dot: #5628ee;
+    --duration: 3s;
+    width: 44px;
+    height: 44px;
+    position: relative;
+  }
+  
+  .loader:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    background: var(--dot);
+    top: 37px;
+    left: 19px;
+    transform: translate(-18px, -18px);
+    animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .loader svg rect, .loader svg polygon, .loader svg circle {
+    fill: none;
+    stroke: var(--path);
+    stroke-width: 10px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  
+  .loader svg polygon {
+    stroke-dasharray: 145 76 145 76;
+    stroke-dashoffset: 0;
+    animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg rect {
+    stroke-dasharray: 192 64 192 64;
+    stroke-dashoffset: 0;
+    animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg circle {
+    stroke-dasharray: 150 50 150 50;
+    stroke-dashoffset: 75;
+    animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader.triangle {
+    width: 48px;
+  }
+  
+  .loader.triangle:before {
+    left: 21px;
+    transform: translate(-10px, -18px);
+    animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  @keyframes pathTriangle {
+    33% {
+      stroke-dashoffset: 74;
+    }
+  
+    66% {
+      stroke-dashoffset: 147;
+    }
+  
+    100% {
+      stroke-dashoffset: 221;
+    }
+  }
+  
+  @keyframes dotTriangle {
+    33% {
+      transform: translate(0, 0);
+    }
+  
+    66% {
+      transform: translate(10px, -18px);
+    }
+  
+    100% {
+      transform: translate(-10px, -18px);
+    }
+  }
+  
+  @keyframes pathRect {
+    25% {
+      stroke-dashoffset: 64;
+    }
+  
+    50% {
+      stroke-dashoffset: 128;
+    }
+  
+    75% {
+      stroke-dashoffset: 192;
+    }
+  
+    100% {
+      stroke-dashoffset: 256;
+    }
+  }
+  
+  @keyframes dotRect {
+    25% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(18px, -18px);
+    }
+  
+    75% {
+      transform: translate(0, -36px);
+    }
+  
+    100% {
+      transform: translate(-18px, -18px);
+    }
+  }
+  
+  @keyframes pathCircle {
+    25% {
+      stroke-dashoffset: 125;
+    }
+  
+    50% {
+      stroke-dashoffset: 175;
+    }
+  
+    75% {
+      stroke-dashoffset: 225;
+    }
+  
+    100% {
+      stroke-dashoffset: 275;
+    }
+  }
+
+
+
+body {
+  padding-bottom: 3rem;
+  color: rgb(var(--bs-tertiary-color-rgb));
+}
+
+
+
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+
+.carousel-item {
+  height: 32rem;
+}
+
+
+
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+.featurette-divider {
+  margin: 5rem 0; 
+}
+
+
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+
+
+
+
+
+@media (min-width: 40em) {
+  
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+
+
+
+.bd-placeholder1-img{
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, h2, .btn,p,h5,.card .col-6,li {
+  animation: slideUp 1s forwards;
+}
+ .hola {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hola1 {
+            width: 50px;
+            height: 50px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            margin-right: 5px;
+            
+        }
+        .logo span {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        h3{
+  color:#000000;
+}
+button {
+  position: relative;
+  background: #630569;
+  color: #630569;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+  border-radius: 50px;
+  padding: 12px;
+
+}
+
+button:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  animation: box 3s infinite;
+   padding: 12px;
+
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #fff;
+    border-radius: 50px;
+    padding: 12px;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+
+}
+
+button i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+
+button i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}
+</style>
+    
+   </head>
+
+<body>
+   <div class="loader-wrapper">
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+        <circle id="test" cx="40" cy="40" r="32"></circle>
+    </svg>
+  </div>
+
+  <div class="loader triangle">
+    <svg viewBox="0 0 86 80">
+        <polygon points="43 8 79 72 7 72"></polygon>
+    </svg>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+        <rect x="8" y="8" width="64" height="64"></rect>
+    </svg>
+  </div>
+</div>
+<div id="content" style="display: none;">
+  <div>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-kickstarter bx-tada' style='color:#080808'></i>
+      <span class="logo_name"style='color:#080808'>Sistemas</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+          <i class='bx bx-home'></i>
+
+          <span class="link_name">Bienvenida</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.html">Bienvenida</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="index2.html">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Introducción</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index2.html">Introducción</a></li>
+          <li><a href="#optimizacion">Optimización</a></li>
+          <li><a href="#Estrategias">Estrategias</a></li>
+          <li><a href="#Rendimiento">Rendimiento</a></li>
+          <li><a href="#Conclusión">Conclusión</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">¿Ques es?</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">¿Que es?</a></li>
+          <li><a href="#">Sub Menú 1</a></li>
+          <li><a href="#">Sub Menú 2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Reportes</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Reportes</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="index7.html">
+            <i class='bx bxs-user-voice'></i>
+            <span class="link_name">Audio</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index7.html">Audio</a></li>
+          <li><a href="#">Sub Menú 1</a></li>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-contact' ></i>
+          <span class="link_name">Contactos</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Contactos</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-edit-location'></i>
+          <span class="link_name">Sedes</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Sedes</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Configuración</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Configuración</a></li>
+        </ul>
+      </li>
+      <li>
+    
+  </li>
+</ul>
+  </div>
+
+  <section class="home-section " >
+    <div class="home-content" style=" background-color: #efeff3; position: fixed;">
+      <i class='bx bx-menu ' style="padding: 5px; background-color: #efeff3;" ></i>
+      </div>
+      
+  </section>
+</div>
+<div style="padding-left: 78px;">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+<main>
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    
+
+    
+
+
+
+
+<main class="container" style="padding-top: 6%;"> 
+     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" style="background-image: url(descarga.gif); background-size: cover; height: 80%; box-shadow: 0 0 10px rgba(0, 0, 0, 1); ">
+
+    <div class="col-lg-6 px-0">
+
+      <h1 class="display-4 fst-italic" style=" color: #fff; padding-top: 10%;">Todo lo que Debes Saber sobre la Memoria RAM</h1>
+      <p class="lead my-3" style="color: #fff;"> Optimización Avanzada para un Rendimiento Superior</p>
+
+
+    </div>
+  </div>
+
+  <div class="row mb-2" >
+    <div class="col-md-6">
+      <div class="row g-0  rounded overflow-hidden flex-md-row mb-4" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); background-color: #EEEEEE; ">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">DIMM</strong>
+          <h3 class="mb-0">módulo de memoria de dos lineas</h3>
+          <div class="mb-1 text-body-secondary">dual in-line memory module</div>
+          <p class="card-text mb-auto">La memoria DIMM: almacenamiento rápido y fácil de actualizar.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link" style="margin-top: 21%;">
+            VER MAS
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+           <img class="bd-placeholder-img" src="ram.jpg" width="220" height="100%">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+     <div class="row g-0  rounded overflow-hidden flex-md-row mb-4" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);background-color: #EEEEEE;">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">SO-DIMM</strong>
+          <h3 class="mb-0">Módulo de memoria dual en línea de contorno pequeño</h3>
+          <div class="mb-1 text-body-secondary">Small Outline Dual In-Line Memory Module</div>
+          <p class="card-text mb-auto">La memoria SO-DIMM: RAM compacta y eficiente para portátiles.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            VER MAS
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+           <img class="bd-placeholder-img" src="como.jpeg" width="220" height="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Existen 2 Tipos De Memoria RAM
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">La emoria RAM </h2>
+        <p class="blog-post-meta">¿Que es la memoria ram?</p>
+
+        <p>La memoria RAM (Random Access Memory, o memoria de acceso aleatorio) es un tipo de memoria que se utiliza en computadoras y otros dispositivos electrónicos para almacenar temporalmente datos que están en uso o que se necesitan para realizar operaciones.</p>
+        <hr>
+        <p>La RAM es un componente fundamental en cualquier sistema informático, ya que permite que la CPU acceda rápidamente a los datos que necesita para ejecutar programas y realizar tareas. A diferencia del almacenamiento en disco, que es más lento pero persistente, la RAM es más rápida pero volátil, lo que significa que los datos se borran cuando se apaga el dispositivo.</p>
+        <h2>Flujo de Datos y Velocidad de Acceso</h2>
+        <p>Optimización del Rendimiento</p>
+        <blockquote class="blockquote">
+          <p>La Memoria RAM y las Derivadas</p>
+        </blockquote>
+        <p>En un sistema informático, la memoria RAM juega un papel crucial al almacenar temporalmente datos que la CPU necesita procesar rápidamente. Este flujo de datos se asemeja al concepto de derivadas en matemáticas, donde se analiza la tasa de cambio instantánea de una función. De manera similar, la RAM permite un acceso rápido y directo a los datos, lo que se asemeja a la capacidad de las derivadas para proporcionar información instantánea sobre cómo cambia una función en un punto específico.</h3>
+        <p>El proceso de paso de información desde la unidad de almacenamiento hasta el CPU implica que, cuando un usuario abre una aplicación o programa, este programa se transfiere desde la unidad de almacenamiento a la RAM para su ejecución.</p>
+        <p>Podemos dividir el proceso de paso de la informacion  (se sobre entiende que la informacion puede ser un programa o aplicacion ) desde la unidad de almacenamiento hasta el cpu en los siguientes pasos:</p>
+        <ul>
+          <li>El usuario abre una aplicación o programa.</li>
+          <li>El programa está almacenado en la unidad de almacenamiento (HDD, SSD, M.2).</li>
+          <li>El programa se traslada desde la unidad de almacenamiento a la RAM para su ejecución.</li>
+        </ul>
+        
+        
+        <h2>Para Que Sirve La Meroria RAM</h2>
+        <p>La memoria RAM (Random Access Memory, Memoria de Acceso Aleatorio) es un componente esencial en una computadora y cumple varias funciones importantes:</p>
+        <P>la memora ram se utiliza en las computadoras para almacenar datos e instrucciones de manera temporal. Su función principal es proporcionar acceso rápido a estos datos para que la CPU (Unidad Central de Procesamiento) pueda procesarlos de manera eficiente. La RAM es crucial para el funcionamiento de una computadora, ya que permite ejecutar programas y realizar tareas de manera rápida y eficiente. Cuanta más RAM tenga una computadora, más programas podrá ejecutar simultáneamente y más rápido podrá realizar operaciones.</P>
+        
+        <h2>Característica</h2>
+        <p>1. <strong>Volátil: </strong>La RAM es una memoria volátil, lo que significa que los datos almacenados en ella se pierden cuando se apaga la computadora o se reinicia. Esto la diferencia de la memoria de almacenamiento permanente, como los discos duros o las unidades de estado sólido (SSD).</p>
+
+        <p>2. <strong>Acceso Aleatorio: </strong>La RAM es de acceso aleatorio, lo que significa que la CPU puede acceder a cualquier ubicación de la memoria de manera directa e igualmente rápida, independientemente de la ubicación de los datos en la memoria.</p>
+
+        <p>3. <strong>Rápida Velocidad de Acceso:  </strong>La RAM es mucho más rápida que los dispositivos de almacenamiento permanente, lo que la hace ideal para almacenar datos e instrucciones que la CPU necesita acceder con frecuencia y de manera rápida.</p>
+
+        <p>4. <strong>Capacidad de Almacenamiento Temporal: </strong>La RALa RAM actúa como un área de almacenamiento temporal para los datos e instrucciones que la CPU necesita mientras ejecuta programas y realiza operaciones. Esto permite que la CPU acceda rápidamente a estos datos sin tener que esperar a que se carguen desde el almacenamiento permanente.</p>
+
+
+        <p>5. <strong>Capacidad de Multitarea: </strong>La cantidad de RAM en una computadora determina su capacidad para ejecutar varios programas simultáneamente. Cuanta más RAM tenga una computadora, más programas podrá ejecutar de manera simultánea sin que el rendimiento se vea afectado.</p>
+
+        <p>6. <strong>Capacidad de Almacenamiento Temporal: </strong>La cantidad y la velocidad de la RAM tienen un impacto significativo en el rendimiento general de una computadora. Una cantidad insuficiente de RAM puede hacer que una computadora funcione lentamente, especialmente al ejecutar programas o tareas intensivas en recursos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        
-      <div class="album-cover">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/d3ca28bf-e1b7-467e-a00b-c7785be8e397"
-              />
-              <div class="overlay">
-                <a
-                  href="https://www.youtube.com/watch?v=aatr_2MstrI&ab_channel=CleanBandit"
-                  target="_blank"
-                  ><ion-icon name="logo-youtube"></ion-icon
-                ></a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/1afe4c6a-0287-43f0-9076-92f8be49d9dc"
-              />
-              <div class="overlay">
-                <a
-                  href="https://www.youtube.com/watch?v=qEnfeG8uBRY&ab_channel=AliciaKeys-Topic"
-                  target="_blank"
-                  ><ion-icon name="logo-youtube"></ion-icon
-                ></a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/abaa23bd-8c93-4219-a3ef-0d0cb6f12566"
-              />
-              <div class="overlay">
-                <a
-                  href="https://www.youtube.com/watch?v=h5oHhGlWKf0&ab_channel=MuzikPlay"
-                  target="_blank"
-                  ><ion-icon name="logo-youtube"></ion-icon
-                ></a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/bd9bcc80-a9ab-4d54-a460-ffdb77f22a72"
-              />
-              <div class="overlay">
-                <a
-                  href="https://www.youtube.com/watch?v=a5uQMwRMHcs&ab_channel=DaftPunkVEVO"
-                  target="_blank"
-                  ><ion-icon name="logo-youtube"></ion-icon
-                ></a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/18bc2436-740b-44c4-9dd8-fd7be51a07ad"
-              />
-              <div class="overlay">
-                <a
-                  href="https://www.youtube.com/watch?v=H5v3kku4y6Q&ab_channel=HarryStylesVEVO"
-                  target="_blank"
-                  ><ion-icon name="logo-youtube"></ion-icon
-                ></a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4c5c1727-8b32-48c1-91de-b0496ccf10f6"
-              />
-              <div class="overlay">
-                <a
-                  href="https://www.youtube.com/watch?v=9HDEHj2yzew&ab_channel=DuaLipa"
-                  target="_blank"
-                  ><ion-icon name="logo-youtube"></ion-icon
-                ></a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/23e440e5-a0fa-4a85-8175-bcc485a20ee6"
-              />
-              <div class="overlay">
-                <a
-                  href="https://www.youtube.com/watch?v=tCXGJQYZ9JA&ab_channel=TaylorSwiftVEVO"
-                  target="_blank"
-                  ><ion-icon name="logo-youtube"></ion-icon
-                ></a>
-              </div>
-            </div>
-          </div>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Capacidad de la Memoria RAM en Computadoras</h2>
+        <p class="blog-post-meta">Guía de Uso Recomendado </p>
+
+        <p>La tabla describe la capacidad típica de la memoria RAM en computadoras de escritorio y portátiles, así como su uso recomendado. La memoria RAM es un componente crucial en una computadora, ya que almacena temporalmente datos e instrucciones que la CPU necesita para realizar operaciones. La cantidad de RAM en una computadora afecta directamente su capacidad para ejecutar programas y realizar tareas de manera eficiente.</p>
+       
+        <h3>Recomendaciones Para Un Buen Uso</h3>
+        <p>Aquí se visualizara una tabla de recomendaciones del uso adecuado de una memoria RAM</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Capacidad de RAM</th>
+              <th>Uso</th>
+             
+            </tr>
+          </thead>
+          
+          <tfoot>
+            <tr>
+              <td>4 GB</td>
+              <td>Uso básico como navegación web, correo electrónico y procesamiento de texto.</td>
+              
+            </tr>
+            <tr>
+              <td>8 GB</td>
+              <td>Uso general y multitarea moderada, adecuado para la mayoría de los usuarios.</td>
+              
+            </tr>
+            <tr>
+              <td>16 GB</td>
+              <td>Multitarea intensiva, edición de fotos y videos, diseño gráfico y juegos de alta gama.</td>
+              
+            </tr>
+            <tr>
+              <td>32 GB o más</td>
+              <td>Uso profesional o especializado, como diseño 3D, edición de video 4K, simulaciones científicas, etc.</td>
+              
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>Estas capacidades son aproximadas y pueden variar según el fabricante y el modelo de la computadora.</p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Relación entre la Capacidad de la Memoria RAM y las Derivadas</h2>
+        <p class="blog-post-meta">Adaptabilidad y Eficiencia en Computación</p>
+
+        <p>La capacidad de la memoria RAM en una computadora se puede relacionar con las derivadas en matemáticas en términos de adaptabilidad y eficiencia. Al igual que las derivadas indican cómo cambia una función en un punto dado, la capacidad de la RAM permite que la computadora cambie rápidamente entre diferentes tareas, manteniendo un rendimiento eficiente. Cuanta más RAM tenga una computadora, más capacidad tendrá para adaptarse a las demandas cambiantes de los programas, de manera similar a cómo las derivadas nos dan información sobre cambios instantáneos en una función.</p>
+        
+      </article>
+
+      <button style="--clr: #630569"><span>Ver Mas</span><i></i></button>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
+          <h4 class="fst-italic">Para Mas Informacion</h4>
+          <p class="mb-0">Descubre cómo la capacidad de la memoria RAM afecta la adaptabilidad y eficiencia de la computadora. Para más detalles sobre este tema, visita las páginas dedicadas a la memoria RAM. </p>
         </div>
-      </div>
 
-      <div class="music-player">
-        <h1>Title</h1>
-        <p>Song Name</p>
-
-        <audio id="song">
-          <source src="song-list/Luke-Bergs-Gold.mp3" type="audio/mpeg" />
-        </audio>
-
-        <input type="range" value="0" id="progress" />
-
-        <div class="controls">
-          <button class="backward">
-            <i class="fa-solid fa-backward"></i>
-          </button>
-          <button class="play-pause-btn">
-            <i class="fa-solid fa-play" id="controlIcon"></i>
-          </button>
-          <button class="forward">
-            <i class="fa-solid fa-forward"></i>
-          </button>
+        <div>
+          <h4 class="fst-italic">Dar click para mas informacion</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.xataka.com/basics/memoria-ram-que-sirve-como-mirar-cuanta-tiene-tu-ordenador-movil">
+                <img src="memoria2.jpeg" width="100%" height="90" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Xataka.com</h6>
+                  <small class="text-body-secondary">Visitanos para mas informacion</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://edu.gcfglobal.org/es/informatica-basica/memoria-ram-y-disco-duro/1/">
+               <img src="mamoria1.jpeg" width="100%" height="90" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">GCFGlobal.com</h6>
+                  <small class="text-body-secondary">Visitanos para mas informacion</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.avast.com/es-es/c-what-is-ram-memory">
+                 <img src="memoria3.jpeg" width="100%" height="75" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Avast.com</h6>
+                  <small class="text-body-secondary">Visitanos para mas informacion</small>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
+
+        
+
+        
       </div>
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./script1.js"></script>
-     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-  </body>
+    </div>
+  </div>
+
+</main>
+
+
+  
+
+
+  
+
+  <div class="container marketing">
+
+ 
+    <div class="row">
+      
+      
+      
+    </div>
+ 
+
+    
+  
+
+
+ 
+ 
+
+ <hr class="featurette-divider">
+
+     
+   
+  </div>
+
+ <footer class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <header class="hola">
+        <div class="logo">
+    <img class="hola1" src="descarga1.png" alt="logo">
+    <span class="team" style="color: #000; font-size: 17px;">EQUIPO/</span>
+    <span style="color: #000; font-size: 17px;">KLRP</span>
+    
+</div>
+    </header>
+     
+    </div>
+    <div class="col-6 col-md">
+       <h5>Kevin Ortiz</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Lucio Garcia</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Pedro Molina</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Ronald Acevedo</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+        <li><a class="link-secondary text-decoration-none" href="#">lo que aporto</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </main>
+
+</div>
+  <script src="script2.js"></script>
+ <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelector('.loader-wrapper').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }, 2000); 
+});
+</script>
+<script>
+        var enlace = document.getElementById('enlace');
+        var linkText = document.getElementById('linkText');
+
+        enlace.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
 </html>
