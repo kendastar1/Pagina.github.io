@@ -203,7 +203,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 100%;
 }
 
 .page-header-inner {
