@@ -458,6 +458,16 @@ h1, h2, .btn,p,h5,.card .col-6,li {
             font-weight: bold;
             font-size: 20px;
         }
+        .animate-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+}
+
+.animate-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
     
    </head>
@@ -747,6 +757,26 @@ window.addEventListener('load', function() {
             this.currentTime = 0;
             this.play();
         });
+    </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-text');
+
+    const handleScroll = () => {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !element.classList.contains('animated')) {
+                element.classList.add('visible');
+                element.classList.add('animated'); // Marcar como animado
+            }
+        });
+    };
+
+    // Verifica inicialmente al cargar la página
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+});
     </script>
 </body>
 </html>

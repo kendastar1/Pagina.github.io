@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="style8.css">
     <link href="css/style.css" rel="stylesheet">
     <style>
-       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-     p{
-      font-family: "Poppins", sans-serif;
-     }
-
 
   .loader-wrapper {
     position: fixed;
@@ -459,6 +454,16 @@ h1, h2, .btn,p,h5,.card .col-6,li {
             font-weight: bold;
             font-size: 20px;
         }
+        .animate-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+}
+
+.animate-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
     
    </head>
@@ -628,7 +633,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     </section>
 
     <section>
-      <div class="block">
+      <div class="block animate-text">
         <p><span class="first-character sc">I</span>n 1978, Brian Smith landed in Southern California with a bag of
           sheepskin boots and hope. He fell in love with the sheepskin experience and was convinced the world would one
           day share this love. The beaches of Southern California had long been an epicenter of a relaxed, casual
@@ -654,13 +659,13 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     </section>
 
     <section>
-      <div class="parallax-two">
+      <div class="parallax-two animate-text">
         <h2>NEW YORK</h2>
       </div>
     </section>
 
     <section>
-      <div class="block">
+      <div class="block animate-text">
         <p><span class="first-character ny">B</span>reaking into the New York fashion world is no easy task. But by the
           early 2000's, UGG Australia began to take it by storm. The evolution of UGG from a brand that made sheepskin
           boots, slippers, clogs and sandals for an active, outdoor lifestyle to a brand that was now being touted as a
@@ -681,13 +686,13 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     </section>
 
     <section>
-      <div class="parallax-three">
+      <div class="parallax-three animate-text">
         <h2>ENCHANTED FOREST</h2>
       </div>
     </section>
 
     <section>
-      <div class="block">
+      <div class="block animate-text">
         <p><span class="first-character atw">W</span>hen the New York fashion community notices your brand, the world
           soon follows. The widespread love for UGG extended to Europe in the mid-2000's along with the stylish casual
           movement and demand for premium casual fashion. UGG boots and shoes were now seen walking the streets of
@@ -812,6 +817,26 @@ window.addEventListener('load', function() {
         enlace.addEventListener('click', function() {
             window.location.href = 'index.html';
         });
+    </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-text');
+
+    const handleScroll = () => {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !element.classList.contains('animated')) {
+                element.classList.add('visible');
+                element.classList.add('animated'); // Marcar como animado
+            }
+        });
+    };
+
+    // Verifica inicialmente al cargar la página
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+});
     </script>
 </body>
 </html>

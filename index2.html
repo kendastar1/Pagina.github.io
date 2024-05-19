@@ -435,6 +435,16 @@ body {
  .btn,p,h5,.card .col-6,li {
   animation: slideUp 1s forwards;
 }
+.animate-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+}
+
+.animate-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
  .hola {
             display: flex;
             align-items: center;
@@ -664,10 +674,10 @@ body {
 
   
 
-  <div class="container marketing">
+  <div class="container marketing animate-text">
 
  
-    <div class="row">
+    <div class="row animate-text">
       <div class="col-lg-4">
         <img class="bd-placeholder1-img rounded-circle" src="imagen2.jpg" width="140" height="140">
         
@@ -696,7 +706,7 @@ body {
     </div>
     <hr class="featurette-divider" id="optimizacion">
 
-    <div class="row featurette"  >
+    <div class="row featurette animate-text"  >
       <div class="col-md-7" style="margin-top: -50px">
         <h2 class="featurette-heading fw-normal lh-1" >Derivadas y Optimización  <span class="uncolormas" style="color: #0008ff;"  >de la Memoria RAM</span></h2>
         <p class="lead">Una mirada matemática al rendimiento informático</p>
@@ -720,7 +730,7 @@ body {
     <hr class="featurette-divider" id="Estrategias">
 
 
-     <div class="row featurette">
+     <div class="row featurette animate-text">
       <div class="col-md-7 order-md-2" style="margin-top: -30px;">
         <h2 class="featurette-heading fw-normal lh-1" >Estrategias Matemáticas para  <span class="otroc" style="color: #0008ff;">Optimizar tu Memoria RAM.</span></h2>
         <p class="lead">Mejora la velocidad y eficiencia de tu computadora.</p>
@@ -743,7 +753,7 @@ body {
     </div>
     <hr class="featurette-divider" id="Rendimiento">
 
-    <div class="row featurette">
+    <div class="row featurette animate-text" >
       <div class="col-md-7" style="margin-top: -50px;">
         <h2 class="featurette-heading fw-normal lh-1" >Rendimiento Potenciado: <span class="otrocs" style="color: #0008ff;">Derivadas y Memoria RAM.</span></h2>
         <p class="lead">Descubre cómo las matemáticas impulsan tu experiencia informática</p>
@@ -769,7 +779,7 @@ body {
 
      <div class="row featurette">
 
-<div class="px-4 pt-5 my-5 text-center">
+<div class="px-4 pt-5 my-5 text-center animate-text">
     <h1 class="display-4 fw-bold text-body-emphasis" style="margin-top: -10%; ">En Conclusión</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Las derivadas no solo son conceptos matemáticos abstractos, sino también herramientas poderosas en la optimización de la memoria RAM de tu computadora. Al aplicar estos principios, puedes mejorar significativamente el rendimiento y la velocidad de tu equipo, brindándote una experiencia informática más fluida y eficiente. </p>
@@ -876,6 +886,26 @@ window.addEventListener('load', function() {
             this.currentTime = 0;
             this.play();
         });
+    </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-text');
+
+    const handleScroll = () => {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !element.classList.contains('animated')) {
+                element.classList.add('visible');
+                element.classList.add('animated'); // Marcar como animado
+            }
+        });
+    };
+
+    // Verifica inicialmente al cargar la página
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+});
     </script>
 </body>
 </html>
