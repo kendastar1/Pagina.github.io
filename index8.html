@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Universidad Simon bolivar</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
+    rel='stylesheet'>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <!-- Favicon -->
+ 
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+   
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="style2.css">
+
+    <style>
+        .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loader {
+    --path: #2f3545;
+    --dot: #5628ee;
+    --duration: 3s;
+    width: 44px;
+    height: 44px;
+    position: relative;
+  }
+  
+  .loader:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    background: var(--dot);
+    top: 37px;
+    left: 19px;
+    transform: translate(-18px, -18px);
+    animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .loader svg rect, .loader svg polygon, .loader svg circle {
+    fill: none;
+    stroke: var(--path);
+    stroke-width: 10px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  
+  .loader svg polygon {
+    stroke-dasharray: 145 76 145 76;
+    stroke-dashoffset: 0;
+    animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg rect {
+    stroke-dasharray: 192 64 192 64;
+    stroke-dashoffset: 0;
+    animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg circle {
+    stroke-dasharray: 150 50 150 50;
+    stroke-dashoffset: 75;
+    animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader.triangle {
+    width: 48px;
+  }
+  
+  .loader.triangle:before {
+    left: 21px;
+    transform: translate(-10px, -18px);
+    animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  @keyframes pathTriangle {
+    33% {
+      stroke-dashoffset: 74;
+    }
+  
+    66% {
+      stroke-dashoffset: 147;
+    }
+  
+    100% {
+      stroke-dashoffset: 221;
+    }
+  }
+  
+  @keyframes dotTriangle {
+    33% {
+      transform: translate(0, 0);
+    }
+  
+    66% {
+      transform: translate(10px, -18px);
+    }
+  
+    100% {
+      transform: translate(-10px, -18px);
+    }
+  }
+  
+  @keyframes pathRect {
+    25% {
+      stroke-dashoffset: 64;
+    }
+  
+    50% {
+      stroke-dashoffset: 128;
+    }
+  
+    75% {
+      stroke-dashoffset: 192;
+    }
+  
+    100% {
+      stroke-dashoffset: 256;
+    }
+  }
+  
+  @keyframes dotRect {
+    25% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(18px, -18px);
+    }
+  
+    75% {
+      transform: translate(0, -36px);
+    }
+  
+    100% {
+      transform: translate(-18px, -18px);
+    }
+  }
+  
+  @keyframes pathCircle {
+    25% {
+      stroke-dashoffset: 125;
+    }
+  
+    50% {
+      stroke-dashoffset: 175;
+    }
+  
+    75% {
+      stroke-dashoffset: 225;
+    }
+  
+    100% {
+      stroke-dashoffset: 275;
+    }
+  }
+
+    </style>
+    <style>
+.card {
+    position: relative;
+    animation: slide-up 1s ease-in-out;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Same as the image height */
+    background: rgb(0 0 0 / 0%); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.card:hover .overlay {
+   background: rgb(0 0 0 / 0%); /* Darker background on hover */
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .text {
+    transform: scale(1.2); /* Zoom effect */
+}
+.hola {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hola1 {
+            width: 50px;
+            height: 50px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            margin-right: 5px;
+            
+        }
+        .logo span {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        h3{
+  color:#000000;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
+  color: white;
+  text-shadow: 2px 2px rgb(116, 116, 116);
+  text-transform: uppercase;
+  cursor: pointer;
+  border: solid 2px black;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 17px;
+  background-color: hsl(49deg 98% 60%);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+button:active {
+  transform: scale(0.9);
+  transition: all 100ms ease;
+}
+
+button svg {
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.play {
+  transition: all 0.5s ease;
+  transition-delay: 300ms;
+}
+
+button:hover svg {
+  transform: scale(3) translate(50%);
+}
+
+.now {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+button:hover .now {
+  transform: translateX(10px);
+  transition-delay: 300ms;
+}
+
+button:hover .play {
+  transform: translateX(200%);
+  transition-delay: 300ms;
+}
+ .gradient-background {
+            background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-title {
+            text-align: center;
+            color: #293df8; /* Fallback color in case the gradient doesn't load */
+            padding: 0.75rem;
+            background-color: white;
+        }
+</style>
+
+</head>
+
+<body>
+
+   <div class="loader-wrapper">
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+        <circle id="test" cx="40" cy="40" r="32"></circle>
+    </svg>
+  </div>
+
+  <div class="loader triangle">
+    <svg viewBox="0 0 86 80">
+        <polygon points="43 8 79 72 7 72"></polygon>
+    </svg>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+        <rect x="8" y="8" width="64" height="64"></rect>
+    </svg>
+  </div>
+</div>
+  <div id="content" style="display: none;">
+  <div>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-kickstarter bx-tada' style='color:#080808'></i>
+      <span class="logo_name"style='color:#080808'>Sistemas</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+         <i class='bx bx-home'></i>
+
+          <span class="link_name">Bienvenida</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.html">Bienvenida</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="index2.html">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Introducción</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index2.html">Introducción</a></li>
+          <li><a href="#optimizacion">Optimización</a></li>
+          <li><a href="#Estrategias">Estrategias</a></li>
+          <li><a href="#Rendimiento">Rendimiento</a></li>
+          <li><a href="#Conclusión">Conclusión</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="index3.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">¿Que es?</span>
+          </a>
+          
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index3.html">¿Que es?</a></li>
+         
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Reportes</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Reportes</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="index7.html">
+            <i class='bx bxs-user-voice'></i>
+            <span class="link_name">Audio</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index7.html">Audio</a></li>
+          
+         
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-contact' ></i>
+          <span class="link_name">Contactos</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Contactos</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-edit-location'></i>
+          <span class="link_name">Sedes</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Sedes</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Configuración</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Configuración</a></li>
+        </ul>
+      </li>
+      <li>
+    
+  </li>
+</ul>
+  </div>
+
+  <section class="home-section " >
+    <div class="home-content" style=" background-color: #efeff3; position: fixed;">
+      <i class='bx bx-menu ' style="padding: 5px; background-color: #efeff3;" ></i>
+      </div>
+      
+  </section>
+     
+      
+
+
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5" style="padding-left: 78px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+
+                    <h1 class="display-3 text-white animated slideInDown" style="padding-top: 75px; text-align: center;">Bienvenidos a los eventos.</h1>
+                    <h3 class="text-white" style="text-align: center;">universidad simón bolivar</h3>
+                    <!-- <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                        </ol>
+                    </nav>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    <!-- Team Start -->
+    <div class="container marketing">
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="">
+                <h2 class="section-title gradient-background">EVENTOS</h2>
+                <h4 class="mb-5">2023-3</h4>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="team-item bg-light">
+        <div class="overflow-hidden"></div>
+        <div class="position-relative d-flex justify-content-center" style="margin-top:-23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1"></div>
+        </div>
+        <div class="card animate-up" style="width:23rem; height: 25rem; position: relative; border-color: #000; ">
+            <img src="cool2.gif" height="200px" class="card-img-top" alt="...">
+            <div class="overlay">
+                <div class="text">Bienvenido</div>
+            </div>
+            <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
+            <div class="card-body">
+                <h5 class="card-title">EVENTO MATEMATICO</h5>
+                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <center><button>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 36"
+    width="36px"
+    height="36px"
+  >
+    <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+    <path
+      fill="#e53935"
+      d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"
+    ></path>
+    <path
+      fill="#b71c1c"
+      d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"
+    ></path>
+    <path
+      fill="#01579b"
+      d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"
+    ></path>
+    <path
+      fill="#81d4fa"
+      d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"
+    ></path>
+    <path
+      fill="#e1f5fe"
+      d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
+    ></path>
+  </svg>
+  <span class="now">Ahora</span>
+  <span class="play">Ver</span>
+</button></center>
+            </div>
+        </div>
+    </div>
+</div>
+                 <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="team-item bg-light">
+        <div class="overflow-hidden"></div>
+        <div class="position-relative d-flex justify-content-center" style="margin-top:-23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1"></div>
+        </div>
+        <div class="card animate-up" style="width:23rem; height: 25rem; position: relative; border-color: #000;">
+
+            <img src="cool3.gif" height="200px" class="card-img-top" alt="...">
+            <div class="overlay">
+                <div class="text">Bienvenido</div>
+            </div>
+            <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
+            <div class="card-body">
+                <h5 class="card-title">EVENTO MATEMATICO</h5>
+                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <center><button>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 36"
+    width="36px"
+    height="36px"
+  >
+    <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+    <path
+      fill="#e53935"
+      d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"
+    ></path>
+    <path
+      fill="#b71c1c"
+      d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"
+    ></path>
+    <path
+      fill="#01579b"
+      d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"
+    ></path>
+    <path
+      fill="#81d4fa"
+      d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"
+    ></path>
+    <path
+      fill="#e1f5fe"
+      d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
+    ></path>
+  </svg>
+   <span class="now">Ahora</span>
+  <span class="play">Ver</span>
+</button></center>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="team-item bg-light">
+        <div class="overflow-hidden"></div>
+        <div class="position-relative d-flex justify-content-center" style="margin-top:-23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1"></div>
+        </div>
+        <div class="card animate-up" style="width:23rem; height: 25rem; position: relative; border-color: #000;">
+            <img src="cool4.gif" height="200px" class="card-img-top" alt="...">
+            <div class="overlay">
+                <div class="text">Bienvenido</div>
+            </div>
+            <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );height: 2px; margin: 10px;"></div>
+            <div class="card-body">
+                <h5 class="card-title">EVENTO MATEMATICO</h5>
+                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <center><button>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 36"
+    width="36px"
+    height="36px"
+  >
+    <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+    <path
+      fill="#e53935"
+      d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"
+    ></path>
+    <path
+      fill="#b71c1c"
+      d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"
+    ></path>
+    <path
+      fill="#01579b"
+      d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"
+    ></path>
+    <path
+      fill="#81d4fa"
+      d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"
+    ></path>
+    <path
+      fill="#e1f5fe"
+      d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
+    ></path>
+  </svg>
+  <span class="now">Ahora</span>
+  <span class="play">Ver</span>
+</button></center>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team End -->
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+           <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="">
+                <h2 class="section-title gradient-background">EVENTOS</h2>
+                <h4 class="mb-5">2023-3</h4>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="team-item bg-light">
+        <div class="overflow-hidden"></div>
+        <div class="position-relative d-flex justify-content-center" style="margin-top:-23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1"></div>
+        </div>
+        <div class="card animate-up" style="width:23rem; height: 25rem; position: relative; border-color: #000;">
+            <img src="cool5.gif" height="200px" class="card-img-top" alt="...">
+            <div class="overlay">
+                <div class="text">Bienvenido</div>
+            </div>
+            <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
+            <div class="card-body">
+                <h5 class="card-title">EVENTO MATEMATICO</h5>
+                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <center><button>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 36"
+    width="36px"
+    height="36px"
+  >
+    <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+    <path
+      fill="#e53935"
+      d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"
+    ></path>
+    <path
+      fill="#b71c1c"
+      d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"
+    ></path>
+    <path
+      fill="#01579b"
+      d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"
+    ></path>
+    <path
+      fill="#81d4fa"
+      d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"
+    ></path>
+    <path
+      fill="#e1f5fe"
+      d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
+    ></path>
+  </svg>
+   <span class="now">Ahora</span>
+  <span class="play">Ver</span>
+</button></center>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="team-item bg-light">
+        <div class="overflow-hidden"></div>
+        <div class="position-relative d-flex justify-content-center" style="margin-top:-23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1"></div>
+        </div>
+        <div class="card animate-up" style="width:23rem; height: 25rem; position: relative; border-color: #000;">
+            <img src="cool6.gif" height="200px" class="card-img-top" alt="...">
+            <div class="overlay">
+                <div class="text">Bienvenido</div>
+            </div>
+            <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
+            <div class="card-body">
+                <h5 class="card-title">EVENTO MATEMATICO</h5>
+                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <center><button>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 36"
+    width="36px"
+    height="36px"
+  >
+    <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+    <path
+      fill="#e53935"
+      d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"
+    ></path>
+    <path
+      fill="#b71c1c"
+      d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"
+    ></path>
+    <path
+      fill="#01579b"
+      d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"
+    ></path>
+    <path
+      fill="#81d4fa"
+      d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"
+    ></path>
+    <path
+      fill="#e1f5fe"
+      d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
+    ></path>
+  </svg>
+   <span class="now">Ahora</span>
+  <span class="play">Ver</span>
+</button></center>
+            </div>
+        </div>
+    </div>
+</div>
+                 <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="team-item bg-light">
+        <div class="overflow-hidden"></div>
+        <div class="position-relative d-flex justify-content-center" style="margin-top:-23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1"></div>
+        </div>
+        <div class="card animate-up" style="width:23rem; height: 25rem; position: relative; border-color: #000;">
+            <img src="cool7.gif" height="200px" class="card-img-top" alt="...">
+            <div class="overlay">
+                <div class="text">Bienvenido</div>
+            </div>
+            <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
+            <div class="card-body">
+                <h5 class="card-title">EVENTO MATEMATICO</h5>
+                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <center><button>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 36"
+    width="36px"
+    height="36px"
+  >
+    <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+    <path
+      fill="#e53935"
+      d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"
+    ></path>
+    <path
+      fill="#b71c1c"
+      d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"
+    ></path>
+    <path
+      fill="#01579b"
+      d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"
+    ></path>
+    <path
+      fill="#81d4fa"
+      d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"
+    ></path>
+    <path
+      fill="#212121"
+      d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"
+    ></path>
+    <path
+      fill="#e1f5fe"
+      d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"
+    ></path>
+  </svg>
+  <span class="now">Ahora</span>
+  <span class="play">Ver</span>
+</button></center>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+
+
+    <!--Footer Start -->
+  
+
+  </main>
+</div>
+
+  <div style="padding-left: 78px;">
+    
+<main>
+
+
+  <div class="container marketing">
+
+ 
+
+     <div class="row featurette">
+</div>
+
+   
+  </div>
+
+<footer>
+        <div class="content" style="margin-top: 50px;">
+            <div class="top">
+                <div class="logo-details">
+                    <img src="noble.png" width="50">
+                    <span class="logo_name">EQUIPO<span style="color: blue;">/</span><span style="color: red;">KLRP</span></span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link-name">Company</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Get Started</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link-name">Service</li>
+                    <li><a href="#">App design</a></li>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Logo Design</a></li>
+                    <li><a href="#">Banner design</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link-name">Account</li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">My account</a></li>
+                    <li><a href="#">PreFerences</a></li>
+                    <li><a href="#">Purchase</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link-name">Courses</li>
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">PhotoShop</a></li>
+                </ul>
+                <ul class="box input-box">
+                    <li class="link-name">Subscribe</li>
+                    <li><input type="email" placeholder="Enter Your Email"></li>
+                    <li><input type="button" value="Subscribe"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-details">
+            <div class="bottom-text">
+                <span class="copyright-text">copyright &#169; 2024
+                    <a href="#"> sL Code<span style="color: red;">
+                            Hub</span></a>All rights
+                    reserved</span>
+            </div>
+        </div>
+    </footer>
+
+  </main>
+
+</div>
+
+</div>
+   
+     <!-- Footer Start -->  
+
+    <!-- Back to Top -->
+
+
+                        <!-- JavaScript Libraries -->
+                        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                        <script src="lib/wow/wow.min.js"></script>
+                        <script src="lib/easing/easing.min.js"></script>
+                        <script src="lib/waypoints/waypoints.min.js"></script>
+                        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+                        <!-- Template Javascript -->
+                        <script src="js/main.js"></script>
+                        <script>
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelector('.loader-wrapper').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }, 2000); 
+});
+</script>
+ <script src="script2.js"></script>
+
+</body>
+
+</html>

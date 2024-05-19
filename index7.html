@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Music Player with Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -12,9 +13,309 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./style7.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freeman&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poetsen+One&display=swap" rel="stylesheet">
+
+    <style>
+      .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loader {
+    --path: #2f3545;
+    --dot: #5628ee;
+    --duration: 3s;
+    width: 44px;
+    height: 44px;
+    position: relative;
+  }
+  
+  .loader:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    background: var(--dot);
+    top: 37px;
+    left: 19px;
+    transform: translate(-18px, -18px);
+    animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .loader svg rect, .loader svg polygon, .loader svg circle {
+    fill: none;
+    stroke: var(--path);
+    stroke-width: 10px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  
+  .loader svg polygon {
+    stroke-dasharray: 145 76 145 76;
+    stroke-dashoffset: 0;
+    animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg rect {
+    stroke-dasharray: 192 64 192 64;
+    stroke-dashoffset: 0;
+    animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader svg circle {
+    stroke-dasharray: 150 50 150 50;
+    stroke-dashoffset: 75;
+    animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  .loader.triangle {
+    width: 48px;
+  }
+  
+  .loader.triangle:before {
+    left: 21px;
+    transform: translate(-10px, -18px);
+    animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  @keyframes pathTriangle {
+    33% {
+      stroke-dashoffset: 74;
+    }
+  
+    66% {
+      stroke-dashoffset: 147;
+    }
+  
+    100% {
+      stroke-dashoffset: 221;
+    }
+  }
+  
+  @keyframes dotTriangle {
+    33% {
+      transform: translate(0, 0);
+    }
+  
+    66% {
+      transform: translate(10px, -18px);
+    }
+  
+    100% {
+      transform: translate(-10px, -18px);
+    }
+  }
+  
+  @keyframes pathRect {
+    25% {
+      stroke-dashoffset: 64;
+    }
+  
+    50% {
+      stroke-dashoffset: 128;
+    }
+  
+    75% {
+      stroke-dashoffset: 192;
+    }
+  
+    100% {
+      stroke-dashoffset: 256;
+    }
+  }
+  
+  @keyframes dotRect {
+    25% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(18px, -18px);
+    }
+  
+    75% {
+      transform: translate(0, -36px);
+    }
+  
+    100% {
+      transform: translate(-18px, -18px);
+    }
+  }
+  
+  @keyframes pathCircle {
+    25% {
+      stroke-dashoffset: 125;
+    }
+  
+    50% {
+      stroke-dashoffset: 175;
+    }
+  
+    75% {
+      stroke-dashoffset: 225;
+    }
+  
+    100% {
+      stroke-dashoffset: 275;
+    }
+  }
+
+  
+
+/* Estilos del botón */
+.toggle-btn {
+  position: fixed; 
+  top: 20px; 
+  left: 20px; 
+  z-index: 3;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.nav-menu {
+  position: fixed;
+  top: 15px;
+  left: -200px;
+  width: 200px;
+  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease-in-out;
+  z-index: 2;
+  border-radius: 20px;
+
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block; 
+  padding: 5px 10px; 
+  transition: background-color 0.3s; 
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+}
+
+
+.nav-menu li:hover > a {
+  background-color: #C7C7C7 ; 
+  color: #fff; 
+}
+
+
+.nav-menu li ul {
+  display: none;
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.nav-menu li:hover > ul {
+  display: block;
+}
+
+
+.nav-menu.open {
+  left: 0;
+}
+
+.toggle-btn.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.toggle-btn.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+    </style>
   </head>
   <body>
+<div class="loader-wrapper">
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+        <circle id="test" cx="40" cy="40" r="32"></circle>
+    </svg>
+  </div>
+
+  <div class="loader triangle">
+    <svg viewBox="0 0 86 80">
+        <polygon points="43 8 79 72 7 72"></polygon>
+    </svg>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+        <rect x="8" y="8" width="64" height="64"></rect>
+    </svg>
+  </div>
+</div>
+
+<header>
+    <button class="toggle-btn">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+    <nav class="nav-menu" style="padding-top: 100px; border: 3px solid #fff;">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+
     <body>
+
       <div class="album-cover">
         <div class="swiper">
           <div class="swiper-wrapper">
@@ -25,7 +326,7 @@
               <div class="overlay">
                 <a
                   href="https://www.youtube.com/watch?v=aatr_2MstrI&ab_channel=CleanBandit"
-                  target="_blank"
+                  target=""
                   ><ion-icon name="logo-youtube"></ion-icon
                 ></a>
               </div>
@@ -133,5 +434,24 @@
     <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./script7.js"></script>
+    <script>
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelector('.loader-wrapper').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }, 2000); 
+});
+</script>
+<script>
+  const toggleBtn = document.querySelector('.toggle-btn');
+const navMenu = document.querySelector('.nav-menu');
+
+toggleBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
+  toggleBtn.classList.toggle('open');
+});
+</script>
+
   </body>
 </html>
