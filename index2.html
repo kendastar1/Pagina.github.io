@@ -468,6 +468,21 @@ body {
             font-weight: bold;
             font-size: 20px;
         }
+        .text-center1 {
+    text-align: center;
+  }
+  .container1 {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas en dispositivos pequeños */
+  }
+  .col-lg-477 {
+    margin: 10px; /* Espacio entre las columnas */
+  }
+  .bd-placeholder1-img66 {
+    display: block;
+    margin: 0 auto;
+  }
 </style>
     
    </head>
@@ -704,26 +719,24 @@ body {
  <button class="btn" style="color: #ffffff;">Button</button>
 </p>
       </div>
-<div style="display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    flex-wrap: wrap;">
-       <div class="col-lg-4">
-          <img class="bd-placeholder1-img rounded-circle" src="imagen2.jpg" width="140" height="140">
-        <h2 class="fw-normal">Pedro Molina</h2>
-        <p>Ingeniero en Sistemas</p>
-        <p id="enlace" style="display: inline-flex;">
- <button class="btn" style="color: #ffffff;">Button</button>
-</p>
-      </div>
-       <div class="col-lg-4">
-          <img class="bd-placeholder1-img rounded-circle" src="imagen2.jpg" width="140" height="140">
-        <h2 class="fw-normal">Doris Barrera</h2>
-        <p>Profesora de calculo diferencial</p>
-        <p id="enlace" style="display: inline-flex;">
- <button class="btn" style="color: #ffffff;">Button</button>
-</p>
-      </div>
-      </div>
+<div class="container1">
+  <div class="col-lg-4 col-md-6 col-sm-12 text-center1 col-lg-477">
+    <img class="bd-placeholder1-img rounded-circle bd-placeholder1-img66" src="imagen2.jpg" width="140" height="140">
+    <h2 class="fw-normal">Pedro Molina</h2>
+    <p>Ingeniero en Sistemas</p>
+    <p id="enlace">
+      <button class="btn btn-primary">Button</button>
+    </p>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-12 text-center1 col-lg-477">
+    <img class="bd-placeholder1-img rounded-circle bd-placeholder1-img66" src="imagen2.jpg" width="140" height="140">
+    <h2 class="fw-normal">Ronal Acevedo</h2>
+    <p>And lastly this, the third column of representative placeholder content.</p>
+    <p id="enlace">
+      <button class="btn btn-primary">Button</button>
+    </p>
+  </div>
+</div>
 
     </div>
     <hr class="featurette-divider" id="optimizacion">
