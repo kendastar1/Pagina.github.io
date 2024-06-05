@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> La Memoria Ram </title>
+    <title>Memoria RAM y Derivadas </title>
     <link rel="stylesheet" href="style2.css">
    <link rel="icon" href="descarga1.png" type="image/png">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
@@ -407,11 +407,590 @@ button:hover i::after {
     opacity: 1;
     transform: translateY(0);
 }
+.card {
+  position: relative;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 2px #960c85;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+}
+
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+.card2 {
+  width: 325px;
+  height: 90px;
+  background: #262626;
+    border-radius: 10px;
+
+}
+
+.smallIcon {
+  width: 100%;
+  height: 100%;
+  background-color: #ff5858;
+    border-radius: 10px;
+background: linear-gradient(-45deg, #f83dbe 0%, #334eb0 100% );
+
+}
+
+.smallIcon div {
+  background: linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 
+  40%, #e5e5e5 48%);
+  margin-top: 10px;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  color: #262626;
+  font-weight: bold;
+  font-size: 15px;
+
+
+
+}
+
+.Icon {
+  margin: 10px;
+  width: 70px;
+  height: 70px;
+  float: left;
+  border-radius: 5px;
+}
+
+.Name {
+  width: 90px;
+  height: 20px;
+  float: left;
+  transform: translate(10px ,0px);
+  border-radius: 5px;
+  animation: load89234 2s infinite;
+}
+
+
+
+.Descripion {
+  margin: 10px;
+  width: 210px;
+  height: 45px;
+  float: left;
+  transform: translate(0px ,-5px);
+  border-radius: 5px;
+  animation: load89234 2s infinite;
+
+}
+
+@keyframes load89234 {
+  100% {
+    background-position: -100% 0;
+  }
+}
+.main_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    height: 25em;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.antenna {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #f27405;
+  margin-bottom: -6em;
+  margin-left: 0em;
+  z-index: -1;
+}
+.antenna_shadow {
+  position: absolute;
+  background-color: transparent;
+  width: 50px;
+  height: 56px;
+  margin-left: 1.68em;
+  border-radius: 45%;
+  transform: rotate(140deg);
+  border: 4px solid transparent;
+  box-shadow: inset 0px 16px #a85103, inset 0px 16px 1px 1px #a85103;
+  -moz-box-shadow: inset 0px 16px #a85103, inset 0px 16px 1px 1px #a85103;
+}
+.antenna::after {
+  content: "";
+  position: absolute;
+  margin-top: -9.4em;
+  margin-left: 0.4em;
+  transform: rotate(-25deg);
+  width: 1em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: #f69e50;
+}
+.antenna::before {
+  content: "";
+  position: absolute;
+  margin-top: 0.2em;
+  margin-left: 1.25em;
+  transform: rotate(-20deg);
+  width: 1.5em;
+  height: 0.8em;
+  border-radius: 50%;
+  background-color: #f69e50;
+}
+.a1 {
+  position: relative;
+  top: -102%;
+  left: -130%;
+  width: 12em;
+  height: 5.5em;
+  border-radius: 50px;
+  background-image: linear-gradient(
+    #171717,
+    #171717,
+    #353535,
+    #353535,
+    #171717
+  );
+  transform: rotate(-29deg);
+  clip-path: polygon(50% 0%, 49% 100%, 52% 100%);
+}
+.a1d {
+  position: relative;
+  top: -211%;
+  left: -35%;
+  transform: rotate(45deg);
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #979797;
+  z-index: 99;
+}
+.a2 {
+  position: relative;
+  top: -210%;
+  left: -10%;
+  width: 12em;
+  height: 4em;
+  border-radius: 50px;
+  background-color: #171717;
+  background-image: linear-gradient(
+    #171717,
+    #171717,
+    #353535,
+    #353535,
+    #171717
+  );
+  margin-right: 5em;
+  clip-path: polygon(
+    47% 0,
+    47% 0,
+    34% 34%,
+    54% 25%,
+    32% 100%,
+    29% 96%,
+    49% 32%,
+    30% 38%
+  );
+  transform: rotate(-8deg);
+}
+.a2d {
+  position: relative;
+  top: -294%;
+  left: 94%;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #979797;
+  z-index: 99;
+}
+
+.notfound_text {
+  background-color: black;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  font-size: 0.75em;
+  color: white;
+  letter-spacing: 0;
+  border-radius: 5px;
+  z-index: 10;
+}
+.tv {
+  width: 17em;
+  height: 9em;
+  margin-top: 3em;
+  border-radius: 15px;
+  background-color: #d36604;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #1d0e01;
+  box-shadow: inset 0.2em 0.2em #e69635;
+}
+.tv::after {
+  content: "";
+  position: absolute;
+  width: 17em;
+  height: 9em;
+  border-radius: 15px;
+  background: repeating-radial-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%)
+      50% 0/2500px 2500px,
+    repeating-conic-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%) 60% 60%/2500px
+      2500px;
+  background-blend-mode: difference;
+  opacity: 0.09;
+}
+.curve_svg {
+  position: absolute;
+  margin-top: 0.25em;
+  margin-left: -0.25em;
+  height: 12px;
+  width: 12px;
+}
+.display_div {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 3.5px 3.5px 0px #e69635;
+}
+.screen_out {
+  width: auto;
+  height: auto;
+
+  border-radius: 10px;
+}
+.screen_out1 {
+  width: 11em;
+  height: 7.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.screen {
+  width: 13em;
+  height: 7.85em;
+  font-family: Montserrat;
+  border: 2px solid #1d0e01;
+ 
+  background-blend-mode: difference;
+  animation: b 0.2s infinite alternate;
+  border-radius: 10px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #252525;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+@keyframes b {
+  100% {
+    background-position: 50% 0, 60% 50%;
+  }
+}
+
+
+
+.lines {
+  display: flex;
+  column-gap: 0.1em;
+  align-self: flex-end;
+}
+.line1,
+.line3 {
+  width: 2px;
+  height: 0.5em;
+  background-color: black;
+  border-radius: 25px 25px 0px 0px;
+  margin-top: 0.5em;
+}
+.line2 {
+  flex-grow: 1;
+  width: 2px;
+  height: 1em;
+  background-color: black;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.buttons_div {
+  width: 4.25em;
+  align-self: center;
+  height: 8em;
+  background-color: #e69635;
+  border: 2px solid #1d0e01;
+  padding: 0.6em;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 0.75em;
+  box-shadow: 3px 3px 0px #e69635;
+}
+.b1 {
+  width: 1.65em;
+  height: 1.65em;
+  border-radius: 50%;
+  background-color: #7f5934;
+  border: 2px solid black;
+  box-shadow: inset 2px 2px 1px #b49577, -2px 0px #513721,
+    -2px 0px 0px 1px black;
+}
+.b1::before {
+  content: "";
+  position: absolute;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  transform: rotate(47deg);
+  border-radius: 5px;
+  width: 0.1em;
+  height: 0.4em;
+  background-color: #000000;
+}
+.b1::after {
+  content: "";
+  position: absolute;
+  margin-top: 0.9em;
+  margin-left: 0.8em;
+  transform: rotate(47deg);
+  border-radius: 5px;
+  width: 0.1em;
+  height: 0.55em;
+  background-color: #000000;
+}
+.b1 div {
+  content: "";
+  position: absolute;
+  margin-top: -0.1em;
+  margin-left: 0.65em;
+  transform: rotate(45deg);
+  width: 0.15em;
+  height: 1.5em;
+  background-color: #000000;
+}
+.b2 {
+  width: 1.65em;
+  height: 1.65em;
+  border-radius: 50%;
+  background-color: #7f5934;
+  border: 2px solid black;
+  box-shadow: inset 2px 2px 1px #b49577, -2px 0px #513721,
+    -2px 0px 0px 1px black;
+}
+.b2::before {
+  content: "";
+  position: absolute;
+  margin-top: 1.05em;
+  margin-left: 0.8em;
+  transform: rotate(-45deg);
+  border-radius: 5px;
+  width: 0.15em;
+  height: 0.4em;
+  background-color: #000000;
+}
+.b2::after {
+  content: "";
+  position: absolute;
+  margin-top: -0.1em;
+  margin-left: 0.65em;
+  transform: rotate(-45deg);
+  width: 0.15em;
+  height: 1.5em;
+  background-color: #000000;
+}
+.speakers {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+.speakers .g1 {
+  display: flex;
+  column-gap: 0.25em;
+}
+.speakers .g1 .g11,
+.g12,
+.g13 {
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  background-color: #7f5934;
+  border: 2px solid black;
+  box-shadow: inset 1.25px 1.25px 1px #b49577;
+}
+.speakers .g {
+  width: auto;
+  height: 2px;
+  background-color: #171717;
+}
+
+.bottom {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8.7em;
+}
+.base1 {
+  height: 1em;
+  width: 2em;
+  border: 2px solid #171717;
+  background-color: #4d4d4d;
+  margin-top: -0.15em;
+  z-index: -1;
+}
+.base2 {
+  height: 1em;
+  width: 2em;
+  border: 2px solid #171717;
+  background-color: #4d4d4d;
+  margin-top: -0.15em;
+  z-index: -1;
+}
+.base3 {
+  position: absolute;
+  height: 0.15em;
+  width: 17.5em;
+  background-color: #171717;
+  margin-top: 0.8em;
+}
+
+.text_404 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  column-gap: 6em;
+  z-index: -5;
+  margin-bottom: 2em;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  font-family: Montserrat;
+}
+.text_4041 {
+  transform: scaleY(24.5) scaleX(9);
+}
+.text_4042 {
+  transform: scaleY(24.5) scaleX(9);
+}
+.text_4043 {
+  transform: scaleY(24.5) scaleX(9);
+}
+.container6 {
+  display: flex;
+  gap: 10px;
+}
+
+.card6 {
+  background-color: #fff;
+ 
+  flex: 1;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card6 img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 16px;
+  object-fit: cover; /* Ajusta la imagen para que se ajuste al contenedor */
+}
+
+.card6:hover {
+  flex: 2;
+  background-color: #b8b8b8;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+#video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
+
 </style>
     
    </head>
 
 <body>
+   <video id="video" autoplay muted loop style="filter: brightness(1);">
+    <source src="fondo9.mp4" type="video/mp4">
+  </video>
    <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
@@ -441,7 +1020,7 @@ button:hover i::after {
     <ul class="nav-links">
       <li>
         <a href="index.html">
-          <i class='bx bx-home'></i>
+         <i class='bx bx-home'></i>
 
           <span class="link_name">Bienvenida</span>
         </a>
@@ -449,40 +1028,64 @@ button:hover i::after {
           <li><a class="link_name" href="index.html">Bienvenida</a></li>
         </ul>
       </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
+
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
+
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
       <li>
         <div class="iocn-link">
           <a href="index2.html">
             <i class='bx bx-collection' ></i>
             <span class="link_name">Introducción</span>
           </a>
-        
+          <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="index2.html">Introducción</a></li>
-         
+          <li><a href="#optimizacion">Optimización</a></li>
+          <li><a href="#Estrategias">Estrategias</a></li>
+          <li><a href="#Rendimiento">Rendimiento</a></li>
+          <li><a href="#Conclusión">Conclusión</a></li>
         </ul>
       </li>
       <li>
         <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">¿Ques es?</span>
+          <a href="index3.html">
+           <i class='bx bx-memory-card'></i>
+            <span class="link_name">Lamemoria RAM</span>
           </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+          
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">¿Que es?</a></li>
-          <li><a href="#">Sub Menú 1</a></li>
-          <li><a href="#">Sub Menú 2</a></li>
+          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
+         
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a href="index8.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Reportes</span>
+          <span class="link_name">Temáticas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Reportes</a></li>
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
         </ul>
       </li>
       <li>
@@ -491,44 +1094,18 @@ button:hover i::after {
             <i class='bx bxs-user-voice'></i>
             <span class="link_name">Audio</span>
           </a>
-          
+        
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="index7.html">Audio</a></li>
           
-          
+         
         </ul>
       </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-contact' ></i>
-          <span class="link_name">Contactos</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Contactos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-edit-location'></i>
-          <span class="link_name">Sedes</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Sedes</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Configuración</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Configuración</a></li>
-        </ul>
-      </li>
-      <li>
-    
-  </li>
+      
+     
+      
+     
 </ul>
   </div>
 
@@ -598,11 +1175,8 @@ button:hover i::after {
           <strong class="d-inline-block mb-2 text-primary-emphasis" >DIMM</strong>
           <h3 class="mb-0">módulo de memoria de dos lineas</h3>
           <div class="mb-1 text-body-secondary">dual in-line memory module</div>
-          <p class="card-text mb-auto">La memoria DIMM: almacenamiento rápido y fácil de actualizar.</p>
-          <a href="index4.html" class="icon-link gap-1 icon-link-hover stretched-link" >
-            VER MAS
-            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-          </a>
+          <p class="card-text mb-auto" style="padding-bottom: 60px;">La memoria DIMM: almacenamiento rápido y fácil de actualizar.</p>
+         
         </div>
         <div class="col-auto d-none d-lg-block">
            <img class="bd-placeholder-img" src="ram.jpg" width="220" height="100%">
@@ -615,11 +1189,8 @@ button:hover i::after {
           <strong class="d-inline-block mb-2 text-primary-emphasis">SO-DIMM</strong>
           <h3 class="mb-0">Módulo de memoria dual en línea de contorno pequeño</h3>
           <div class="mb-1 text-body-secondary">Small Outline Dual In-Line Memory Module</div>
-          <p class="card-text mb-auto">La memoria SO-DIMM: RAM compacta y eficiente para portátiles.</p>
-          <a href="index5.html" class="icon-link gap-1 icon-link-hover stretched-link">
-            VER MAS
-            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-          </a>
+          <p class="card-text mb-auto" >La memoria SO-DIMM: RAM compacta y eficiente para portátiles.</p>
+         
         </div>
         <div class="col-auto d-none d-lg-block">
            <img class="bd-placeholder-img" src="como.jpeg" width="220" height="100%">
@@ -634,60 +1205,119 @@ button:hover i::after {
         Existen 2 Tipos De Memoria RAM
       </h3>
 
-      <article class="blog-post animate-text">
-        <h2 class="display-5 " style="background-image: url(ga.gif);background-size: cover;  color: #fff; padding-top: 40px; padding-bottom: 40px; border-radius: 8px; " >La Memoria RAM y las Derivadas</h2>
+      <article class="blog-post animate-text" id="Quees">
+        <h2 class="display-5 " style="background-image: url(ga.gif);background-size: cover;  color: #fff; padding-top: 40px; padding-bottom: 40px; border-radius: 8px; text-align: center;" >La Memoria RAM y las Derivadas</h2>
         <p class="blog-post-meta"><b>¿Que es la memoria ram?</b></p>
 
         <p>La memoria RAM (Random Access Memory, o memoria de acceso aleatorio) es un componente crucial en los sistemas informáticos que se utiliza para almacenar temporalmente datos y programas que están en uso activo o que se están procesando en un momento dado.</p>
         <hr>
         <p><b>En el contexto de las derivadas</b> la memoria RAM podría compararse con la velocidad de cambio instantáneo de una función en un punto específico. Así como la RAM almacena y proporciona acceso rápido a datos para el funcionamiento eficiente de un sistema informático, la derivada de una función en un punto dado representa la rapidez con la que la función está cambiando en ese punto, lo que es fundamental para comprender y optimizar diversos procesos en matemáticas, ciencias y tecnología.</p>
         <hr>
+        <div class="main_wrapper">
+  <div class="main">
+    <div class="antenna">
+      <div class="antenna_shadow"></div>
+      <div class="a1"></div>
+      <div class="a1d"></div>
+      <div class="a2"></div>
+      <div class="a2d"></div>
+      <div class="a_base"></div>
+    </div>
+    <div class="tv">
+      <div class="cruve">
+        <svg
+          xml:space="preserve"
+          viewBox="0 0 189.929 189.929"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          class="curve_svg"
+        >
+          <path
+            d="M70.343,70.343c-30.554,30.553-44.806,72.7-39.102,115.635l-29.738,3.951C-5.442,137.659,11.917,86.34,49.129,49.13
+        C86.34,11.918,137.664-5.445,189.928,1.502l-3.95,29.738C143.041,25.54,100.895,39.789,70.343,70.343z"
+          ></path>
+        </svg>
+      </div>
+      <div class="display_div">
+        <div class="screen_out">
+          <div class="screen_out1">
+            <div class="screen">
+    <video id="miVideo" controls style="width: 100%;height: 100%; border-radius: 6px;  width: 100%;
+    height: 100%;
+    object-fit: cover;">
+        <source src="derivadas.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="lines">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div class="buttons_div">
+        <div class="b1"><div></div></div>
+        <div class="b2"></div>
+        <div class="speakers">
+          <div class="g1">
+            <div class="g11"></div>
+            <div class="g12"></div>
+            <div class="g13"></div>
+          </div>
+          <div class="g"></div>
+          <div class="g"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="base1"></div>
+      <div class="base2"></div>
+      <div class="base3"></div>
+    </div>
+  </div>
+  
+</div>
 
-        <h2 class="display-5 " style="background-image: url(wl.gif);background-size: cover;  color: #fff; padding-top: 40px; padding-bottom: 40px; border-radius: 8px; " >La Importancia de las Derivadas</h2>
+        <h2 class="display-5 " style="background-image: url(wl.gif);background-size: cover;  color: #fff; padding-top: 40px; padding-bottom: 40px; border-radius: 8px; text-align: center; " >La Importancia de las Derivadas</h2>
         <p><b>Optimizando el Rendimiento de la Memoria RAM</b></p>
         <blockquote class="blockquote">
         </blockquote>
         <p>La importancia de las derivadas en el contexto de la memoria RAM radica en su capacidad para describir y cuantificar el cambio instantáneo en una función en un punto dado. En el ámbito de la memoria RAM, las derivadas podrían analogarse a la velocidad a la que se pueden acceder y manipular los datos almacenados en la memoria.</p>
 <hr>
         </h3>
-        <p><b>1. Optimización de la eficiencia:</b> Al igual que una función puede ser optimizada para minimizar o maximizar su valor utilizando derivadas, los algoritmos y procesos en sistemas informáticos pueden optimizarse para acceder y utilizar la memoria RAM de manera más eficiente. Por ejemplo, algoritmos de gestión de memoria que minimizan el tiempo de acceso a los datos pueden basarse en conceptos derivados de la optimización matemática.</p>
-         <p><b>2. Gestión de recursos: </b> Las derivadas pueden ayudar a comprender cómo cambia la demanda de recursos de memoria en función de diferentes variables, como el tamaño de los datos o la complejidad del procesamiento. Esta comprensión es fundamental para la asignación adecuada de recursos de memoria en sistemas informáticos para garantizar un rendimiento óptimo.</p>
-          <p><b>3. Predicción de tendencias: </b> Al igual que las derivadas pueden utilizarse para predecir tendencias en una función matemática, en informática, pueden utilizarse para prever necesidades futuras de memoria en función de patrones de uso históricos y actuales. Esto es crucial para planificar y escalar infraestructuras informáticas de manera efectiva.</p>
-          <p><b>4. Detección de anomalías: </b> Las derivadas también pueden ser útiles para detectar anomalías en el uso de la memoria RAM. Por ejemplo, un cambio brusco en la tasa de acceso a la memoria puede indicar un problema en el sistema que requiere atención inmediata.</p>
+        <div class="container6">
+  <div class="card6"><p style="position: absolute;  color: #fff;">1</p><img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2024/04/4-formas-optimizar-memoria-ram-pc-mejorar-rendimiento-maximo-3298132.jpg?tf=1200x900" alt="Imagen 1"></div>
+  <div class="card6"><p style="position: absolute;  color: #fff;">2</p><img src="https://th.bing.com/th/id/OIG2.8EkVyCEFFjRe52_TWcBk?w=270&h=270&c=6&r=0&o=5&pid=ImgGn" alt="Imagen 2"></div>
+  <div class="card6"><p style="position: absolute;  color: #fff;">3</p><img src="https://th.bing.com/th/id/OIG3.6WlU0tO3_6yv9cY2zezq?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Imagen 3"></div>
+  <div class="card6"><p style="position: absolute;  color: #fff;">4</p><img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/A71B/production/_98297724_gettyimages-533909709.jpg" alt="Imagen 4"></div>
+</div>
+<hr>
+        <p><b>1. Optimización de la eficiencia:</b> Al igual que una función puede ser optimizada para minimizar o maximizar su valor utilizando derivadas, los algoritmos y procesos en sistemas informáticos pueden optimizarse para acceder y utilizar la memoria RAM de manera más eficiente. </p>
+         <p><b>2. Gestión de recursos: </b> Las derivadas pueden ayudar a comprender cómo cambia la demanda de recursos de memoria en función de diferentes variables, como el tamaño de los datos o la complejidad del procesamiento. </p>
+          <p><b>3. Predicción de tendencias: </b> Al igual que las derivadas pueden utilizarse para predecir tendencias en una función matemática, en informática, pueden utilizarse para prever necesidades futuras de memoria en función de patrones de uso históricos y actuales. </p>
+          <p><b>4. Detección de anomalías: </b> Las derivadas también pueden ser útiles para detectar anomalías en el uso de la memoria RAM. </p>
        
 
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <hr>
+
       </article>
 
+
       <article class="blog-post animate-text">
-        <h2 class="display-5 " style="background-image: url(rt.gif);background-size: cover;  color: #fff; padding-top: 40px; padding-bottom: 40px; border-radius: 8px; " >Capacidad de la Memoria RAM en Computadoras</h2>
+        <h2 class="display-5 " style="background-image: url(rt.gif);background-size: cover;  color: #fff; padding-top: 40px; padding-bottom: 40px; border-radius: 8px; text-align: center;" >Capacidad de la Memoria RAM en Computadoras</h2>
         <p class="blog-post-meta"><b>Guía de Uso Recomendado</b> </p>
 
         <p>La tabla describe la capacidad típica de la memoria RAM en computadoras de escritorio y portátiles, así como su uso recomendado. La memoria RAM es un componente crucial en una computadora, ya que almacena temporalmente datos e instrucciones que la CPU necesita para realizar operaciones. La cantidad de RAM en una computadora afecta directamente su capacidad para ejecutar programas y realizar tareas de manera eficiente.</p>
        <hr>
-        <h3>Recomendaciones Para Un Buen Uso</h3>
+       <div class="card5">
+
+</div>
+        <h3 style="background-image: url(nomve.gif); color: #ffff; padding-top: 50px;padding-bottom: 50px; border-radius: 10px; text-align: center;">Recomendaciones Para Un Buen Uso</h3>
         <p>Aquí se visualizara una tabla de recomendaciones del uso adecuado de una memoria RAM</p>
-        <table class="table">
+        <table class="table" style="--bs-table-bg: transparent;">
           <thead>
             <tr>
               <th>Capacidad de RAM</th>
@@ -721,7 +1351,10 @@ button:hover i::after {
         </table>
 
         <p>Estas capacidades son aproximadas y pueden variar según el fabricante y el modelo de la computadora.</p>
+    
+        
       </article>
+
 
       
 
@@ -732,41 +1365,59 @@ button:hover i::after {
 
     <div class="col-md-4 animate-text">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-body-tertiary rounded" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
-          <h4 class="fst-italic">Para Mas Informacion</h4>
-          <p class="mb-0">Descubre cómo la capacidad de la memoria RAM afecta la adaptabilidad y eficiencia de la computadora. Para más detalles sobre este tema, visita las páginas dedicadas a la memoria RAM. </p>
-        </div>
-
+        <div class="card">
+        <img src="derivadas.gif" width="80%">
+  <div class="card__content">
+    <p class="card__title">Derivada</p>
+    <p class="card__description">Las derivadas son esenciales para medir el cambio en matemáticas y ciencias. Permiten analizar funciones, calcular velocidades, modelar cambios en economía etc... y diseñar sistemas en ingeniería.</p>
+  </div>
+</div>
+<hr>
         <div>
           <h4 class="fst-italic">Dar click para mas informacion</h4>
           <ul class="list-unstyled">
             <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.xataka.com/basics/memoria-ram-que-sirve-como-mirar-cuanta-tiene-tu-ordenador-movil">
-                <img src="memoria2.jpeg" width="100%" height="90" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Xataka.com</h6>
-                  <small class="text-body-secondary">Visitanos para mas informacion</small>
-                </div>
-              </a>
+             <div class="card2">
+              <a href="https://www.xataka.com/basics/memoria-ram-que-sirve-como-mirar-cuanta-tiene-tu-ordenador-movil">
+  <div class="smallIcon">
+    <div class="Icon" style="background-image: url(ram22.jpg);background-size: cover;  background-position: center; background-repeat: no-repeat;"></div>
+    <div class="Name" style="text-align: center;">Xataka<p></p></div>
+  
+    <div class="Descripion" style="position: absolute;
+    margin-left: 100;
+    margin-top: 40; "><p style="text-align: center;">Dar click para mas informacion</p></div>
+  </div>
+  </a>
+</div>
+ 
             </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://edu.gcfglobal.org/es/informatica-basica/memoria-ram-y-disco-duro/1/">
-               <img src="mamoria1.jpeg" width="100%" height="90" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">GCFGlobal.com</h6>
-                  <small class="text-body-secondary">Visitanos para mas informacion</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.avast.com/es-es/c-what-is-ram-memory">
-                 <img src="memoria3.jpeg" width="100%" height="75" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Avast.com</h6>
-                  <small class="text-body-secondary">Visitanos para mas informacion</small>
-                </div>
-              </a>
-            </li>
+            <hr>
+            <div class="card2">
+              <a href="https://www.avast.com/es-es/c-what-is-ram-memory">
+  <div class="smallIcon">
+    <div class="Icon" style="background-image: url(avast.png);background-size: cover;  background-position: center; background-repeat: no-repeat; "></div>
+    <div class="Name" style="text-align: center;">Avast<p></p></div>
+  
+    <div class="Descripion" style="position: absolute;
+    margin-left: 100;
+    margin-top: 40; "><p style="text-align: center;">Dar click para mas informacion</p></div>
+  </div>
+  </a>
+</div>
+ <hr>
+              <div class="card2">
+                <a href="https://hiraoka.com.pe/blog/post/memoria-ram-que-es-para-que-sirve-y-como-aumentar">
+  <div class="smallIcon">
+    <div class="Icon" style="background-image: url(hitaoka.png);background-size: cover;  background-position: center; background-repeat: no-repeat; "></div>
+    <div class="Name" style="text-align: center;">Hiraoka<p></p></div>
+  
+    <div class="Descripion" style="position: absolute;
+    margin-left: 100;
+    margin-top: 40; "><p style="text-align: center;">Dar click para mas informacion</p></div>
+
+  </div>
+   </a>
+ <hr>
           </ul>
         </div>
 
@@ -891,7 +1542,22 @@ window.addEventListener('load', function() {
     window.addEventListener('scroll', handleScroll);
 });
     </script>
+ <script>
+      var video = document.getElementById("miVideo");
 
+// Ocultar los controles al cargar la página
+video.controls = false;
+
+// Mostrar los controles cuando pasa el cursor sobre el video
+video.addEventListener("mouseover", function() {
+  video.controls = true;
+});
+
+// Ocultar los controles cuando el cursor deja el video
+video.addEventListener("mouseout", function() {
+  video.controls = false;
+});
+    </script>
 
 </body>
 </html>

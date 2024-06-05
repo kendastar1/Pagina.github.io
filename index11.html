@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Menú desplegable de la barra lateral | Kenyo León </title>
+    <title> LAS DERIVADAS </title>
     <link rel="stylesheet" href="style2.css">
    <link rel="icon" href="descarga1.png" type="image/png">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
@@ -246,80 +246,88 @@ body {
   }
 }
 
-.card-container {
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: lightgrey;
+  justify-content: center; /* Centra los grupos de botones horizontalmente */
+}
 
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 20px; /* Margen derecho para separar los grupos de botones */
+}
+
+.red-btn {
   width: 300px;
-  height: 300px;
+  height: 150px;
+  margin: 15px; /* Margen para separar los botones dentro de cada grupo */
+  background: rgb(255, 0, 0);
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
   position: relative;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  overflow: hidden;
+}
+.blue-btn {
+  width: 300px;
+  height: 150px;
+  margin: 15px; /* Margen para separar los botones dentro de cada grupo */
+  background: rgb(0, 8, 144);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 8, 144, 1) 0%,
+    rgba(16, 0, 255, 1) 22%,
+    rgba(86, 255, 247, 1) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
+button:hover {
+  color: rgb(0, 0, 0);
 }
 
-.card .front-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .front-content p {
-  font-size: 32px;
-  font-weight: 700;
-  opacity: 1;
-  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .content {
+button:after {
+  content: "";
+  background: white;
   position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  background: linear-gradient(-45deg,#293df8 0%, #ff0f7b 100% );
-  color: #e8e8e8;
-  padding: 20px;
-  line-height: 1.5;
-  border-radius: 5px;
-  pointer-events: none;
-  transform: translateY(96%);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
 }
 
-.card .content .heading {
-  font-size: 32px;
-  font-weight: 700;
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.card:hover .content {
-  transform: translateY(0);
-}
-
-.card:hover .front-content {
-  transform: translateY(-30%);
-}
-
-.card:hover .front-content p {
-  opacity: 0;
-}
 .btn {
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
   --border-width: 0.125em;
@@ -468,11 +476,385 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     opacity: 1;
     transform: translateY(0);
 }
+#video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
+.math {
+      font-family: 'Cambria Math', 'DejaVu Math TeX Gyre', serif;
+      font-size: 1.5em;
+    }
+    .math-sub {
+      vertical-align: sub;
+      font-size: 0.75em;
+    }
+    .math-sup {
+      vertical-align: super;
+      font-size: 0.75em;
+    }
+    .container1000 {
+            display: flex;
+            align-items: center;
+        }
+        .container1000 img {
+            max-width: 350px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            margin-right: 50px;
+            padding-left: 20px; /* Espacio entre la imagen y el texto */
+        }
+        .text-content {
+            max-width: 600px; /* Ajusta el ancho del texto según tus necesidades */
+        }
+         @media (max-width: 768px) {
+            .container1000 {
+                flex-direction: column;
+               
+            }
+            .container1000 img {
+                margin-right: 0;
+                margin-bottom: 20px; /* Espacio entre la imagen y el texto en pantallas pequeñas */
+                max-width: 100%;
+                 /* Asegura que la imagen no sea más ancha que su contenedor */
+            }
+            .text-content {
+                max-width: 100%;
+            }
+        }
+        .card300 {
+  width: 252px;
+  height: 265px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
+.img300 {
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: linear-gradient(#e66465, #9198e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .centered-text {
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño del texto */
+    text-align: center; /* Alineación del texto */
+  }
+
+.save300 {
+  transition: 0.2s ease-in-out;
+  border-radius: 10px;
+  margin: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
+.save300 .svg {
+  transition: 0.2s ease-in-out;
+  width: 15px;
+  height: 15px;
+}
+
+
+
+
+.text .h3 {
+  font-family: 'Lucida Sans' sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+}
+
+.text .p {
+  font-family: 'Lucida Sans' sans-serif;
+  color: #999999;
+  font-size: 13px;
+}
+
+
+
+.card300:hover {
+  cursor: pointer;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+}
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card300 {
+  width: calc(50% - 20px);
+  margin: 0 10px 20px;
+  max-width: 300px;
+}
+
+@media (min-width: 768px) {
+  .card300 {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (min-width: 992px) {
+  .card300 {
+    width: calc(25% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .card300 {
+    width: calc(100% - 20px);
+  }
+}.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Ajusta el espacio entre las cartas según tus preferencias */
+  flex-wrap: wrap;
+}
+
+.card-container3000 {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  margin: 10px; /* Para asegurar que haya espacio alrededor de las cartas en dispositivos móviles */
+}
+
+.card-container3000::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.card3000 {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card3000 .img-content3000 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transition: scale 0.6s, rotate 0.6s, filter 1s;
+}
+
+.card3000 .img-content3000 svg {
+  width: 50px;
+  height: 50px;
+  fill: #212121;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card3000 .content3000 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  color: #e8e8e8;
+  padding: 20px 24px;
+  line-height: 1.5;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card3000 .content3000 .heading3000 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card3000:hover .content3000 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card3000:hover .img-content3000 {
+  scale: 2.5;
+  rotate: 30deg;
+  filter: blur(7px);
+}
+
+.card3000:hover .img-content3000 svg {
+  fill: transparent;
+}
+@media (max-width: 600px) {
+  .card-container3000 {
+    width: 100%;
+   
+ height: auto;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.img-content3000 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .img-content3000 math {
+    margin-top: 10px; /* Espacio entre el texto y la fórmula */
+  }
+  @media (max-width: 600px) {
+  .img-content3000 {
+    font-size: 14px; /* Reducir el tamaño del texto en dispositivos móviles */
+    padding: 50px; /* Añadir un poco de espacio alrededor del contenido */
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .red-btn, .blue-btn {
+    width: 97%; /* Ajusta los botones al ancho completo en dispositivos móviles */
+    max-width: none; /* Elimina el ancho máximo */
+  }
+}
+@media (min-width: 601px) {
+  .card {
+    
+    margin: 0 auto; /* Centra la tarjeta horizontalmente */
+  }
+}
+.container1000 {
+            display: flex;
+            align-items: center;
+        }
+        .container1000 img {
+            max-width: 350px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            margin-right: 50px;
+            padding-left: 20px; /* Espacio entre la imagen y el texto */
+        }
+        .text-content {
+            max-width: 600px; /* Ajusta el ancho del texto según tus necesidades */
+        }
+         @media (max-width: 768px) {
+            .container1000 {
+                flex-direction: column;
+               
+            }
+            .container1000 img {
+                margin-right: 0;
+                margin-bottom: 20px; /* Espacio entre la imagen y el texto en pantallas pequeñas */
+                max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+            }
+            .text-content {
+                max-width: 100%;
+            }
+        }
+
+        .tv {
+  width: 300px;
+  height: 200px;
+  background: black;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen {
+  width: 240px;
+  height: 160px;
+  background: #333;
+  border-radius: 5px;
+}
+.screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.screen .controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.screen .controls button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  /* Estilos para pantallas de hasta 600px de ancho (móviles) */
+  .container1000 {
+    padding: 0 10px; /* Reduce el espacio a los lados */
+  }
+  .text-content {
+    margin-top: 20px; /* Añade espacio encima del texto */
+  }
+}
 </style>
     
    </head>
 
 <body >
+  <video id="video" autoplay muted loop style="filter: brightness(1);">
+    <source src="fondo9.mp4" type="video/mp4">
+  </video>
    <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
@@ -510,6 +892,28 @@ h1, h2, .btn,p,h5,.card .col-6,li {
           <li><a class="link_name" href="index.html">Bienvenida</a></li>
         </ul>
       </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
+
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
+
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
       <li>
         <div class="iocn-link">
           <a href="index2.html">
@@ -529,23 +933,23 @@ h1, h2, .btn,p,h5,.card .col-6,li {
       <li>
         <div class="iocn-link">
           <a href="index3.html">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">¿Que es?</span>
+           <i class='bx bx-memory-card'></i>
+            <span class="link_name">Lamemoria RAM</span>
           </a>
           
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="index3.html">¿Que es?</a></li>
+          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
          
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a href="index8.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Reportes</span>
+          <span class="link_name">Temáticas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Reportes</a></li>
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
         </ul>
       </li>
       <li>
@@ -562,36 +966,10 @@ h1, h2, .btn,p,h5,.card .col-6,li {
          
         </ul>
       </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-contact' ></i>
-          <span class="link_name">Contactos</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Contactos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-edit-location'></i>
-          <span class="link_name">Sedes</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Sedes</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Configuración</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Configuración</a></li>
-        </ul>
-      </li>
-      <li>
-    
-  </li>
+      
+     
+      
+     
 </ul>
   </div>
 
@@ -624,14 +1002,22 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="fondo3.gif" width="100%" height="100%" style=" filter: brightness(50%);">
+        <video class="background-video" src="fondo11.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" filter: brightness(50%);  overflow: hidden;position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      filter: brightness(50%);"></video>
         
 
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Guía Completa sobre la Memoria RAM</h1>
-            <p class="opacity-75">Desde los Fundamentos hasta la Optimización</p>
+            <h1>¿Qué Son las Derivadas?</h1>
+            <p class="opacity-75">Concepto de Derivadas</p>
            
           </div>
         </div>
@@ -643,20 +1029,415 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
 
   <div class="container marketing">
-
- 
+ <h1 class="animate-text">¿QUE SON<span style="color: #ff5e00;"> LAS DERIVADAS?</span></h1>
+ <P>Las derivadas representan la tasa de cambio instantánea de una función con respecto a una de sus variables. Indican cómo varía el valor de una función a medida que cambia su variable independiente y se utilizan para encontrar pendientes de curvas, optimizar funciones y modelar fenómenos de cambio en diversas disciplinas.</P>
    
+<div class="container1000 animate-text" style="padding-top: 20px;">
+  <div class="tv">
+    <div class="screen">
+      <video id="miVideo" controls>
+        <source src="Qué es la derivada_ _ Concepto de derivada.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  
+  <div class="text-content" style="margin-left: 20px;">
+    <h1>Qué es <span style="color: red;"> la derivada?</span></h1>
+    <p>Concepto de derivada</p>
+    
+  </div>
+</div>
+
+
     <hr class="featurette-divider" id="optimizacion">
 
+
+<div class="container1000 animate-text">
+       
+        <div class="text-content">
+          <h1>REPRESENTACIÓN DE UNA DERIVADA:<span style="color: #ff5e00;"> <b class="math">f ′(x)
+</b></span></h1>
+            <P>Para saber que estamos derivando representamos la función a derivar de la siguiente manera  f´(x)  esto se lee como f prima de x</P>
+            <P>Puntos clave:</P>
+             <ul>
+        <li>Es la tasa de cambio de una función en un punto específico.</li>
+        <li>La explicación de la derivada como una función es que refleja la tasa de cambio de una variable respecto a otra.</li>
+        <li>La interpretación geométrica de la derivada es la pendiente de la recta tangente a un punto de la función.</li>
+    </ul>
+         
+            
+        </div>
+         <img src="graficadederivada.png" alt="Descripción de la imagen" style="width: 100%;">
+    </div>
     
-    <hr class="featurette-divider" id="Estrategias">
+    <hr class="featurette-divider " id="Estrategias">
+    <div class="animate-text">
+ <h1>APLICACIONES<span style="color: #ff5e00;"> PRÁCTICAS</span></h1>
+ <P >Las derivadas tienen diversas aplicaciones en distintas disciplinas, por ejemplo:</P>
+<ul class="animate-text">
+        <li>En física, describen la velocidad y aceleración de objetos en movimiento</li>
+        <li>En ingenierías, son esenciales para analizar sistemas dinámicos y diseñar controladores</li>
+    </ul>
+    <h3 style="color: #ff5e00; padding-bottom: 15px;">REGLAS DE DERIVACION</h3>
+    </div>
+<div class="card animate-text" style="padding-left: 3%;">
+  <div class="btn-group">
+    <button  style="background: linear-gradient( 90deg, rgb(22 108 236) 0%, rgb(63 29 253) 50%, rgb(69 142 252) 100% );"  class="red-btn" onmouseover="this.textContent = 'f(x) = 8x, f`(x) = 8'" onmouseout="this.textContent = 'Derivada de función identidad f(x) = 1 '">Derivada de función identidad f(x) = 1 </button>
+   <button style="background: linear-gradient( 90deg, rgb(236 131 22) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100% );"  class="red-btn" onmouseover="this.textContent = 'f(x) = k, f`(x) = 0'" onmouseout="this.textContent = 'Derivada de función constante f(x)=0'">Derivada de función constante f(x)=0 </button>
+   <button style="background: linear-gradient( 90deg, rgb(22 108 236) 0%, rgb(63 29 253) 50%, rgb(69 142 252) 100% );" class="red-btn" onmouseover="this.textContent = 'f`(x)=14x'" onmouseout="this.textContent = 'Regla del multiplo constante f(x)=7x^2'">Regla del multiplo constante f(x)=7x^2</button>
+  </div>
+  <div class="btn-group">
+   <button  style="background: linear-gradient( 90deg, rgb(236 131 22) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100% );" class="red-btn" onmouseover="this.textContent = 'dx/dy =f′(x)±g′(x)'" onmouseout="this.textContent = 'Derivadas: suma y resta'">Derivadas: suma y resta </button>
+   <button style="font-size: 16px; background: linear-gradient( 90deg, rgb(22 108 236) 0%, rgb(63 29 253) 50%, rgb(69 142 252) 100% );"  class="red-btn" onmouseover="this.textContent = 'Dx(f(x)g(x))=f(x)g`(x)+f`(x)g(x)'" onmouseout="this.textContent = 'Derivada: multiplicacion f(x)=(2x^4-1)(5x^2+6x)'">Derivadas: multiplicacion f(x)=(2x^4-1)(5x^2+6x)</button>
+  </div>
+  <div class="btn-group" style="margin-left: auto;">
+   <button style="font-size: 15px; background: linear-gradient( 90deg, rgb(22 108 236) 0%, rgb(63 29 253) 50%, rgb(69 142 252) 100% );" class="red-btn" onmouseover="this.textContent = 'Z`(X)=f`(x)*g(x)-g`(x).f(x)/[g(x)]^2'" onmouseout="this.textContent = 'Derivadas: division z(x)=(f(x))/(g(x))  g (x)≠0 xϵI'">Derivadas: division z(x)=(f(x))/(g(x))  g (x)≠0 xϵI</button>
+   <button style="background: linear-gradient( 90deg, rgb(236 131 22) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100% );" class="red-btn" onmouseover="this.textContent = 'f`(g(x)).g`(x)'" onmouseout="this.textContent = 'Regla de la cadena: d/dx=[f(g(x))]'">Regla de la cadena: d/dx=[f(g(x))]</button>
+  </div>
+</div>
+  
+ 
+  <h3 class=" animate-text" style="padding-top: 50px;">DERIVADAS<span style="color: #ff5e00;"> TRIGONOMÉTRICAS</span></h3>
+  <hr style="padding-bottom: 50px;">
+  <div class="card-wrapper">
+  <div class="card300 animate-text">
+    <div class="img300" style="background: linear-gradient(#1419b6, #4788ff);">
+      <p class="centered-text"><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>cos</mi>
+        <mo>(</mo>
+        <mi>X</mi>
+        <mo>)</mo>
+      </math></p>
+    </div>
+
+    <div class="text">
+      <p class="h3"> DERIVADA DE LA FUNCION SENO  </p>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac>
+      <mi>d</mi>
+      <mrow>
+       
+        <mi>d</mi>
+        <mi>x</mi>
+      </mrow>
+    </mfrac>
+        <mo>(</mo>
+        <mi>sin</mi>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </math>
+    </div>
+  </div>
+
+  <div class="card300 animate-text">
+    <div class="img300"  style="background: linear-gradient(#ff8d00, #ff4747);">
+      <p class="centered-text"><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo>-</mo>
+    <mn>2</mn>
+    <mi>sin</mi>
+    <mo stretchy="false">(</mo>
+    <mn>2</mn>
+    <mi>X</mi>
+    <mo stretchy="false">)</mo>
+
+      </math></p>
+    </div>
+
+    <div class="text">
+      <p class="h3"> DERIVADA DE LA FUNCIÓN COSENO  </p>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+      <mi>d</mi>
+      <mrow>
+       
+        <mi>d</mi>
+        <mi>x</mi>
+      </mrow>
+    </mfrac>
+    <mo stretchy="false">(</mo>
+    <mi>cos</mi>
+    <mo stretchy="false">(</mo>
+    <mn>2</mn>
+    <mi>x</mi>
+    <mo stretchy="false">)</mo>
+    <mo stretchy="false">)</mo>
+  </math>
+
+    </div>
+  </div>
+  <div class="card300 animate-text">
+    <div class="img300" style="background: linear-gradient(#1419b6, #4788ff);">
+  <p class="centered-text">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mn>2</mn>
+      <mi>tan</mi>
+      <mo stretchy="false">(</mo>
+      <mi>X</mi>
+      <mo stretchy="false">)</mo>
+       <msup>
+          <mi>sec</mi>
+          <mn>2</mn>
+        </msup>
+      <msup>
+        <mrow>
+          <mo stretchy="false">(</mo>
+          <mi>X</mi>
+          <mo stretchy="false">)</mo>
+        </mrow>
+      </msup>
+    </math>
+  </p>
+</div>
+
+    <div class="text">
+      <p class="h3"> DERIVADA DE LA FUNCION TANGENTE   </p>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac>
+    <mi>d</mi>
+    <mrow>
+      
+      <mi>d</mi>
+      <mi>x</mi>
+    </mrow>
+  </mfrac>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>tan</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+</math>
+    </div>
+  </div>
+   <div class="card300 animate-text">
+    <div class="img300" style="background: linear-gradient(#ff8d00, #ff4747);">
+      <p class="centered-text"><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo>-</mo>
+        <msup>
+          <mi>csc</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>(</mo>
+        <mi>X</mi>
+        <mo>)</mo>
+      </math></p>
+    </div>
+
+    <div class="text">
+      <p class="h3"> DERIVADA DE LA FUNCIÓN COTANGENTE   </p>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac>
+          <mstyle mathsize="1em">
+        <mfrac>
+      <mi>d</mi>
+      <mrow>
+       
+        <mi>d</mi>
+        <mi>x</mi>
+      </mrow>
+    </mfrac>
+        <mo>(</mo>
+        <mi>cot</mi>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+        <mo>)</mo>
+      </mstyle>
+    </math>
+      </math>
+    </div>
+  </div>
+   <div class="card300 animate-text">
+    <div class="img300" style="background: linear-gradient(#1419b6, #4788ff);">
+      <p class="centered-text"><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+         <mi>sec</mi>
+         <mstyle mathsize="1em">
+      
+      <mo>(</mo>
+      <mi>X</mi>
+      <mo>)</mo>
+    </mstyle>
+     
+       <mstyle mathsize="1em" >
+      <mi>tan</mi>
+      <mo>(</mo>
+      <mi>X</mi>
+      <mo>)</mo>
+    </mstyle>
+      </math></p>
+    </div>
+
+    <div class="text">
+      <p class="h3"> DERIVADA DE LA FUNCIÓN SECANTE  </p>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac>
+      <mi>d</mi>
+      <mrow>
+       
+        <mi>d</mi>
+        <mi>x</mi>
+      </mrow>
+    </mfrac>
+      <mo>(</mo>
+      <mi>sec</mi>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+      <mo>)</mo>
+      </math>
+    </div>
+  </div>
+   <div class="card300 animate-text">
+    <div class="img300" style="background: linear-gradient(#ff8d00, #ff4747);">
+      <p class="centered-text"><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo>-</mo>
+      <mi>csc</mi>
+      <mo>(</mo>
+      <mi>X</mi>
+      <mo>)</mo>
+      <mo>&#x2062;</mo> <!-- Invisible times for correct spacing -->
+      <mi>cot</mi>
+      <mo>(</mo>
+      <mi>X</mi>
+      <mo>)</mo>
+      </math></p>
+    </div>
+
+    <div class="text">
+      <p class="h3"> DERIVADA DE LA FUNCIÓN COSECANTE   </p>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac>
+      <mi>d</mi>
+      <mrow>
+       
+        <mi>d</mi>
+        <mi>x</mi>
+      </mrow>
+    </mfrac>
+      <mo>(</mo>
+      <mi>csc</mi>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+      <mo>)</mo>
+      </math>
+    </div>
+  </div>
+
+</div>
+<div class="animate-text">
+ <h3 style="padding-top: 50px;">DERIVADAS<span style="color: #ff5e00;"> EXPONENCIALES </span></h3>
+ <hr>
+</div>
+<div class="cards-wrapper animate-text">
+  <div class="card-container3000">
+    <div class="card3000">
+      <div class="img-content3000" style="background: linear-gradient(-45deg, #ff7600 0%, #ff0000 100% );">
+  <p style="font-size: 20px; color: #fff;">Derivada de la función exponencial de base e</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+       <mstyle mathsize="2em" style="color: #fff;">
+        <mi>f</mi>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+        <mo>=</mo>
+        <msup>
+          <mi>e</mi>
+          <mi>u</mi>
+        </msup>
+      </mstyle>
+    </mrow>
+  </math>
+</div>
+      <div class="content3000">
+        <p class="heading3000">Resultado</p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+       <mstyle mathsize="2em">
+        <mi>f</mi>
+        <mo>'</mo>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+        <mo>=</mo>
+        <msup>
+          <mi>e</mi>
+          <mi>u</mi>
+        </msup>
+        <mo>&#8290;</mo>
+        <mi>u</mi>
+        <mo>'</mo>
+      </mstyle>
+    </mrow>
+  </math>
+      </div>
+    </div>
+  </div>
+  <div class="card-container3000">
+    <div class="card3000">
+      <div class="img-content3000" style="background: linear-gradient(-45deg, #3300ff 0%, #00d0ff 100% );">
+        <p style="font-size: 20px; color: #fff;">Derivada de la función exponencial de base a</p>
+       <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+       <mstyle mathsize="2em" style="color: #fff;">
+ 
+    <mi>f</mi>
+    <mo>(</mo>
+    <mi>x</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <msup>
+      <mi>a</mi>
+      <mi>u</mi>
+    </msup>
+  </mstyle>
+  </mrow>
+</math>
+      </div>
+      <div class="content3000">
+        <p class="heading3000">Resultado</p>
+        <p>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+       <mstyle mathsize="2em">
+        <mi>f</mi>
+        <mo>'</mo>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+        <mo>=</mo>
+        <msup>
+          <mi>a</mi>
+          <mi>u</mi>
+        </msup>
+        <mo>&#8290;</mo>
+        <mo>ln</mo>
+        <mo>(</mo>
+        <mi>a</mi>
+        <mo>)</mo>
+        <mo>&#8290;</mo>
+        <mi>u</mi>
+         <mo>'</mo>
+
+      </mstyle>
+    </mrow>
+  </math>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    
-    <hr class="featurette-divider" id="Rendimiento">
 
-    
- <hr class="featurette-divider" id="Conclusión">
+
+
 
      <div class="row featurette">
 
@@ -776,6 +1557,22 @@ window.addEventListener('load', function() {
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
+});
+    </script>
+    <script>
+      var video = document.getElementById("miVideo");
+
+// Ocultar los controles al cargar la página
+video.controls = false;
+
+// Mostrar los controles cuando pasa el cursor sobre el video
+video.addEventListener("mouseover", function() {
+  video.controls = true;
+});
+
+// Ocultar los controles cuando el cursor deja el video
+video.addEventListener("mouseout", function() {
+  video.controls = false;
 });
     </script>
 </body>

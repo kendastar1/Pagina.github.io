@@ -469,11 +469,111 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     opacity: 1;
     transform: translateY(0);
 }
+.container1000 {
+            display: flex;
+            align-items: center;
+        }
+        .container1000 img {
+            max-width: 350px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            margin-right: 50px;
+            padding-left: 20px; /* Espacio entre la imagen y el texto */
+        }
+        .text-content {
+            max-width: 600px; /* Ajusta el ancho del texto según tus necesidades */
+        }
+         @media (max-width: 768px) {
+            .container1000 {
+                flex-direction: column;
+               
+            }
+            .container1000 img {
+                margin-right: 0;
+                margin-bottom: 20px; /* Espacio entre la imagen y el texto en pantallas pequeñas */
+                max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+            }
+            .text-content {
+                max-width: 100%;
+            }
+        }
+        #video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
+.tv {
+  width: 300px;
+  height: 200px;
+  background: black;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen {
+  width: 240px;
+  height: 160px;
+  background: #333;
+  border-radius: 5px;
+}
+.screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.screen .controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.screen .controls button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  /* Estilos para pantallas de hasta 600px de ancho (móviles) */
+  .container1000 {
+    padding: 0 10px; /* Reduce el espacio a los lados */
+  }
+  .text-content {
+    margin-top: 20px; /* Añade espacio encima del texto */
+  }
+}
 </style>
     
    </head>
 
 <body >
+   <video id="video" autoplay muted loop style="filter: brightness(1);">
+    <source src="fondo9.mp4" type="video/mp4">
+  </video>
    <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
@@ -511,6 +611,28 @@ h1, h2, .btn,p,h5,.card .col-6,li {
           <li><a class="link_name" href="index.html">Bienvenida</a></li>
         </ul>
       </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
+
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
+
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
       <li>
         <div class="iocn-link">
           <a href="index2.html">
@@ -530,23 +652,23 @@ h1, h2, .btn,p,h5,.card .col-6,li {
       <li>
         <div class="iocn-link">
           <a href="index3.html">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">¿Que es?</span>
+           <i class='bx bx-memory-card'></i>
+            <span class="link_name">Lamemoria RAM</span>
           </a>
           
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="index3.html">¿Que es?</a></li>
+          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
          
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a href="index8.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Reportes</span>
+          <span class="link_name">Temáticas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Reportes</a></li>
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
         </ul>
       </li>
       <li>
@@ -563,36 +685,10 @@ h1, h2, .btn,p,h5,.card .col-6,li {
          
         </ul>
       </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-contact' ></i>
-          <span class="link_name">Contactos</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Contactos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-edit-location'></i>
-          <span class="link_name">Sedes</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Sedes</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Configuración</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Configuración</a></li>
-        </ul>
-      </li>
-      <li>
-    
-  </li>
+      
+     
+      
+     
 </ul>
   </div>
 
@@ -625,14 +721,23 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="inicio2.gif" width="100%" height="100%" style=" filter: brightness(50%);">
+        <video class="background-video" src="inicio2.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" filter: brightness(50%);  overflow: hidden;position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      filter: brightness(50%);"></video>
         
 
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Guía Completa sobre la Memoria RAM</h1>
-            <p class="opacity-75">Desde los Fundamentos hasta la Optimización</p>
+            <h1>¿QUÉ ES UNA GRÁFICA DE UNA FUNCIÓN?</h1>
+            <p class="opacity-75">Definición de Gráfica de una Función
+</p>
            
           </div>
         </div>
@@ -644,29 +749,52 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
 
   <div class="container marketing">
+<div class="container1000 animate-text">
+        <img src="der.png" alt="Descripción de la imagen">
+        <div class="text-content">
+           <h1>GRÁFICA DE <span style="color: red;">UNA FUNCIÓN</span></h1>
+            <p>Una gráfica de una función es una representación visual de la relación entre dos variables, donde una variable independiente (x) se relaciona con una variable dependiente (f(x)). La gráfica se construye en un sistema de coordenadas cartesianas, donde:</p>
+            <ul style="color: #000;">
+        <li><p>
+           El eje horizontal (x) representa los valores de la variable independiente.</p></li>
+        <li> <p>
+          El eje vertical (y) representa los valores de la variable dependiente f(x).</p></li>
+       
+    </ul>
+        </div>
+    </div>
 
  
-   
     <hr class="featurette-divider" id="optimizacion">
-
+<div class="container1000 animate-text">
+       
+        <div class="text-content">
+          
+            <p>Cada punto en la gráfica representa un par ordenado (x, f(x)), donde x es un valor del dominio de la función y f(x) es el valor correspondiente en el rango o conjunto imagen. La forma de la gráfica depende del tipo de función y sus características, como el dominio, rango, crecimiento, decrecimiento, máximos, mínimos, etc. La gráfica de una función permite visualizar su comportamiento y propiedades de manera intuitiva.</p>
+            
+        </div>
+         <img src="f.png" alt="Descripción de la imagen">
+    </div>
     
     <hr class="featurette-divider" id="Estrategias">
-
-
+<div class="container1000 animate-text" style="padding-bottom: 50px;">
+  <div class="tv">
+    <div class="screen">
+      <video id="miVideo" controls>
+        <source src="Gráficas de Derivadas.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  
+  <div class="text-content" style="margin-left: 20px;">
+    <h1>GRAFICAS<span style="color: red;"> DE DERIVADAS</span></h1>
+    <p>Podras ver el video, sobre como se debe entender al graficar una derivada </p>
     
-    <hr class="featurette-divider" id="Rendimiento">
-
-    
- <hr class="featurette-divider" id="Conclusión">
-
-     <div class="row featurette">
-
-
-
-
-
+  </div>
 </div>
 
+    
+    
    
   </div>
 
@@ -777,6 +905,22 @@ window.addEventListener('load', function() {
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
+});
+    </script>
+    <script>
+      var video = document.getElementById("miVideo");
+
+// Ocultar los controles al cargar la página
+video.controls = false;
+
+// Mostrar los controles cuando pasa el cursor sobre el video
+video.addEventListener("mouseover", function() {
+  video.controls = true;
+});
+
+// Ocultar los controles cuando el cursor deja el video
+video.addEventListener("mouseout", function() {
+  video.controls = false;
 });
     </script>
 </body>

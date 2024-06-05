@@ -247,80 +247,7 @@ body {
   }
 }
 
-.card-container {
 
-  width: 300px;
-  height: 300px;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-}
-
-.card .front-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .front-content p {
-  font-size: 32px;
-  font-weight: 700;
-  opacity: 1;
-  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  background: linear-gradient(-45deg,#293df8 0%, #ff0f7b 100% );
-  color: #e8e8e8;
-  padding: 20px;
-  line-height: 1.5;
-  border-radius: 5px;
-  pointer-events: none;
-  transform: translateY(96%);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.card .content .heading {
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.card:hover .content {
-  transform: translateY(0);
-}
-
-.card:hover .front-content {
-  transform: translateY(-30%);
-}
-
-.card:hover .front-content p {
-  opacity: 0;
-}
 .btn {
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
   --border-width: 0.125em;
@@ -469,11 +396,234 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     opacity: 1;
     transform: translateY(0);
 }
+.math {
+      font-family: 'Cambria Math', 'DejaVu Math TeX Gyre', serif;
+      font-size: 1.5em;
+    }
+    .math-sub {
+      vertical-align: sub;
+      font-size: 0.75em;
+    }
+    .math-sup {
+      vertical-align: super;
+      font-size: 0.75em;
+    }
+   .card5000 {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  display: inline-block;
+  margin-right: 20px; /* Espacio entre las tarjetas */
+}
+
+.card-inner5000 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card5000:hover .card-inner5000 {
+  transform: rotateY(180deg);
+}
+
+.card-front5000,
+.card-back5000 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front5000 {
+  background-color: #4619ce;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #4619ce;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back5000 {
+  background-color: #9100ff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #9100ff;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+@media (max-width: 600px) {
+  .card5000 {
+    width: 100%;
+    margin: 10px 0; /* Ajustar el espacio entre las tarjetas para dispositivos móviles */
+  }
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card20000 {
+  width: 190px;
+  height: 254px;
+  position: relative;
+  border-radius: 40px;
+  transition: all 0.8s;
+  perspective: 600px;
+  perspective-origin: center bottom;
+  margin: 10px; /* Espacio entre las tarjetas */
+}
+
+.upper-part {
+  width: 100%;
+  height: 65%;
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.9s;
+}
+
+.upper-part-face,
+.upper-part-back {
+  text-align: center;
+  background-color: lightgray;
+  color: #000;
+  border: 3px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  border-radius: 40px 40px 0 0;
+  font-weight: bold;
+  z-index: 2;
+  backface-visibility: hidden;
+  transition: all 0.6s;
+}
+
+.upper-part-back {
+  background-color: blue;
+  color: lightgray;
+  transform: rotatex(180deg);
+}
+
+.lower-part {
+  width: 100%;
+  height: 35%;
+  border-radius: 0 0 40px 40px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center top;
+  transition: all 0.9s;
+}
+
+.lower-part-face,
+.lower-part-back {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  color: lightgray;
+  font-weight: bold;
+  position: absolute;
+  border-radius: 0 0 40px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0, -0.8px);
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+.lower-part-back {
+  backface-visibility: visible;
+  border-radius: 40px;
+  color: #000;
+  background-color: lightgray;
+  transform: rotateX(180deg);
+  z-index: 1;
+  transition: border-radius 0.6s;
+}
+
+.card20000:hover > .upper-part {
+  transform: rotatex(-0.5turn);
+}
+
+.card20000:hover > .lower-part {
+  transform: translateY(88.3px) rotateX(0.5turn);
+}
+
+.card20000:hover > .lower-part > .lower-part-back {
+  border: 3px solid blue;
+  border-radius: 0 0 40px 40px;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .card20000 {
+    width: 100%;
+    margin: 10px 0; /* Ajustar el espacio entre las tarjetas para dispositivos móviles */
+  }
+}
+ .graph-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 100px); /* Reduce height by 100px to account for the margin */
+            margin: 50px 0 0 0; /* Add margin on top to separate from text above */
+            background-color: #f0f0f0;
+        }
+        .graph-container {
+            width: 800px;
+            height: 600px;
+        }
+        .graph-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        @media (max-width: 800px) {
+            .graph-container {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 4 / 3;
+            }
+        }
+ #video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
 </style>
     
    </head>
 
 <body >
+  <video id="video" autoplay muted loop style="filter: brightness(1);">
+    <source src="fondo9.mp4" type="video/mp4">
+  </video>
    <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
@@ -511,6 +661,28 @@ h1, h2, .btn,p,h5,.card .col-6,li {
           <li><a class="link_name" href="index.html">Bienvenida</a></li>
         </ul>
       </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
+
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
+
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
       <li>
         <div class="iocn-link">
           <a href="index2.html">
@@ -530,23 +702,23 @@ h1, h2, .btn,p,h5,.card .col-6,li {
       <li>
         <div class="iocn-link">
           <a href="index3.html">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">¿Que es?</span>
+           <i class='bx bx-memory-card'></i>
+            <span class="link_name">Lamemoria RAM</span>
           </a>
           
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="index3.html">¿Que es?</a></li>
+          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
          
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a href="index8.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Reportes</span>
+          <span class="link_name">Temáticas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Reportes</a></li>
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
         </ul>
       </li>
       <li>
@@ -563,36 +735,10 @@ h1, h2, .btn,p,h5,.card .col-6,li {
          
         </ul>
       </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-contact' ></i>
-          <span class="link_name">Contactos</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Contactos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-edit-location'></i>
-          <span class="link_name">Sedes</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Sedes</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Configuración</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Configuración</a></li>
-        </ul>
-      </li>
-      <li>
-    
-  </li>
+      
+     
+      
+     
 </ul>
   </div>
 
@@ -625,13 +771,20 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
     <div class="carousel-inner">
       <div class="carousel-item active">
-     <video class="background-video" src="fondo.mp4" autoplay loop muted playsinline style=" filter: brightness(50%);"></video>
-        
+    <video class="background-video" src="fondo13.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" filter: brightness(50%);  overflow: hidden;position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      filter: brightness(50%);"></video>
 
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Guía Completa sobre la Memoria RAM</h1>
+            <h1>PUNTO CRITICO</h1>
             <p class="opacity-75">Desde los Fundamentos hasta la Optimización</p>
            
           </div>
@@ -644,29 +797,122 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
 
   <div class="container marketing">
+    <div class="animate-text">
+ <h1>¿COMO SE ENCUENTRA <span style="color: blue;"> UN PUNTO CRITICO?</span></h1>
 
- 
+ <p>Un punto crítico de una función es un punto del dominio de la función donde la derivada es cero o no existe:</p>
+ <b class="math">f(x)=2 → f´(x)=0</b>
+ </div>
    
-    <hr class="featurette-divider" id="optimizacion">
+    <hr>
+    <div class="animate-text" style="padding-top: 30px;">
+    <h3 style="padding-bottom: 30px;">COMO SE  <span style="color: blue;"> CALCULA:</span></h3>
+
+    <div class="card5000">
+  <div class="card-inner5000">
+    <div class="card-front5000">
+      <p>SE CALCULA</p>
+    </div>
+    <div class="card-back5000">
+      <ul style="color: #fff;">
+        <li><p>
+          Derivar</p></li>
+        <li> <p>
+         Igualar a "0" y resolver  </p></li>
+
+        
+          
+       
+       
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card5000">
+  <div class="card-inner5000">
+    <div class="card-front5000">
+      <p>SE CALCULA</p>
+    </div>
+    <div class="card-back5000">
+     <ul style="color: #fff;">
+        <li><p>
+          Remplazar en f(x)</p></li>
+        <li> <p>
+         Averiguar si es max o min </p></li>
+
+        
+          
+       
+       
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+    </div>
 
     
     <hr class="featurette-divider" id="Estrategias">
-
-
-    
-    <hr class="featurette-divider" id="Rendimiento">
-
-    
- <hr class="featurette-divider" id="Conclusión">
-
-     <div class="row featurette">
-
-
-
-
-
+    <div class="animate-text">
+ <h3 style="padding-bottom: 25px;">EJEMPLO</h3>
+<b class="math">f(x)=2 → f´(x)=0</b>
 </div>
 
+    <div class="card-container animate-text">
+  <div class="card20000">
+    <div class="upper-part">
+      <div class="upper-part-face">Derivar</div>
+      <div class="upper-part-back"><b class="math">f´(x)=4x-4</b></div>
+    </div>
+    <div class="lower-part">
+      <div class="lower-part-face"></div>
+      <div class="lower-part-back">Resuelto</div>
+    </div>
+  </div>
+
+  <div class="card20000">
+    <div class="upper-part">
+      <div class="upper-part-face">igualar a "0" y resolver</div>
+     <div class="upper-part-back"><b class="math"><p style="font-size: 15px; margin-top:35px;">0 = 4x - 4</p><p style="font-size: 15px;">4 = 4x</p><p style="font-size: 15px;">4/4 = x</p><p style="font-size: 15px;">1 = x</p></b></div>
+    </div>
+    <div class="lower-part">
+      <div class="lower-part-face"></div>
+      <div class="lower-part-back">Resuelto</div>
+    </div>
+  </div>
+
+  <div class="card20000">
+    <div class="upper-part">
+      <div class="upper-part-face">Remplazar en f(x)</div>
+     <div class="upper-part-back"><b class="math"><p style="font-size: 15px; margin-top:35px;">f(x)=2(1)^2-4(1)-1</p><p style="font-size: 15px;">f(x)=2-4-1</p><p style="font-size: 15px;">f(x)=-3</p><p style="font-size: 15px;">1 = x</p></b></div>
+    </div>
+    <div class="lower-part">
+      <div class="lower-part-face"></div>
+      <div class="lower-part-back" style="text-align: center;">Punto crítico:(1,-3) “grafica”</div>
+    </div>
+  </div>
+
+  <div class="card20000">
+    <div class="upper-part">
+      <div class="upper-part-face">Averiguar si es max o min</div>
+      <div class="upper-part-back"><b class="math"><p style="font-size: 15px; margin-top:35px;">f´(x)=4x-4</p><p style="font-size: 15px;">f´´(x)=4</p><p style="font-size: 15px;">f´´(1)=4 </p><p style="font-size: 15px;">Minimo</p></b></div>
+    </div>
+    <div class="lower-part">
+      <div class="lower-part-face"></div>
+      <div class="lower-part-back" style="font-size: 15px; text-align: center;">Aplicamos criterio de la segunda derivada</div>
+    </div>
+  </div>
+
+
+   <div class="graph-wrapper animate-text">
+        <div class="graph-container">
+            <iframe src="https://www.geogebra.org/material/iframe/id/sghbjd5y/width/800/height/600/border/888888/rc/false/ai/false/sdz/true"></iframe>
+        </div>
+    </div>
+</div>
+    
    
   </div>
 
@@ -779,5 +1025,6 @@ window.addEventListener('load', function() {
     window.addEventListener('scroll', handleScroll);
 });
     </script>
+
 </body>
 </html>

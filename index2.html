@@ -483,11 +483,32 @@ body {
     display: block;
     margin: 0 auto;
   }
+ #video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
 </style>
     
    </head>
 
 <body >
+  <video id="video" autoplay muted loop style="filter: brightness(1);">
+    <source src="fondo9.mp4" type="video/mp4">
+  </video>
    <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
@@ -525,6 +546,28 @@ body {
           <li><a class="link_name" href="index.html">Bienvenida</a></li>
         </ul>
       </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
+
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
+
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
       <li>
         <div class="iocn-link">
           <a href="index2.html">
@@ -544,23 +587,23 @@ body {
       <li>
         <div class="iocn-link">
           <a href="index3.html">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">¿Que es?</span>
+           <i class='bx bx-memory-card'></i>
+            <span class="link_name">Lamemoria RAM</span>
           </a>
           
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="index3.html">¿Que es?</a></li>
+          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
          
         </ul>
       </li>
       <li>
         <a href="index8.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Reportes</span>
+          <span class="link_name">Temáticas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="index8.html">Reportes</a></li>
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
         </ul>
       </li>
       <li>
@@ -577,36 +620,10 @@ body {
          
         </ul>
       </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-contact' ></i>
-          <span class="link_name">Contactos</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Contactos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-edit-location'></i>
-          <span class="link_name">Sedes</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Sedes</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Configuración</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Configuración</a></li>
-        </ul>
-      </li>
-      <li>
-    
-  </li>
+      
+     
+      
+     
 </ul>
   </div>
 
@@ -643,7 +660,15 @@ body {
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="hol.gif" width="100%" height="100%" style=" filter: brightness(50%);">
+         <video class="background-video" src="fondo10.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" filter: brightness(50%);  overflow: hidden;position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      filter: brightness(50%);"></video>
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Guía Completa sobre la Memoria RAM</h1>
@@ -699,7 +724,7 @@ body {
         <h2 class="fw-normal">Kevin Ortiz</h2>
         <p>Ingeniero en Sistemas</p>
         <p id="enlace" style="display: inline-flex;">
-          <button class="btn" style="color: #ffffff;">Button</button>
+          <button class="btn" style="color: #ffffff;">Visitar</button>
 </p>
       </div>
       <div class="col-lg-4">
@@ -707,7 +732,7 @@ body {
         <h2 class="fw-normal">Lucio Garcia</h2>
         <p>Ingeniero en Sistemas</p>
         <p id="enlace" style="display: inline-flex;">
- <button class="btn" style="color: #ffffff;">Button</button>
+ <button class="btn" style="color: #ffffff;">Visitar</button>
 </p>
       </div>
       <div class="col-lg-4">
@@ -715,7 +740,7 @@ body {
         <h2 class="fw-normal">Ronal Acevedo</h2>
         <p>Ingeniero en Sistemas</p>
         <p id="enlace" style="display: inline-flex;">
- <button class="btn" style="color: #ffffff;">Button</button>
+ <button class="btn" style="color: #ffffff;">Visitar</button>
 </p>
       </div>
 <div class="container1">
@@ -724,15 +749,15 @@ body {
     <h2 class="fw-normal">Pedro Molina</h2>
     <p>Ingeniero en Sistemas</p>
     <p id="enlace">
-      <button class="btn btn-primary">Button</button>
+      <button class="btn btn-primary">Visitar</button>
     </p>
   </div>
   <div class="col-lg-4 col-md-6 col-sm-12 text-center1 col-lg-477">
     <img class="bd-placeholder1-img rounded-circle bd-placeholder1-img66" src="Doris.jpeg" width="140" height="140">
-    <h2 class="fw-normal">Ronal Acevedo</h2>
-    <p>And lastly this, the third column of representative placeholder content.</p>
+    <h2 class="fw-normal">Doris Barrera</h2>
+    <p>Profesora de calculo diferencial</p>
     <p id="enlace">
-      <button class="btn btn-primary">Button</button>
+      <button class="btn btn-primary">Visitar</button>
     </p>
   </div>
 </div>

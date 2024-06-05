@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ho</title>
+    <title>Tematicas</title>
      <link rel="icon" href="descarga1.png" type="image/png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -334,12 +334,32 @@ button:hover .play {
             padding: 0.75rem;
             background-color: white;
         }
+        #video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
 </style>
 
 </head>
 
 <body>
-
+ <video id="video" autoplay muted loop style="filter: brightness(1);">
+    <source src="fondo9.mp4" type="video/mp4">
+  </video>
    <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
@@ -359,7 +379,7 @@ button:hover .play {
     </svg>
   </div>
 </div>
-  <div id="content" style="display: none;">
+ <div id="content" style="display: none;">
   <div>
   <div class="sidebar close">
     <div class="logo-details">
@@ -377,6 +397,28 @@ button:hover .play {
           <li><a class="link_name" href="index.html">Bienvenida</a></li>
         </ul>
       </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
+
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
+
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
       <li>
         <div class="iocn-link">
           <a href="index2.html">
@@ -396,23 +438,23 @@ button:hover .play {
       <li>
         <div class="iocn-link">
           <a href="index3.html">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">¿Que es?</span>
+           <i class='bx bx-memory-card'></i>
+            <span class="link_name">Lamemoria RAM</span>
           </a>
           
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="index3.html">¿Que es?</a></li>
+          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
          
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a href="index8.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Reportes</span>
+          <span class="link_name">Temáticas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Reportes</a></li>
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
         </ul>
       </li>
       <li>
@@ -429,36 +471,10 @@ button:hover .play {
          
         </ul>
       </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-contact' ></i>
-          <span class="link_name">Contactos</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Contactos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-edit-location'></i>
-          <span class="link_name">Sedes</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Sedes</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Configuración</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Configuración</a></li>
-        </ul>
-      </li>
-      <li>
-    
-  </li>
+      
+     
+      
+     
 </ul>
   </div>
 
@@ -477,15 +493,9 @@ button:hover .play {
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
 
-                    <h1 class="display-3 text-white animated slideInDown" style="padding-top: 75px; text-align: center;">Bienvenidos a los eventos.</h1>
-                    <h3 class="text-white" style="text-align: center;">universidad simón bolivar</h3>
-                    <!-- <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                        </ol>
-                    </nav>-->
+                    <h1 class="display-3 text-white animated slideInDown" style="padding-top: 75px; text-align: center;">Bienvenidos</h1>
+                    <h3 class="text-white" style="text-align: center;">Podras ver los temas relacionado a derivadas</h3>
+                   
                 </div>
             </div>
         </div>
@@ -497,7 +507,7 @@ button:hover .play {
         <div class="container" style="padding-left: 50px;">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="">
                 <h2 class="section-title gradient-background">DERIVADAS EN LAS MATEMATICAS</h2>
-                <h4 class="mb-5">2023-3</h4>
+                <h4 class="mb-5">1-Sección</h4>
             </div>
             <div class="row g-3">
                 <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -509,12 +519,12 @@ button:hover .play {
         <div class="card animate-up" style="width:20rem; height: 23rem; position: relative; border-color: #000; ">
             <img src="cool2.gif" height="200px" class="card-img-top" alt="...">
             <div class="overlay">
-                <div class="text">Bienvenido</div>
+                 <div class="text">Modelación</div>
             </div>
             <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
             <div class="card-body">
-                <h5 class="card-title">EVENTO MATEMATICO</h5>
-                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+               <h5 class="card-title">QUÉ ES UNA MODELACIÓN</h5>
+                <p class="card-text">la Modelación: Un Enfoque Claro</p><br>
                 <center>
                   <a href="index9.html" style="color: #fff;">
                   <button>
@@ -577,12 +587,12 @@ button:hover .play {
 
             <img src="cool3.gif" height="200px" class="card-img-top" alt="...">
             <div class="overlay">
-                <div class="text">Bienvenido</div>
+                <div class="text" style="text-align: center;">Gráfica de una Función</div>
             </div>
             <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
             <div class="card-body">
-                <h5 class="card-title">EVENTO MATEMATICO</h5>
-                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <h5 class="card-title">GRÁFICA DE UNA FUNCIÓN</h5>
+                <p class="card-text">Definición de Gráfica de una Función</p><br>
                 <center> <a href="index10.html" style="color: #fff;"><button>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -642,12 +652,12 @@ button:hover .play {
          <div class="card animate-up" style="width:20rem; height: 23rem; position: relative; border-color: #000; ">
             <img src="cool4.gif" height="200px" class="card-img-top" alt="...">
             <div class="overlay">
-                <div class="text">Bienvenido</div>
+                <div class="text">Derivadas </div>
             </div>
             <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );height: 2px; margin: 10px;"></div>
             <div class="card-body">
-                <h5 class="card-title">EVENTO MATEMATICO</h5>
-                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <h5 class="card-title">DERIVADAS </h5>
+                <p class="card-text">Concepto Básico</p><br>
                 <center><a href="index11.html" style="color: #fff;"><button>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -708,8 +718,8 @@ button:hover .play {
     <div class="container-xxl py-5">
         <div class="container" style="padding-left: 50px;">
            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="">
-                <h2 class="section-title gradient-background">EVENTOS</h2>
-                <h4 class="mb-5">2023-3</h4>
+                
+                <h4 class="mb-5">2-Sección</h4>
             </div>
             <div class="row g-3">
                 <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -721,12 +731,12 @@ button:hover .play {
          <div class="card animate-up" style="width:20rem; height: 23rem; position: relative; border-color: #000; ">
             <img src="cool5.gif" height="200px" class="card-img-top" alt="...">
             <div class="overlay">
-                <div class="text">Bienvenido</div>
+                <div class="text">Extremos Relativos</div>
             </div>
             <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
             <div class="card-body">
-                <h5 class="card-title">EVENTO MATEMATICO</h5>
-                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <h5 class="card-title">EXTREMOS RELATIVOS</h5>
+                <p class="card-text">Extremos Relativos en Funciones</p><br>
                 <center><a href="index12.html" style="color: #fff;"><button>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -786,12 +796,12 @@ button:hover .play {
          <div class="card animate-up" style="width:20rem; height: 23rem; position: relative; border-color: #000; ">
             <img src="cool6.gif" height="200px" class="card-img-top" alt="...">
             <div class="overlay">
-                <div class="text">Bienvenido</div>
+                <div class="text">Punto Critico</div>
             </div>
             <div style="background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% ); height: 2px; margin: 10px;"></div>
             <div class="card-body">
-                <h5 class="card-title">EVENTO MATEMATICO</h5>
-                <p class="card-text">Bienvenido a los eventos matematicos</p><br>
+                <h5 class="card-title">PUNTO CRITICO</h5>
+                <p class="card-text">Los Puntos Críticos en Derivadas</p><br>
                 <center><a href="index13.html" style="color: #fff;"><button>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -849,7 +859,7 @@ button:hover .play {
             <div class="bg-light d-flex justify-content-center pt-2 px-1"></div>
         </div>
          <div class="card animate-up" style="width:20rem; height: 23rem; position: relative; border-color: #000; ">
-            <img src="cool7.gif" height="200px" class="card-img-top" alt="...">
+            <img src="fondo3.gif" height="200px" class="card-img-top" alt="...">
             <div class="overlay">
                 <div class="text">Bienvenido</div>
             </div>
