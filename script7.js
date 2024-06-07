@@ -9,47 +9,47 @@ const artistName = document.querySelector(".music-player p");
 
 const songs = [
   {
-    title: "Symphony",
-    name: "Clean Bandit ft. Zara Larsson",
+    title: "Derivadas",
+    name: "Pedro Molina",
     source:
-      "musica.mp3",
+      "derivada.m4a",
   },
   {
-    title: "Pawn It All",
-    name: "Alicia Keys",
+    title: "Puntos críticos",
+    name: "Ronal Acevedo",
     source:
-      "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/Pawn-It-All.mp3",
+      "maxmin.mpeg",
   },
   {
-    title: "Seni Dert Etmeler",
-    name: "Madrigal",
+    title: "Grafica de una funcion",
+    name: "Lucio Garcia",
     source:
-      "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/Madrigal-Seni-Dert-Etmeler.mp3",
+      "Audio .mp3",
   },
   {
-    title: "Instant Crush",
-    name: "Daft Punk ft. Julian Casablancas",
+    title: "Funcion",
+    name: "Kevin Ortiz",
     source:
-      "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/Daft-Punk-Instant-Crush.mp3",
+      "funcion.mp4",
   },
   {
     title: "As It Was",
     name: "Harry Styles",
     source:
-      "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/Harry-Styles-As-It-Was.mp3",
+      "",
   },
 
   {
     title: "Physical",
     name: "Dua Lipa",
     source:
-      "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/Dua-Lipa-Physical.mp3",
+      "",
   },
   {
     title: "Delicate",
     name: "Taylor Swift",
     source:
-      "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/Taylor-Swift-Delicate.mp3",
+      "",
   },
 ];
 
