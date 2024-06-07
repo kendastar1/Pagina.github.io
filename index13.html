@@ -580,7 +580,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
             align-items: center;
             min-height: calc(100vh - 100px); /* Reduce height by 100px to account for the margin */
             margin: 50px 0 0 0; /* Add margin on top to separate from text above */
-            background-color: #f0f0f0;
+          
         }
         .graph-container {
             width: 800px;
@@ -616,13 +616,107 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   height: 100%;
   background: rgba(0, 0, 0, 0.5); 
 }
+.container1000 {
+            display: flex;
+            align-items: center;
+        }
+        .container1000 img {
+            max-width: 350px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            margin-right: 50px;
+            padding-left: 20px; /* Espacio entre la imagen y el texto */
+        }
+        .text-content {
+            max-width: 600px; /* Ajusta el ancho del texto según tus necesidades */
+        }
+         @media (max-width: 768px) {
+            .container1000 {
+                flex-direction: column;
+               
+            }
+            .container1000 img {
+                margin-right: 0;
+                margin-bottom: 20px; /* Espacio entre la imagen y el texto en pantallas pequeñas */
+                max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+            }
+            .text-content {
+                max-width: 100%;
+            }
+        }
+
+          .flip-card-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Espacio entre las cartas */
+            flex-wrap: wrap;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: calc(50% - 10px); /* 50% del ancho menos el espacio entre ellas */
+            max-width: 190px; /* Máximo ancho de la carta */
+            height: 254px;
+            perspective: 1000px;
+            font-family: sans-serif;
+        }
+
+        .title {
+            font-size: 1.5em;
+            font-weight: 900;
+            text-align: center;
+            margin: 0;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 1px solid coral;
+            border-radius: 1rem;
+        }
+
+        .flip-card-front {
+            background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%, rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+            color: coral;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%, bisque 40%, rgb(255, 185, 160) 78%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        @media (max-width: 600px) {
+            .flip-card {
+                width: 100%; /* Ocupar todo el ancho en pantallas pequeñas */
+                max-width: none; /* Remover el máximo ancho */
+            }
+        }
 </style>
     
    </head>
 
 <body >
   <video id="video" autoplay muted loop style="filter: brightness(1);">
-    <source src="fondo9.mp4" type="video/mp4">
+    <source src="foddoo.mp4" type="video/mp4">
   </video>
    <div class="loader-wrapper">
   <div class="loader">
@@ -689,14 +783,11 @@ h1, h2, .btn,p,h5,.card .col-6,li {
             <i class='bx bx-collection' ></i>
             <span class="link_name">Introducción</span>
           </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+  
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="index2.html">Introducción</a></li>
-          <li><a href="#optimizacion">Optimización</a></li>
-          <li><a href="#Estrategias">Estrategias</a></li>
-          <li><a href="#Rendimiento">Rendimiento</a></li>
-          <li><a href="#Conclusión">Conclusión</a></li>
+        
         </ul>
       </li>
       <li>
@@ -713,29 +804,54 @@ h1, h2, .btn,p,h5,.card .col-6,li {
         </ul>
       </li>
       <li>
-        <a href="index8.html">
+          <div class="iocn-link">
+          <a href="index3.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Temáticas</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="index8.html">Temáticas</a></li>
+            <span class="link_name" style="margin-bottom: 5px;">Tematicas</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+         <ul class="sub-menu">
+          <li><a class="link_name" href="index8.html">Tematicas</a></li>
+          <li><a href="index9.html">Modelacion</a></li>
+          <li><a href="index10.html">Grafica de una <br>funcion</a></li>
+          <li><a href="index11.html">Derivadas</a></li>
+          <li><a href="index12.html">Extremos relativos</a></li>
+          <li><a href="index13.html">Máximo y mínimo</a></li>
+
+          <li><a href="index14.html">Enunciado problema</a></li>
+
         </ul>
       </li>
       <li>
         <div class="iocn-link">
           <a href="index7.html">
             <i class='bx bxs-user-voice'></i>
-            <span class="link_name">Audio</span>
+            <span class="link_name">Escuchanos</span>
           </a>
         
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="index7.html">Audio</a></li>
+          <li><a class="link_name" href="index7.html">Escuchanos</a></li>
           
          
         </ul>
       </li>
-      
+        <li>
+        <div class="iocn-link">
+          <a href="index100.html">
+          <i class='bx bxs-check-circle'></i>
+            <span class="link_name">Evaluacion</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index100.html">Evaluacion</a></li>
+          
+         
+        </ul>
+        
+      </li>
      
       
      
@@ -784,7 +900,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>PUNTO CRITICO</h1>
+            <h1>MÁXIMO Y MÍNIMO</h1>
             <p class="opacity-75">Desde los Fundamentos hasta la Optimización</p>
            
           </div>
@@ -798,27 +914,55 @@ h1, h2, .btn,p,h5,.card .col-6,li {
 
   <div class="container marketing">
     <div class="animate-text">
- <h1>¿COMO SE ENCUENTRA <span style="color: blue;"> UN PUNTO CRITICO?</span></h1>
+ <h1>¿COMO SE ENCUENTRA <span style="color: blue;"> MÁXIMO Y MÍNIMO?</span></h1>
 
- <p>Un punto crítico de una función es un punto del dominio de la función donde la derivada es cero o no existe:</p>
- <b class="math">f(x)=2 → f´(x)=0</b>
+ <p>Un <b>máximo</b> de una función es un punto donde la función alcanza su valor más alto en un intervalo cercano o en todo su dominio, mientras que un <b>mínimo</b> es un punto donde la función alcanza su valor más bajo en un intervalo cercano o en todo su dominio.</p>
+ <math style="  font-size: 2em;" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mo>&#x2192;</mo> <!-- Esto es el símbolo de flecha -->
+        <mi>f</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <mn>0</mn>
+    </math>
  </div>
    
     <hr>
     <div class="animate-text" style="padding-top: 30px;">
-    <h3 style="padding-bottom: 30px;">COMO SE  <span style="color: blue;"> CALCULA:</span></h3>
+    <h2 style="padding-bottom: 30px;">COMO SE  <span style="color: blue;"> CALCULA:</span></h2>
+    <p>Debemos igualar la derivada a cero y resolver para encontrar  los valores de x que satisfacen esta condicion.Estos valores son los puntos criticos.</p>
+    <math style="  font-size: 2em; padding-bottom: 50px;" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <msup><mi>x</mi><mn>3</mn></msup>
+        <mo>-</mo>
+        <mn>3</mn><msup><mi>x</mi><mn>2</mn></msup>
+        <mo>+</mo>
+        <mn>2</mn>
+    </math>
+     </div>
+    <div class="card5000 animate-text">
 
-    <div class="card5000">
   <div class="card-inner5000">
     <div class="card-front5000">
-      <p>SE CALCULA</p>
+      <p style="text-align: center;">Derivamos la función por medio del factor común </p>
     </div>
     <div class="card-back5000">
       <ul style="color: #fff;">
-        <li><p>
-          Derivar</p></li>
-        <li> <p>
-         Igualar a "0" y resolver  </p></li>
+        <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <mn>3</mn><msup><mi>x</mi><mn>2</mn></msup>
+        <mo>-</mo>
+        <mn>6</mn><mi>x</mi>
+    </math></li>
+        <li>     <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <mn>3</mn><mi>x</mi><mo>(</mo><mi>x</mi><mo>-</mo><mn>2</mn><mo>)</mo>
+    </math>
+</li>
 
         
           
@@ -829,17 +973,34 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   </div>
 </div>
 
-<div class="card5000">
+<div class="card5000 animate-text">
   <div class="card-inner5000">
     <div class="card-front5000">
-      <p>SE CALCULA</p>
+      <p style="text-align: center;">Igualamos  a cero para encontrar puntos críticos</p>
     </div>
     <div class="card-back5000">
      <ul style="color: #fff;">
-        <li><p>
-          Remplazar en f(x)</p></li>
+        <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo>-</mo><mn>3</mn><mi>x</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>&#x2192;</mo> <!-- Esto es el símbolo de flecha -->
+        <mi>x</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+    </math></li>
         <li> <p>
-         Averiguar si es max o min </p></li>
+         <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>x</mi>
+        <mo>-</mo>
+        <mn>2</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>&#x2192;</mo> <!-- Esto es el símbolo de flecha -->
+        <mi>x</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+    </math> </p></li>
 
         
           
@@ -851,13 +1012,52 @@ h1, h2, .btn,p,h5,.card .col-6,li {
 </div>
 
 
-    </div>
+   
+ <hr class="featurette-divider" id="Estrategias">
+     <h1 style="padding-bottom: 30px;"> <span style="color: blue;"></span></h1>
+<div class="container1000 animate-text">
+       
+        <div class="text-content">
+           <h1 style="padding-bottom: 30px;">MAXIMOS Y <span style="color: blue;">  MINIMOS</span></h1>
+           <ul style="color: #000;">
+        <li><p>
+         Los máximos y los minios de una función son puntos en su grafico donde alcanza los valores más altos (máximos)o más bajos (mínimos).</p></li>
+        <li> <p>
+       En un máximo, la pendiente cambia de positiva a negativa, mientras que, en un mínimo, cambia de negativa a positiva. Estos puntos se determinan evaluando la derivada de una función </p></li>
 
+        
+       
+       
+    </ul>
+            
+        </div>
+         <img src="maximo.png" alt="Descripción de la imagen" >
+            <img src="minimo.png" alt="Descripción de la imagen">
+    </div>
     
+
+
+
+
+
+
     <hr class="featurette-divider" id="Estrategias">
     <div class="animate-text">
+            <h1 style="padding-bottom: 30px;">COMO SE <span style="color: blue; padding-top: 50px;">CALCULA</span> </h1>
+          </div>
+    <div class="animate-text" style="text-align: center;">
  <h3 style="padding-bottom: 25px;">EJEMPLO</h3>
-<b class="math">f(x)=2 → f´(x)=0</b>
+ <div style="padding-bottom: 30px;">
+ <math style="font-size: 2em;" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <mn>2</mn><msup><mi>x</mi><mn>2</mn></msup>
+        <mo>-</mo>
+        <mn>4</mn><mi>x</mi>
+        <mo>-</mo>
+        <mn>1</mn>
+    </math>
+    </div>
 </div>
 
     <div class="card-container animate-text">
@@ -886,7 +1086,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   <div class="card20000">
     <div class="upper-part">
       <div class="upper-part-face">Remplazar en f(x)</div>
-     <div class="upper-part-back"><b class="math"><p style="font-size: 15px; margin-top:35px;">f(x)=2(1)^2-4(1)-1</p><p style="font-size: 15px;">f(x)=2-4-1</p><p style="font-size: 15px;">f(x)=-3</p><p style="font-size: 15px;">1 = x</p></b></div>
+     <div class="upper-part-back"><b class="math"><p style="font-size: 15px; margin-top:35px;">f(x)=2(1)^2-4(1)-1</p><p style="font-size: 15px;">f(x)=2-4-1</p><p style="font-size: 15px;"></p><p style="font-size: 15px;">1 = x</p></b></div>
     </div>
     <div class="lower-part">
       <div class="lower-part-face"></div>
@@ -913,7 +1113,271 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     </div>
 </div>
     
+ <hr class="featurette-divider" id="Estrategias">
+ <div class="animate-text">
+     <h1 style="padding-bottom: 30px;">CRITERIO DE LA <span style="color: blue; padding-top: 50px;">PRIMERA DERIVADA</span> </h1>
+     <p style="padding-bottom: 30px;">A continuación, veremos 2 criterios para las derivadas estos criterios son imprescindibles para comprobar si los puntos críticos hallados son máximos o mínimos.
+usaremos la siguiente función para calcular ambos criterios
+</p>
+</div>
+<div class="animate-text">
+<math style="font-size: 2em; padding-top: 10px; padding-bottom: 30px;" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <msup><mi>x</mi><mn>2</mn></msup>
+        <mo>-</mo>
+        <mn>4</mn><mi>x</mi>
+        <mo>+</mo>
+        <mn>3</mn>
+    </math>
+</div>
+<div class="animate-text">
+ <hr>
+     <h3 style="padding-bottom: 20px;">Derivamos</h3> 
+    <ul style="color: #000;">
+      <li>
+         <math style="font-size: 20px; padding-bottom: 20px;" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <mn>2</mn><mi>x</mi><mo>-</mo><mn>4</mn>
+    </math>
+      </li>
+    </ul>
+    </div>
+    <hr>
+    <div class="animate-text">
+  <h3 style="padding-bottom: 20px;">Igualamos a cero</h3> 
+</div>
+  <div class="animate-text">
+    <ul>
+      <li>
+         <math style="font-size: 20px; padding-bottom: 20px;" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mn>2</mn><mi>x</mi><mo>-</mo><mn>4</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+    </math>
+      </li>
+  
+
+  </div>
+
+  <div class="animate-text" style="padding-bottom: 20px;">
+    <ul>
+      <li>
+             <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi style="font-size: 30px;">x</mi>
+        <mo style="font-size: 20px;">=</mo>
+        <mn style="font-size: 20px;">2</mn>
+        <mn> →punto critico</mn>
+    </math>
+      </li>
+    </ul>
+
+  </div>
+  <div class="animate-text" style="padding-bottom: 20px;">
+    <ul>
+      <li>
+         <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi style="font-size: 20px;">(2, -1)</mi>
+        <mi> →comprobar en la grafica </mi>
+        
+    </math>
+      </li>
+    </ul>
    
+  </div>
+    </ul>
+<hr>
+<div>
+ <h3 style="padding-bottom: 20px;">Evaluar la función en los puntos críticos cuando</h3> 
+ <div class="animate-text">
+  <ul>
+    <li>
+       <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi style="font-size: 30px;">x</mi>
+        <mo style="font-size: 20px;"><</mo>
+        <mn style="font-size: 20px;">2</mn>
+        <mn style="font-size: 20px;">,ㅤ</mn>
+
+         <mi style="font-size: 30px;">x</mi>
+        <mo style="font-size: 20px;">=</mo>
+        <mn style="font-size: 20px;">2</mn>
+        <mn style="font-size: 20px;">,ㅤ</mn>
+
+         <mi style="font-size: 30px;">x</mi>
+        <mo style="font-size: 20px;">></mo>
+        <mn style="font-size: 20px;">2</mn>
+        
+
+    </math>
+    </li>
+  </ul>
+ 
+</div>
+</div>
+<div class="animate-text" style="padding-top: 20px; padding-bottom: 20px;">
+  <p>Reemplazamos las <b>“x”</b> de la función derivada <b>f´(x)=2x-4</b> por un punto de la gráfica que cumpla con las anteriores condiciones</p>
+  <div>
+    <ul>
+      <li>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi style="font-size: 30px;">x</mi>
+        <mo style="font-size: 20px;"><</mo>
+        <mn style="font-size: 20px;">2</mn>
+    </math>
+      </li>
+    </ul>
+   
+  </div>
+  <div style="padding-top: 20px;">
+    <ul>
+      <li>
+ <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi style="font-size: 20px;">f</mi><mo style="font-size: 20px;">'</mo><mo style="font-size: 20px;">(</mo><mn style="font-size: 20px;">1.5</mn><mo style="font-size: 20px;">)</mo>
+            <mo style="font-size: 20px;">=</mo>
+            <mn style="font-size: 20px;">2</mn><mo>(</mo><mn style="font-size: 20px;">1.5</mn><mo style="font-size: 20px;">)</mo><mo style="font-size: 20px;">-</mo><mn style="font-size: 20px;">4</mn>
+        </mrow>
+    </math>      </li>
+    </ul>
+   
+  </div>
+
+<div style="padding-top: 20px; padding-bottom: 20px;">
+<ul>
+  <li>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi style="font-size: 20px;">f</mi><mo style="font-size: 20px;">'</mo><mo style="font-size: 20px;">(</mo><mn style="font-size: 20px;">1.5</mn><mo style="font-size: 20px;">)</mo>
+   <mo style="font-size: 20px;">=</mo>
+   <mn style="font-size: 20px;">-1</mn>
+    <mi> →Al ser negativo indica que  f es decreciente en el punto -1 </mi>
+ </math>
+  </li>
+</ul>
+
+    
+</div>
+
+
+
+ <div>
+    <ul>
+      <li>
+         <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi style="font-size: 30px;">x</mi>
+        <mo style="font-size: 20px;">></mo>
+        <mn style="font-size: 20px;">2</mn>
+    </math>
+      </li>
+    </ul>
+   
+  </div>
+<div style="padding-top: 20px;">
+
+  <ul>
+    <li>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi style="font-size: 20px;">f</mi><mo style="font-size: 20px;">'</mo><mo style="font-size: 20px;">(</mo><mn style="font-size: 20px;">3</mn><mo style="font-size: 20px;">)</mo>
+            <mo style="font-size: 20px;">=</mo>
+            <mn style="font-size: 20px;">2</mn><mo style="font-size: 20px;">(</mo><mn style="font-size: 20px;">3</mn><mo style="font-size: 20px;">)</mo><mo style="font-size: 20px;">-</mo><mn style="font-size: 20px;">4</mn>
+        </mrow>
+    </math>
+    </li>
+  </ul>
+    
+</div>
+
+<div style="padding-top: 20px; padding-bottom: 20px;">
+  <ul>
+    <li>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi style="font-size: 20px;">f</mi><mo style="font-size: 20px;">'</mo><mo style="font-size: 20px;">(</mo><mn style="font-size: 20px;">3</mn><mo style="font-size: 20px;">)</mo>
+        <mo style="font-size: 20px;">=</mo>
+        <mn style="font-size: 20px;">2</mn>
+         <mi > →Al ser positivo indica que  f es decreciente en el punto 2 </mi>
+    </math>
+    </li>
+  </ul>
+    
+</div>
+
+<p>Como a la izquierda de la funcion es negativo y a la derecha es positivo significa que <b>x=2</b> es un mínimo</p>
+
+</div>
+    <hr class="featurette-divider" id="Estrategias">
+    <div class="animate-text">
+ <h1 style="padding-bottom: 30px;">CRITERIO DE LA <span style="color: blue; padding-top: 50px;">SEGUNDA DERIVADA</span> </h1>
+<hr>
+  <h3 style="padding-bottom: 20px;">Derivamos por segunda vez</h3> 
+<div>
+  <ul>
+    <li>
+       <math style="font-size: 20px; padding-bottom: 20px;" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>f</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+        <mo>=</mo>
+        <mn>2</mn><mi>x</mi><mo>-</mo><mn>4</mn>
+    </math>
+    </li>
+  </ul>
+ 
+</div>
+ </div> 
+    <div class="animate-text" style="padding-top: 20px; ">
+      <ul>
+        <li>
+           <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow style="font-size: 20px;">
+           <mi>f</mi><mo>'</mo><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+            <mo>=</mo>
+            <mn>2</mn>
+        </mrow>
+    </math>
+        </li>
+      </ul>
+   
+</div>
+<hr>
+<div class="animate-text">
+<h3 style="padding-bottom: 20px;">Remplazamos </h3> 
+<ul>
+  <li>
+    <p>(2,-1)</p>
+  </li>
+</ul>
+</div>
+
+<div class="animate-text" style="padding-top: 20px;">
+  <ul>
+    <li>
+       <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+             <mi style="font-size: 20px;">f</mi><mo  style="font-size: 20px;">'</mo><mo style="font-size: 20px;">'</mo><mo  style="font-size: 20px;">(</mo><mi  style="font-size: 20px;">2</mi><mo  style="font-size: 20px;">)</mo>
+            <mo  style="font-size: 20px;">=</mo>
+            <mn  style="font-size: 20px;">2</mn>
+              <mi> →verificamos en la grafica </mi>
+        </mrow>
+    </math>
+    </li>
+  </ul>
+   
+</div>
+<div class="animate-text">
+<p style="padding-top: 20px; padding-bottom: 20px;">Si al derivar por segunda vez obtenemos un positivo significa que es un mínimo, si es negativo es un máximo </p>
+
+ <div class="card-container animate-text">
+  <div class="graph-wrapper animate-text">
+    <div class="graph-container">
+               <iframe src="https://www.geogebra.org/material/iframe/id/jzwjfn8p/sdz/true/width/800/height/600/border/888888"></iframe>
+
+    </div>
+</div>
+</div>
+
+
+</div>
+
+
   </div>
 
 <footer>
@@ -923,59 +1387,57 @@ h1, h2, .btn,p,h5,.card .col-6,li {
                     <img src="noble.png" width="50">
                     <span class="logo_name">EQUIPO<span style="color: blue;">/</span><span style="color: red;">KLRP</span></span>
                 </div>
-                <div class="media-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
+              <div class="media-icons">
+    <a href="#"><img src="kevin.jpeg" style="width: 100%; border-radius: 50%;"></a>
+    <a href="#"><img src="lucio.jpeg" style="width: 100%; border-radius: 50%;"></a>
+    <a href="#"><img src="ronal.jpeg" style="width: 100%; border-radius: 50%;"></a>
+    <a href="#"><img src="pedro.jpeg" style="width: 100%; border-radius: 50%;"></a>
+   
+</div>
+
             </div>
             <div class="link-boxes">
                 <ul class="box">
-                    <li class="link-name">Company</li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Get Started</a></li>
+                    <li class="link-name">Kevin Ortiz</li>
+                    <li><a href="https://uiverse.io/">Uiverse</a></li>
+                    <li><a href="https://www.perplexity.ai/">Perplexity</a></li>
+                    <li><a href="https://www.bing.com/images/create?FORM=GDPCLS">Bing</a></li>
+                     <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Service</li>
-                    <li><a href="#">App design</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Logo Design</a></li>
-                    <li><a href="#">Banner design</a></li>
+                    <li class="link-name">Lucio Garcia</li>
+                   
+                    <li><a href="https://pixabay.com/es/">Pixabay</a></li>
+                    <li><a href="https://co.pinterest.com/">Pinterest</a></li>
+                    <li><a href="https://www.mathway.com/es/Algebra">Mathway</a></li>
+                    <li><a href="https://helpx.adobe.com/co/photoshop/system-requirements.html">Adobe</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Account</li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">My account</a></li>
-                    <li><a href="#">PreFerences</a></li>
-                    <li><a href="#">Purchase</a></li>
+                    <li class="link-name">Ronal Acevedo</li>
+                     <li><a href="https://chatgpt.com/?model=auto">Chatgpt</a></li>
+                    <li><a href="https://www.geogebra.org/classic?lang=es">GeoGebra</a></li>
+                    <li><a href="https://codepen.io/trending">Codepen</a></li>
+                    <li><a href="https://www.uacj.mx/CGTI/CDTE/JPM/Documents/IIT/sterraza/mate2016/funcion/func_def.html">Uacj.mx</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Courses</li>
-                    <li><a href="#">HTML & CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">Photography</a></li>
-                    <li><a href="#">PhotoShop</a></li>
+                    <li class="link-name">Pedro Molina</li>
+                    <li><a href="https://www.neurochispas.com/wiki/10-ejercicios-de-derivadas-de-la-suma-y-resta-de-funciones/">Neurochispas</a></li>
+                    <li><a href="https://economipedia.com/definiciones/derivada-de-una-funcion.html">Economipedia</a></li>
+                    <li><a href="https://flexbooks.ck12.org/cbook/c%C3%A1lculo-2.0/section/4.2/primary/lesson/c%C3%B3mo-encontrar-los-m%C3%A1ximos-y-m%C3%ADnimos-extremos-de-las-funciones-calc-spn/">Flexbooks</a></li>
+                    <li><a href="https://www.funciones.xyz/derivada-de-una-raiz-funcion-radical-irracional/">Funciones.xyz</a></li>
                 </ul>
-                <ul class="box input-box">
-                    <li class="link-name">Subscribe</li>
-                    <li><input type="email" placeholder="Enter Your Email"></li>
-                    <li><input type="button" value="Subscribe"></li>
-                </ul>
+               
             </div>
         </div>
+
         <div class="bottom-details">
             <div class="bottom-text">
-                <span class="copyright-text">copyright &#169; 2024
-                    <a href="#"> sL Code<span style="color: red;">
-                            Hub</span></a>All rights
-                    reserved</span>
+                <span class="copyright-text">Agradecemos a estas páginas por habernos ayudado a completar nuestro OVA. 
+                    </span>
             </div>
         </div>
     </footer>
+
 
   </main>
 

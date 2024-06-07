@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Menú desplegable de la barra lateral | Kenyo León </title>
+    <title>ENUNCIADO PROBLEMA</title>
     <link rel="stylesheet" href="style2.css">
      <link rel="icon" href="descarga1.png" type="image/png">
   
@@ -247,80 +247,7 @@ body {
   }
 }
 
-.card-container {
 
-  width: 300px;
-  height: 300px;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-}
-
-.card .front-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .front-content p {
-  font-size: 32px;
-  font-weight: 700;
-  opacity: 1;
-  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  background: linear-gradient(-45deg,#293df8 0%, #ff0f7b 100% );
-  color: #e8e8e8;
-  padding: 20px;
-  line-height: 1.5;
-  border-radius: 5px;
-  pointer-events: none;
-  transform: translateY(96%);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.card .content .heading {
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.card:hover .content {
-  transform: translateY(0);
-}
-
-.card:hover .front-content {
-  transform: translateY(-30%);
-}
-
-.card:hover .front-content p {
-  opacity: 0;
-}
 .btn {
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
   --border-width: 0.125em;
@@ -469,11 +396,208 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     opacity: 1;
     transform: translateY(0);
 }
+.container1000 {
+            display: flex;
+            align-items: center;
+        }
+        .container1000 img {
+            max-width: 350px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            margin-right: 50px;
+            padding-left: 20px; /* Espacio entre la imagen y el texto */
+        }
+        .text-content {
+            max-width: 600px; /* Ajusta el ancho del texto según tus necesidades */
+        }
+         @media (max-width: 768px) {
+            .container1000 {
+                flex-direction: column;
+               
+            }
+            .container1000 img {
+                margin-right: 0;
+                margin-bottom: 20px; /* Espacio entre la imagen y el texto en pantallas pequeñas */
+                max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+            }
+            .text-content {
+                max-width: 100%;
+            }
+        }
+        #video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
+.container4000 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container4000 .glass {
+  position: relative;
+  width: 180px;
+  height: 200px;
+ background: linear-gradient(#1000ff, black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -45px;
+  backdrop-filter: blur(10px);
+  transform: rotate(calc(var(--r) * 1deg));
+}
+
+.container4000:hover .glass {
+  transform: rotate(0deg);
+  margin: 0 10px;
+}
+
+.container4000 .glass::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.container4000 .glass svg {
+  font-size: 2.5em;
+  fill: #fff;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  min-width: 200px;
+  height: 250px;
+  background-color: #292929;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  max-width: 80px;
+  background: linear-gradient(90deg, #7eaaff 0%, #ff48fb 40%, rgba(0, 0, 0, 0.28) 60%);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease;
+  background-position: 0px;
+  background-size: 200px;
+}
+
+.icon svg {
+  fill: white;
+}
+
+.card .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.card .text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  height: 270px;
+}
+
+.card:hover .text {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 40px;
+}
+
+.card:hover .icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon svg path {
+  fill: url('#gradientColor');
+  transition: all 0.3s ease;
+}
+.cards-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+
+.card {
+  margin-right: 10px; /* Ajusta este valor según el espacio que quieras entre las cartas */
+}
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 90%;
+      margin: 10px 0;
+    }
+  }
 </style>
     
    </head>
 
 <body >
+  <video id="video" autoplay muted loop style="filter: brightness(1);">
+    <source src="foddoo.mp4" type="video/mp4">
+  </video>
    <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
@@ -539,14 +663,11 @@ h1, h2, .btn,p,h5,.card .col-6,li {
             <i class='bx bx-collection' ></i>
             <span class="link_name">Introducción</span>
           </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+      
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="index2.html">Introducción</a></li>
-          <li><a href="#optimizacion">Optimización</a></li>
-          <li><a href="#Estrategias">Estrategias</a></li>
-          <li><a href="#Rendimiento">Rendimiento</a></li>
-          <li><a href="#Conclusión">Conclusión</a></li>
+      
         </ul>
       </li>
       <li>
@@ -563,29 +684,55 @@ h1, h2, .btn,p,h5,.card .col-6,li {
         </ul>
       </li>
       <li>
-        <a href="index8.html">
+          <div class="iocn-link">
+          <a href="index3.html">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Temáticas</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="index8.html">Temáticas</a></li>
+            <span class="link_name" style="margin-bottom: 5px;">Tematicas</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+         <ul class="sub-menu">
+          <li><a class="link_name" href="index8.html">Tematicas</a></li>
+          <li><a href="index9.html">Modelacion</a></li>
+          <li><a href="index10.html">Grafica de una <br>funcion</a></li>
+          <li><a href="index11.html">Derivadas</a></li>
+          <li><a href="index12.html">Extremos relativos</a></li>
+          <li><a href="index13.html">Máximo y mínimo</a></li>
+
+          <li><a href="index14.html">Enunciado problema</a></li>
+             <li><a href="index15.html">Desarrollo de la<br> situación problema</a></li>
+
         </ul>
       </li>
       <li>
         <div class="iocn-link">
           <a href="index7.html">
             <i class='bx bxs-user-voice'></i>
-            <span class="link_name">Audio</span>
+            <span class="link_name">Escuchanos</span>
           </a>
         
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="index7.html">Audio</a></li>
+          <li><a class="link_name" href="index7.html">Escuchanos</a></li>
           
          
         </ul>
       </li>
-      
+        <li>
+        <div class="iocn-link">
+          <a href="index100.html">
+          <i class='bx bxs-check-circle'></i>
+            <span class="link_name">Evaluacion</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index100.html">Evaluacion</a></li>
+          
+         
+        </ul>
+        
+      </li>
      
       
      
@@ -635,8 +782,8 @@ h1, h2, .btn,p,h5,.card .col-6,li {
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Guía Completa sobre la Memoria RAM</h1>
-            <p class="opacity-75">Desde los Fundamentos hasta la Optimización</p>
+            <h1>ENUNCIADO PROBLEMA</h1>
+            <p class="opacity-75">Problema Complejo de Derivadas</p>
            
           </div>
         </div>
@@ -648,24 +795,209 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
 
   <div class="container marketing">
+    <div class="animate-text">
+<h1 style="color: blue;">CONTEXTUALIZACIÓN</h1>
+ <p>Creativa S.A. es una empresa líder en el sector del diseño gráfico, especializada en la creación de contenido visual de alta calidad para clientes en todo el mundo. La empresa utiliza aplicaciones de software intensivas en recursos como Adobe Photoshop.</p>
+   </div>
+    <hr>
+    <div class="animate-text">
+<h1 style="padding-bottom: 15px; color: blue;">ENUNCIADO</h1>
+</div>
 
- 
-   
-    <hr class="featurette-divider" id="optimizacion">
+<div class="container1000 animate-text">
+       
+        <div class="text-content animate-text">
+         <h3>Situación  <span style="color: blue;"> Actual</span></h3>
+    <p style="padding-bottom: 20px;">Actualmente, Creativa S.A. ha notado que los tiempos de carga y procesamiento de su aplicación de diseño están afectando la productividad de sus diseñadores. La empresa utiliza equipos con las siguientes especificaciones</p>
+           <ul style="color: #000;">
+        <li><p>
+         <b>Procesador:</b> Intel Core i7 de 10ª generación</p></li>
+        <li> <p>
+        <b>Memoria RAM:</b> 8 GB DDR4 </p></li>
 
+         <li> <p>
+<b>Almacenamiento:</b> SSD de 512 GB</p></li>
+
+           <li> <p>
+        <b>Tarjeta Gráfica:</b> NVIDIA GeForce GTX 1660 </p></li>
+       
+       <li> <p>
+        <b>Sistema Operativo:</b> Windows 10 Pro </p></li>
+       
+    </ul>
+            
+        </div>
+        <div class="animate-text">
+         <img src="computadoras.gif" alt="Descripción de la imagen" style=" border-radius: 50%;
+    border: 2px solid transparent; /* Añade un borde transparente para crear espacio alrededor de la imagen */
+    padding: 3px;
+">
+</div>
+    </div>
+     <hr class="featurette-divider" id="Estrategias">
+    <div class="container1000 animate-text">
+       <img src="1ktC.gif" alt="Descripción de la imagen" style=" border-radius: 50%;
+    border: 2px solid transparent; /* Añade un borde transparente para crear espacio alrededor de la imagen */
+    padding: 3px;
+ background-position: center;">
+        <div class="text-content">
+
+         <h1>REQUERIMIENTOS MÍNIMOS  <span style="color: blue;">  PARA ADOBE PHOTOSHOP</span></h1>
     
-    <hr class="featurette-divider" id="Estrategias">
+           <ul style="color: #000;">
+        <li><p>
+         <b>Procesador: </b> Procesador Intel® multinúcleo o AMD (2 GHz o más rápido con SSE 4.2 o posterior) compatible con 64 bits</p></li>
+        <li> <p>
+        <b>Sistema Operativo: </b> Windows 10 de 64 bits (versión 20H2) o posterior; las versiones LTSC no son compatibles</p></li>
 
+         <li> <p>
+<b>RAM:</b> 8 GB</p></li>
+
+           <li> <p>
+        <b>Tarjeta Gráfica:</b> GPU compatible con DirectX 12, 15 GB de memoria GPU </p></li>
+       
+        
+     
+       
+    </ul>
+            <p style="padding-top: 40px;">Con el aumento en la demanda de proyectos más complejos y detallados, Creativa S.A. está considerando actualizar su infraestructura tecnológica para reducir los tiempos de espera y mejorar la eficiencia operativa.</p>
+            
+        </div>
+         
+    </div>
+    
+
+
+
+    <hr class="featurette-divider" id="Estrategias">
+ <div class="container1000 animate-text">
+       
+        <div class="text-content">
+
+         <h1><span style="color: blue;"> OBJETIVO</span></h1>
+    
+         <p>La empresa desea identificar la cantidad óptima de memoria RAM necesaria para minimizar el tiempo de carga y procesamiento de su aplicación de diseño, utilizando un modelo matemático adecuado.</p>
+            
+            
+        </div>
+        <img src="13z0.gif" alt="Descripción de la imagen" style="    border-radius: 30px;
+    border: 2px solid transparent; /* Añade un borde transparente para crear espacio alrededor de la imagen */
+    padding: 3px;  background-position: center;">
+         
+    </div>
 
     
     <hr class="featurette-divider" id="Rendimiento">
+    <div class="animate-text">
+         <h1>MODELO<span style="color: blue;"> MATEMÁTICO</span></h1>
+         <p>En este modelo, a representa la variación en el tiempo respecto a la cantidad de RAM, y b representa el tiempo de ejecución cuando la RAM tiende a infinito.</p>
 
-    
+ <div class="cards-container">
+  <div class="card">
+    <div class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="38px" width="38px" version="1.1" id="heart" viewBox="0 0 471.701 471.701" xml:space="preserve">
+        <linearGradient id="gradientColor">
+          <stop offset="5%" stop-color="#7eaaff"></stop>
+          <stop offset="95%" stop-color="#ff48fb"></stop>
+        </linearGradient>
+        <g>
+          <text x="50%" y="70%" text-anchor="middle" font-family="Cambria Math" font-size="400" font-weight="bold" fill="white">t</text>
+        </g>
+      </svg>
+    </div>
+    <p class="title">Donde t</p>
+    <p style="color: #fff; text-align: center; padding-top: 10px;">Tiempo de ejecución de una aplicación en segundos </p>
+  </div>
+  
+  <div class="card">
+    <div class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="38px" width="38px" version="1.1" id="heart" viewBox="0 0 471.701 471.701" xml:space="preserve">
+        <linearGradient id="gradientColor">
+          <stop offset="5%" stop-color="#7eaaff"></stop>
+          <stop offset="95%" stop-color="#ff48fb"></stop>
+        </linearGradient>
+        <g>
+          <text x="50%" y="70%" text-anchor="middle" font-family="Cambria Math" font-size="400" font-weight="bold" fill="white">r</text>
+        </g>
+      </svg>
+    </div>
+    <p class="title">Donde r</p>
+     <p style="color: #fff; text-align: center; padding-top: 10px;">Memoria de almacenaje a corto plazo (Ram) en gigabytes</p>
+  </div>
+</div>
+<div class="animate-text">
+<hr class="featurette-divider " id="Conclusión">
+<div style="  text-align: center; padding-top: 20px;">
+     <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow style="font-size: 2em;">
+            <mi>t</mi>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow>
+            <mo>(</mo>
+            <mfrac>
+                <mi>a</mi>
+                <mi>r</mi>
+            </mfrac>
+            <mo>)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mi>b</mi>
+        </mrow>
+    </math>
+  </div>
+</div>
+  <div class="container4000 animate-text" style="padding-top: 50px;">
+  <div data-text="a representa" style="--r:-15;" class="glass">
+   <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow style="font-size: 2em; color: #fff;">
+        <mi>a</mi>
+        <mo>=</mo>
+        <mfrac>
+            <mn>800</mn>
+            <mn>3</mn>
+        </mfrac>
+      </mrow>
+    </math>
+  </div>
+ 
+  <div data-text="b representa" style="--r:25;" class="glass">
+   <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow style="font-size: 2em; color: #fff;">
+        <mi>b</mi>
+        <mo>=</mo>
+        <mfrac>
+            <mn>50</mn>
+            <mn>3</mn>
+        </mfrac>
+      </mrow>
+    </math>
+  </div>
+</div>
+</div>
+
  <hr class="featurette-divider" id="Conclusión">
 
+<div class="container1000 animate-text">
+       
+        <div class="text-content">
+
+        
+<h1 style="padding-top: 50px;">Datos  <span style="color: blue;"> Iniciales</span></h1>
+    <p style="padding-bottom: 20px;">Después de realizar un análisis exhaustivo, considerando tanto los costos como la producción, Creativa S.A. ha determinado que la mejor opción para mejorar la eficiencia es reducir el tiempo de ejecución de Adobe Photoshop en un 34%. Esto se basa en estudios preliminares que sugieren una relación directa entre la cantidad de memoria RAM y la velocidad de procesamiento de la aplicación. La empresa ha utilizado equipos con 8 GB de RAM como punto de partida y ha identificado la necesidad de aumentar esta capacidad para alcanzar los objetivos de rendimiento deseados. </p>
+           
+        </div>
+         <img src="imagen.jpg" alt="Descripción de la imagen" style=" border-radius: 50%;
+    border: 2px solid transparent; /* Añade un borde transparente para crear espacio alrededor de la imagen */
+    padding: 3px;
+">
+    </div>
+
+
+ 
      <div class="row featurette">
-
-
 
 
 
@@ -681,56 +1013,53 @@ h1, h2, .btn,p,h5,.card .col-6,li {
                     <img src="noble.png" width="50">
                     <span class="logo_name">EQUIPO<span style="color: blue;">/</span><span style="color: red;">KLRP</span></span>
                 </div>
-                <div class="media-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
+              <div class="media-icons">
+    <a href="#"><img src="kevin.jpeg" style="width: 100%; border-radius: 50%;"></a>
+    <a href="#"><img src="lucio.jpeg" style="width: 100%; border-radius: 50%;"></a>
+    <a href="#"><img src="ronal.jpeg" style="width: 100%; border-radius: 50%;"></a>
+    <a href="#"><img src="pedro.jpeg" style="width: 100%; border-radius: 50%;"></a>
+   
+</div>
+
             </div>
             <div class="link-boxes">
                 <ul class="box">
-                    <li class="link-name">Company</li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Get Started</a></li>
+                    <li class="link-name">Kevin Ortiz</li>
+                    <li><a href="https://uiverse.io/">Uiverse</a></li>
+                    <li><a href="https://www.perplexity.ai/">Perplexity</a></li>
+                    <li><a href="https://www.bing.com/images/create?FORM=GDPCLS">Bing</a></li>
+                     <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Service</li>
-                    <li><a href="#">App design</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Logo Design</a></li>
-                    <li><a href="#">Banner design</a></li>
+                    <li class="link-name">Lucio Garcia</li>
+                   
+                    <li><a href="https://pixabay.com/es/">Pixabay</a></li>
+                    <li><a href="https://co.pinterest.com/">Pinterest</a></li>
+                    <li><a href="https://www.mathway.com/es/Algebra">Mathway</a></li>
+                    <li><a href="https://helpx.adobe.com/co/photoshop/system-requirements.html">Adobe</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Account</li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">My account</a></li>
-                    <li><a href="#">PreFerences</a></li>
-                    <li><a href="#">Purchase</a></li>
+                    <li class="link-name">Ronal Acevedo</li>
+                     <li><a href="https://chatgpt.com/?model=auto">Chatgpt</a></li>
+                    <li><a href="https://www.geogebra.org/classic?lang=es">GeoGebra</a></li>
+                    <li><a href="https://codepen.io/trending">Codepen</a></li>
+                    <li><a href="https://www.uacj.mx/CGTI/CDTE/JPM/Documents/IIT/sterraza/mate2016/funcion/func_def.html">Uacj.mx</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Courses</li>
-                    <li><a href="#">HTML & CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">Photography</a></li>
-                    <li><a href="#">PhotoShop</a></li>
+                    <li class="link-name">Pedro Molina</li>
+                    <li><a href="https://www.neurochispas.com/wiki/10-ejercicios-de-derivadas-de-la-suma-y-resta-de-funciones/">Neurochispas</a></li>
+                    <li><a href="https://economipedia.com/definiciones/derivada-de-una-funcion.html">Economipedia</a></li>
+                    <li><a href="https://flexbooks.ck12.org/cbook/c%C3%A1lculo-2.0/section/4.2/primary/lesson/c%C3%B3mo-encontrar-los-m%C3%A1ximos-y-m%C3%ADnimos-extremos-de-las-funciones-calc-spn/">Flexbooks</a></li>
+                    <li><a href="https://www.funciones.xyz/derivada-de-una-raiz-funcion-radical-irracional/">Funciones.xyz</a></li>
                 </ul>
-                <ul class="box input-box">
-                    <li class="link-name">Subscribe</li>
-                    <li><input type="email" placeholder="Enter Your Email"></li>
-                    <li><input type="button" value="Subscribe"></li>
-                </ul>
+               
             </div>
         </div>
+
         <div class="bottom-details">
             <div class="bottom-text">
-                <span class="copyright-text">copyright &#169; 2024
-                    <a href="#"> sL Code<span style="color: red;">
-                            Hub</span></a>All rights
-                    reserved</span>
+                <span class="copyright-text">Agradecemos a estas páginas por habernos ayudado a completar nuestro OVA. 
+                    </span>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> MODELACIÓN </title>
+    <title>DESARROLLO DE LA SITUACION PROBLEMA</title>
     <link rel="stylesheet" href="style2.css">
      <link rel="icon" href="descarga1.png" type="image/png">
   
@@ -247,80 +247,7 @@ body {
   }
 }
 
-.card-container {
 
-  width: 300px;
-  height: 300px;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-}
-
-.card .front-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .front-content p {
-  font-size: 32px;
-  font-weight: 700;
-  opacity: 1;
-  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
-}
-
-.card .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  background: linear-gradient(-45deg,#293df8 0%, #ff0f7b 100% );
-  color: #e8e8e8;
-  padding: 20px;
-  line-height: 1.5;
-  border-radius: 5px;
-  pointer-events: none;
-  transform: translateY(96%);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.card .content .heading {
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.card:hover .content {
-  transform: translateY(0);
-}
-
-.card:hover .front-content {
-  transform: translateY(-30%);
-}
-
-.card:hover .front-content p {
-  opacity: 0;
-}
 .btn {
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
   --border-width: 0.125em;
@@ -469,189 +396,33 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     opacity: 1;
     transform: translateY(0);
 }
-.container6 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
-  .container6 p {
-    flex: 1;
-  }
-
-  /* Estilos para la imagen */
-  .image-container {
-    flex: 1;
-    text-align: right;
-    padding-left: 20px; /* Espacio entre el texto y la imagen */
-  }
-
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media (max-width: 768px) {
-    /* Estilos para dispositivos móviles */
-    .container6 {
-      flex-direction: column;
-    }
-
-    .image-container {
-      text-align: center;
-      padding-left: 0; /* Eliminar el espacio entre el texto y la imagen en dispositivos móviles */
-      margin-top: 20px; /* Espacio entre el texto y la imagen en dispositivos móviles */
-    }
-  }
- :root{
-  --clr: #0dcaf0;
-}
-
-.container10{
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 600px;
-  height: 400px;
-}
-.tabs{
-  position: relative;
-  width: 80px;
-  padding: 40px 0;
-}
-.tabs input{
-  appearance: none;
-  display: none;
-}
-.tabs .icon{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.tabs .icon label{
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  line-height: 90px;
-  font-size: 2em;
-  color: #000;
-  opacity: 0.25;
-  transition: 0.5s;
-  cursor: pointer;
-  z-index: 2;
-}
-.tabs input:nth-child(1):checked ~ .icon label:nth-child(1),
-.tabs input:nth-child(2):checked ~ .icon label:nth-child(2),
-.tabs input:nth-child(3):checked ~ .icon label:nth-child(3),
-.tabs input:nth-child(4):checked ~ .icon label:nth-child(4){
-  opacity: 1;
-}
-.indicator{
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: var(--clr);
-  z-index: 1;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  transition: 0.5s;
-}
-.indicator::before{
-  content: '';
-  position: absolute;
-  top: -20px;
-  right: 0;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border-bottom-right-radius: 20px;
-  box-shadow: 8px 8px 0 8px var(--clr);
-}
-.indicator::after{
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  right: 0;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border-top-right-radius: 20px;
-  box-shadow: 8px -8px 0 8px var(--clr);
-}
-.tabs input:nth-child(1):checked ~ .icon .indicator{
-  top: 0;
-}
-.tabs input:nth-child(2):checked ~ .icon .indicator{
-  top: 25%;
-}
-.tabs input:nth-child(3):checked ~ .icon .indicator{
-  top: 50%;
-}
-.tabs input:nth-child(4):checked ~ .icon .indicator{
-  top: 75%;
-}
-.content10{
-  position: absolute;
-  top: 0;
-  left: 80px;
-  width: 420px;
-  height: 400px;
- background: linear-gradient(90deg, #0dcaf0, #530dfd);
-  border-radius: 20px;
-}
-.content10 .contentBx{
-  position: absolute;
-  inset: 0;
-  padding: 50px;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
-}
-.tabs input:nth-child(1):checked ~ .content10 .contentBx:nth-child(1),
-.tabs input:nth-child(2):checked ~ .content10 .contentBx:nth-child(2),
-.tabs input:nth-child(3):checked ~ .content10 .contentBx:nth-child(3),
-.tabs input:nth-child(4):checked ~ .content10 .contentBx:nth-child(4){
-  opacity: 1;
-  visibility: visible;
-}
-.content10 .contentBx h2,
-.content10 .contentBx p{
-  color: #fff;
-}
-@media (max-width: 480px) {
-  .tabs .icon label {
-    font-size: 1.5em; /* Reducir el tamaño de la fuente */
-  }
-
-  .content10 {
-    width: 250px; /* Reducir el ancho del contenido */
-    height: 300px; /* Reducir la altura del contenido */
-  }
-
-  .content10 .contentBx {
-    padding: 20px; /* Reducir el padding del contenido */
-  }
-
-  .content10 .contentBx h2,
-  .content10 .contentBx p {
-    font-size: 0.8em; /* Reducir el tamaño de la fuente del contenido */
-  }
-}
-.math {
-      font-family: 'Cambria Math', 'DejaVu Math TeX Gyre', serif;
-      font-size: 1.5em;
-    }
-    .math-sub {
-      vertical-align: sub;
-      font-size: 0.75em;
-    }
-    .math-sup {
-      vertical-align: super;
-      font-size: 0.75em;
-    }
-   #video {
+.container1000 {
+            display: flex;
+            align-items: center;
+        }
+        .container1000 img {
+            max-width: 350px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            margin-right: 50px;
+            padding-left: 20px; /* Espacio entre la imagen y el texto */
+        }
+        .text-content {
+            max-width: 600px; /* Ajusta el ancho del texto según tus necesidades */
+        }
+         @media (max-width: 768px) {
+            .container1000 {
+                flex-direction: column;
+               
+            }
+            .container1000 img {
+                margin-right: 0;
+                margin-bottom: 20px; /* Espacio entre la imagen y el texto en pantallas pequeñas */
+                max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+            }
+            .text-content {
+                max-width: 100%;
+            }
+        }
+        #video {
   position: fixed;
   top: 0;
   left: 0;
@@ -669,89 +440,242 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   height: 100%;
   background: rgba(0, 0, 0, 0.5); 
 }
- .video-wrapper {
-    display: flex;
-    justify-content: flex-end; /* Alinea el contenido al final del eje principal (derecha) */
-    align-items: flex-start; /* Alinea el contenido hacia arriba */
-    height: 100vh; /* Altura total de la ventana del navegador */
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
-  }
-
-  .video-wrapper video {
-    max-width: 80%; /* Establece el ancho máximo del video al 80% del tamaño de su contenedor */
-    height: auto; /* Hace que la altura del video se ajuste automáticamente para mantener la relación de aspecto */
-  }
- .tv {
-      width: 500px;
-      height: 300px;
-      background-color: #333;
-      border-radius: 10px;
-      position: relative;
-      margin: 50px auto;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    }
-    
-    .screen {
-      width: 90%;
-      height: 80%;
-      background-color: #000;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 5px;
-    }
-    
-    .bezel {
-      width: 100%;
-      height: 100%;
-      border: 10px solid #555;
-      box-sizing: border-box;
-      border-radius: 10px;
-    }
-    
-    .stand {
-      width: 60%;
-      height: 20px;
-      background-color: #555;
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 0 0 5px 5px;
-    }
-    .screen {
+.container4000 {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.screen iframe {
+.container4000 .glass {
+  position: relative;
+  width: 180px;
+  height: 200px;
+ background: linear-gradient(#1000ff, black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -45px;
+  backdrop-filter: blur(10px);
+  transform: rotate(calc(var(--r) * 1deg));
+}
+
+.container4000:hover .glass {
+  transform: rotate(0deg);
+  margin: 0 10px;
+}
+
+.container4000 .glass::before {
+  content: attr(data-text);
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.container4000 .glass svg {
+  font-size: 2.5em;
+  fill: #fff;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  min-width: 200px;
+  height: 250px;
+  background-color: #292929;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  max-width: 80px;
+  background: linear-gradient(90deg, #7eaaff 0%, #ff48fb 40%, rgba(0, 0, 0, 0.28) 60%);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease;
+  background-position: 0px;
+  background-size: 200px;
+}
+
+.icon svg {
+  fill: white;
+}
+
+.card .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.card .text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  height: 270px;
+}
+
+.card:hover .text {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 40px;
+}
+
+.card:hover .icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon svg path {
+  fill: url('#gradientColor');
+  transition: all 0.3s ease;
+}
+.cards-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+
+.card {
+  margin-right: 10px; /* Ajusta este valor según el espacio que quieras entre las cartas */
+}
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 90%;
+      margin: 10px 0;
+    }
+  }
+
+  .flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+ margin-right: 8%;
+ margin-left: 8%;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
- @media (max-width: 768px) {
-            .tv {
-                width: 90%;
-                max-width: none;
-            }
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
+  color: #fff;
+}
+
+.flip-card-back {
+ background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
+  color: #fff;
+  transform: rotateY(180deg);
+}
+ .graph-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 100px); /* Reduce height by 100px to account for the margin */
+            margin: 50px 0 0 0; /* Add margin on top to separate from text above */
             
-            .stand {
-                width: 80%;
-                height: 15px;
-                bottom: -15px;
+        }
+        .graph-container {
+            width: 800px;
+            height: 600px;
+        }
+        .graph-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        @media (max-width: 800px) {
+            .graph-container {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 4 / 3;
             }
         }
+
 </style>
     
    </head>
 
 <body >
-   <video id="video" autoplay muted loop style="filter: brightness(1);">
+  <video id="video" autoplay muted loop style="filter: brightness(1);">
     <source src="foddoo.mp4" type="video/mp4">
   </video>
    <div class="loader-wrapper">
@@ -819,11 +743,11 @@ h1, h2, .btn,p,h5,.card .col-6,li {
             <i class='bx bx-collection' ></i>
             <span class="link_name">Introducción</span>
           </a>
-        
+         
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="index2.html">Introducción</a></li>
-         
+        
         </ul>
       </li>
       <li>
@@ -840,7 +764,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
         </ul>
       </li>
       <li>
-                 <div class="iocn-link">
+   <div class="iocn-link">
           <a href="index3.html">
           <i class='bx bx-line-chart' ></i>
             <span class="link_name" style="margin-bottom: 5px;">Tematicas</span>
@@ -856,6 +780,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
           <li><a href="index13.html">Máximo y mínimo</a></li>
 
           <li><a href="index14.html">Enunciado problema</a></li>
+             <li><a href="index15.html">Desarrollo de la<br> situación problema</a></li>
 
         </ul>
       </li>
@@ -923,7 +848,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <video class="background-video" src="inicio1.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" filter: brightness(50%);  overflow: hidden;position: absolute;
+     <video class="background-video" src="video22.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" filter: brightness(50%);  overflow: hidden;position: absolute;
       top: 50%;
       left: 50%;
       width: 100%;
@@ -937,8 +862,8 @@ h1, h2, .btn,p,h5,.card .col-6,li {
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>MODELACIÓN</h1>
-            <p class="opacity-75">la Modelación: Un Enfoque Claro</p>
+            <h1>SOLUCION ENUNCIADO PROBLEMA</h1>
+            <p class="opacity-75">Problema Complejo de Derivadas</p>
            
           </div>
         </div>
@@ -950,122 +875,282 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   
 
   <div class="container marketing">
-    <h1 class="animate-text">¿QUÉ ES UNA <span style="color: blue;">MODELACIÓN?</span></h1>
- 
-   
-  
-   <div class="container6 animate-text">
-  <p>La modelación matemática es un proceso fundamental en la ciencia y la ingeniería que implica la representación simplificada de un fenómeno del mundo real mediante ecuaciones, gráficos y algoritmos. Este enfoque permite a los investigadores y profesionales analizar, predecir y optimizar sistemas complejos, desde el diseño óptimo de estructuras hasta la identificación de sistemas de control. </p>
-  <div class="image-container">
-    <img src="fig2.webp" alt="Descripción de la imagen">
-  </div>
-</div>
-   <hr>
-<div class="animate-text" style="margin: 0 auto; width: 600px;">
- <div class="container10">
-    <div class="tabs">
-      <input id="home" type="radio" name="group" checked>
-      <input id="about" type="radio" name="group">
-      <input id="settings" type="radio" name="group">
-      
-      <div class="icon">
-        <label for="home" style="padding-top: 22px;"><ion-icon name="document-outline"></ion-icon></label>
-        <label for="about" style="padding-top: 2px;"><ion-icon name="construct-outline"></ion-icon></label>
-        <label for="settings" style=" transform: translateY(-15px);"><ion-icon name="settings-outline"></ion-icon></label>
-       
-        <div class="indicator"></div>
-       
-      </div>
-      <div class="content10">
-        <div class="contentBx" for="home">
-          <h2>SU USO</h2>
-          <p>
-            La modelación matemática se utiliza para describir y analizar sistemas complejos, permitiendo la predicción de comportamientos futuros y la toma de decisiones informadas. 
-          </p>
-        </div>
-        <div class="contentBx" for="about">
-           <h2>COMPONENTES</h2>
-           <ul style="color: #fff;">
-        <li><p>
-           VARIABLES</p></li>
-        <li> <p>
-          PARAMETROS</p></li>
-        <li> <p>
-          RESTRICCIONES</p></li>
-        <li><p>
-          RELACIONES ENTRE LAS VARIABLES</p></li>
-           <li><p>
-           REPRESENTACIONES SIMPLIFICADAS</p></li>
-    </ul>
-         
-        </div>
-        <div class="contentBx" for="settings">
-            <h2>PROCESOS DE ELABORACION </h2>
-            <ul style="color: #fff;">
-        <li><p>
-            identificacion de un fenómeno o problema 
-          </p></li>
-        <li> <p>
-           formulacion de un modelo matemático</p></li>
-        <li>  <p>establecimiento de hipótesis y un método de validación</p></li>
-        
-    </ul>
-        
-         
-           
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-    
-    <hr class="featurette-divider " id="Estrategias">
-<div class="animate-text">
- <h1> <span style="color: #f80089;">HERRAMIENTAS</span> DE CONSTRUCCION</h1>
-<h3 >Geogebra</h3>
-    <p>Cuando estamos realizando un proceso matemático, como la resolución de una función, debemos graficar dicha función. Queremos que la gráfica sea lo más precisa posible y hacerlo en el menor tiempo posible. Aquí es donde entra Geogebra, un software matemático dinámico e interactivo. En su apartado de gráfica de funciones, podemos ingresar nuestra función. Veamos un ejemplo: </p> 
 
-    <hr class="featurette-divider" id="Rendimiento">
+
     <div class="animate-text">
-    <h2  style="padding-bottom: 10px;"><b style="text-align: center;">EJEMPLO</b></h2>
-  </div>
+        <h1>SOLUCIÓN ENUNCIADO   <span style="color: blue;"> PROBLEMA</span></h1>
 </div>
-<div class="container6 animate-text">
+ <div class="container1000 animate-text">
+<div  class="text-content">
+  
+         <h3>PASO 1: REDUCIR EL TIEMPO <span style="color: blue;"> DE EJECUCIÓN EN UN 34%</span></h3>
+         <p>El objetivo es reducir el tiempo de ejecución en un 34% respecto al tiempo actual con 8 GB de RAM. Primero, calculamos el tiempo de ejecución actual con 8 GB de RAM.</p>
+         <ul>
+           <li>
+             50 segundos es el tiempo de ejecución actual 
+           </li>
+          
+           <li>
+             Ahora, reducir este tiempo en un 34%:
+           </li>
+           <li>
+             Nueva Tiempo = <b>50 * ( 1 - 0,34 )</b> 
+           </li>
+           <li>
+             Nuevo Tiempo = <b>33 segundos</b> 
+           </li>
+         </ul>
 
-  <div class="image-container" style="padding-right:40px;">
-    <img src="geogebra.png" alt="Descripción de la imagen">
-  </div>
-
-  <p>Consideremos la función <b class="math">f(x) = 2x + 24</b> Utilizando un software de gráficos, podemos visualizar esta función y interactuar con la gráfica resultante. Esta herramienta nos permite analizar cómo cambia la función a medida que modificamos el valor de 
- <b>X</b>
- y entender mejor su comportamiento.</p>
+  
 </div>
-<div style="text-align: center; " class="animate-text">
-<p>Podrás ver GeoGebra dando click aquí.</p>
-<a class="btn btn-lg btn-primary" href="https://www.geogebra.org/classic?lang=es">Geogebra</a>
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title" style="text-align: center;">VER FORMULA</p>
+            
+        </div>
+        <div class="flip-card-back" style="font-size: 20px;">
+           <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>t</mi>
+    <mo stretchy="false">(</mo>
+    <mn>8</mn>
+    <mo stretchy="false">)</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mn>800</mn>
+      <mrow>
+        <mfrac>
+          <mn>3</mn>
+          <mn>8</mn>
+        </mfrac>
+      </mrow>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mn>50</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>50</mn>
+  </mrow>
+</math>
+           
+        </div>
+    </div>
+</div>
+        
 </div>
 
+
+
+ <hr class="featurette-divider" id="Estrategias">
+
+
+ <div class="container1000 animate-text">
+
+  <div class="flip-card" style="padding-bottom: 15px;">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title" style="text-align: center;">VER FORMULA</p>
+            
+        </div>
+        <div class="flip-card-back" style="font-size: 20px;">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>33</mn>
+    <mo>=</mo>
+    <mfrac>
+      <mn>800</mn>
+      <mrow>
+        <mfrac>
+          <mn>3</mn>
+          <mi>r</mi>
+        </mfrac>
+      </mrow>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mn>50</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>16.33</mn>
+  </mrow>
+</math>
+           
+        </div>
+    </div>
+</div>
+<div  class="text-content">
+  
+         <h3>PASO 2: RESOLVER PARA <span style="color: blue;"> LA NUEVA CANTIDAD DE RAM</span></h3>
+         <p>Usando el nuevo tiempo objetivo (33 segundos), resolvemos para RAM</p>
+        
+
+  
+</div>
+
+
+        
+</div>
+<hr class="featurette-divider" id="Estrategias">
+<div class="container1000 animate-text">
+
+ 
+<div  class="text-content">
+  
+         <h3>PASO 3: USO DE CRITERIO<span style="color: blue;"> DE SEGUNDA DERIVADA</span></h3>
+         <p>Usando los criterios de la segunda derivada, podemos confirmar que un punto crítico de una función es un mínimo local si la segunda derivada evaluada en ese punto es positiva.</p>
+        <P>Criterios de segunda derivada:</P>
+        <ul>
+          <li>
+            Remplazar variable independiente por punto crítico especifico (16,33)
+          </li>
+          <math style="font-size: 25px; text-align: center; padding-top: 10px;" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+  
+      <mi>t</mi>
+      <mo>''</mo>
     
- <hr class="featurette-divider" id="Conclusión">
-<div class="tv animate-text">
-  <div class="screen">
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/WFERSiEGZeU?si=7CfRg2GJgeFd9V9y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <div class="bezel"></div>
-  </div>
-  <div class="stand"></div>
+    <mo stretchy="false">(</mo>
+    <mn>16,33</mn>
+    <mo stretchy="false">)</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1600</mn>
+      <mrow>
+        <mn>3</mn>
+        <mo stretchy="false">(</mo>
+        <mn>16,33</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mn>3</mn>
+        </msup>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0.122</mn>
+  </mrow>
+</math>
+
+        </ul>
+
+  
 </div>
-     <div class="row featurette">
+ <div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title" style="text-align: center; font-size: 20px;">DERIVA LA FUNCIÓN POR SEGUNDA VEZ</p>
+            
+        </div>
+        <div class="flip-card-back" style="font-size: 20px;">
+         <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    
+      <mi>t</mi>
+      <mo>'</mo>
+      <mo>'</mo>
+    
+    <mo stretchy="false">(</mo>
+    <mi>r</mi>
+    <mo stretchy="false">)</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1600</mn>
+      <mrow>
+        <mn>3</mn>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>r</mi>
+          <mn>3</mn>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
 
+           
+        </div>
+    </div>
+</div>
+
+        
+</div>
+<hr class="featurette-divider" id="Estrategias">
+
+<div class="animate-text">
+         <h3>PASO 4: INTERPRETAR <span style="color: blue;"> EL RESULTADO</span></h3>
+
+<p>La segunda derivada t''(r) en r = 16.33 GB es positiva (aproximadamente 0.122). Según el criterio de la segunda derivada, si t′′(r) > 0, entonces r = 16.33 GB es un mínimo local.</p>
+</div>
+<hr class="featurette-divider" id="Estrategias">
+<div class="animate-text">
+
+ <h3>CONCLUSIÓN <span style="color: blue;">  PREGUNTA PROBLEMA</span></h3>
+<p>Creativa S.A. debería actualizar la cantidad de memoria RAM a aproximadamente 16 GB para minimizar el tiempo de carga y procesamiento de Adobe Photoshop. Este valor proporciona un tiempo de ejecución óptimo, cumpliendo con el objetivo de reducir los tiempos de espera y mejorar la eficiencia operativa de la empresa.</p>
+</div>
+<div class="animate-text">
+  <math  style="font-size: 25px;" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mrow>
+            <mi>Y</mi>
+            <mo>=</mo>
+            <mrow>
+                <mfrac>
+                    <mrow>
+                        <mrow>
+                            <mfrac>
+                                <mn>800</mn>
+                                <mn>3</mn>
+                            </mfrac>
+                        </mrow>
+                    </mrow>
+                    <mi>x</mi>
+                </mfrac>
+            </mrow>
+            <mo>+</mo>
+            <mfrac>
+                <mn>50</mn>
+                <mn>3</mn>
+            </mfrac>
+        </mrow>
+    </math>
+  </div>
+    <hr>
+   <div class="graph-wrapper animate-text">
+        <div class="graph-container">
+            <iframe src="https://www.geogebra.org/material/iframe/id/wfkrtxbq/width/800/height/600/border/888888/rc/false/ai/false/sdz/true"></iframe>
+        </div>
+    </div>
+<div class="animate-text">
+  <math style="padding-top: 40px; font-size: 25px;" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mrow>
+            <mi>Y</mi>
+            <mo>=</mo>
+            <mfrac>
+                <mn>1600</mn>
+                <mn>3</mn>
+            </mfrac>
+            <msup>
+                <mi>x</mi>
+                <mn>3</mn>
+            </msup>
+        </mrow>
+    </math>
+</div>
+  <div class="graph-wrapper animate-text">
+        <div class="graph-container">
+            <iframe src="https://www.geogebra.org/material/iframe/id/wdwwxpxm/width/800/height/600/border/888888/rc/false/ai/false/sdz/true"></iframe>
+        </div>
+    </div>
 
 
 
 
 </div>
 
-   
-  </div>
 
 <footer>
         <div class="content" style="margin-top: 50px;">
@@ -1122,10 +1207,8 @@ h1, h2, .btn,p,h5,.card .col-6,li {
                 <span class="copyright-text">Agradecemos a estas páginas por habernos ayudado a completar nuestro OVA. 
                     </span>
             </div>
-
         </div>
     </footer>
-
 
   </main>
 
@@ -1175,23 +1258,5 @@ window.addEventListener('load', function() {
     window.addEventListener('scroll', handleScroll);
 });
     </script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script>
-    var video = document.getElementById("miVideo");
-
-// Ocultar los controles al cargar la página
-video.controls = false;
-
-// Mostrar los controles cuando pasa el cursor sobre el video
-video.addEventListener("mouseover", function() {
-  video.controls = true;
-});
-
-// Ocultar los controles cuando el cursor deja el video
-video.addEventListener("mouseout", function() {
-  video.controls = false;
-});
-  </script>
 </body>
 </html>
