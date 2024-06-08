@@ -30,7 +30,7 @@ const songs = [
     title: "Funcion",
     name: "Kevin Ortiz",
     source:
-      "Funcion.mp4",
+      "Funcion.mp3",
   },
   {
     title: "As It Was",
