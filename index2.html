@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Introducción </title>
-    <link rel="stylesheet" href="style2.css">
+
     <link rel="icon" href="descarga1.png" type="image/png">
   
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 99999;
   }
   
   .loader {
@@ -501,6 +501,98 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.5); 
 }
+  .toggle-btn {
+  position: fixed; 
+  top: 20px; 
+  left: 20px; 
+  z-index: 9999;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #c9d7e4;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.nav-menu {
+  position: fixed;
+  top: 0px;
+  left: -200px;
+  width: 200px;
+ background-color: #9c9898;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  
+  padding-bottom: 100%;
+
+
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block; 
+  padding: 5px 10px; 
+  transition: background-color 0.3s; 
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+}
+
+
+.nav-menu li:hover > a {
+  background-color: #C7C7C7 ; 
+  color: #fff; 
+}
+
+
+.nav-menu li ul {
+  display: none;
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.nav-menu li:hover > ul {
+  display: block;
+}
+
+
+.nav-menu.open {
+  left: 0;
+}
+
+.toggle-btn.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.toggle-btn.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
 </style>
     
    </head>
@@ -528,141 +620,36 @@ body {
     </svg>
   </div>
 </div>
-<div id="content" style="display: none;">
-  <div>
-  <div class="sidebar close">
-    <div class="logo-details">
-      <i class='bx bxl-kickstarter bx-tada' style='color:#080808'></i>
-      <span class="logo_name"style='color:#080808'>Sistemas</span>
-    </div>
-    <ul class="nav-links">
-      <li>
-        <a href="index.html">
-         <i class='bx bx-home'></i>
 
-          <span class="link_name">Bienvenida</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="index.html">Bienvenida</a></li>
-        </ul>
-      </li>
-       <li>
-        <a href="Competencia.html">
-        <i class='bx bx-calculator'></i>
+<header>
+    <button class="toggle-btn">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+    <nav class="nav-menu" style="padding-top: 100px;">
+      <ul>
 
-          <span class="link_name">Competencia</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
-        </ul>
-      </li>
+        <li><a href="index.html"><i class='bx bx-home'></i> Bienvenida</a></li>
+        <li><a href="Competencia.html"> <i class='bx bx-calculator'></i> Competencia</a></li>
+        <li><a href="o.html"> <i class='bx bx-network-chart'></i> Metodología</a></li>
+        <li><a href="index2.html"> <i class='bx bx-collection' ></i> Introducción</a></li>
+         <li><a href="index3.html"><i class='bx bx-memory-card'></i> Lamemoria RAM</a></li>
+          <li><a href="index8.html"><i class='bx bx-line-chart' ></i> Temáticas</a></li>
+           <li><a href="index7.html"> <i class='bx bxs-user-voice'></i> Escuchanos</a></li>
+          <li><a href="index17.html">    <i class='bx bxs-brain' style="color: white;"></i> Actividad</a></li>
+            <li><a href="index100.html">   <i class='bx bxs-check-circle'></i> Evaluacion</a></li>
+            
+      </ul>
+    </nav>
+  </header>
 
-       <li>
-        <a href="o.html">
-        <i class='bx bx-network-chart'></i>
 
-          <span class="link_name">Metodología</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="o.html">Metodología</a></li>
-        </ul>
-      </li>
 
-      <li>
-        <div class="iocn-link">
-          <a href="index2.html">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Introducción</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="index2.html">Introducción</a></li>
-          <li><a href="#optimizacion">Optimización</a></li>
-          <li><a href="#Estrategias">Estrategias</a></li>
-          <li><a href="#Rendimiento">Rendimiento</a></li>
-          <li><a href="#Conclusión">Conclusión</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="index3.html">
-           <i class='bx bx-memory-card'></i>
-            <span class="link_name">Lamemoria RAM</span>
-          </a>
-          
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
-         
-        </ul>
-      </li>
-      <li>
-        <a href="index8.html">
-          <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Temáticas</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="index8.html">Temáticas</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="index7.html">
-            <i class='bx bxs-user-voice'></i>
-            <span class="link_name">Escuchanos</span>
-          </a>
-        
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="index7.html">Escuchanos</a></li>
-          
-         
-        </ul>
 
-      </li>
-<li>
-        <div class="iocn-link">
-          <a href="index17.html">
-            <i class='bx bxs-brain'></i> 
-            <span class="link_name">Actividad</span>
-          </a>
-        
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="index17.html">Actividad</a></li>
-        </ul>
-        
-      </li>
 
-       <li>
-        <div class="iocn-link">
-          <a href="index100.html">
-          <i class='bx bxs-check-circle'></i>
-            <span class="link_name">Evaluacion</span>
-          </a>
-        
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="index100.html">Evaluacion</a></li>
-        </ul>
-        
-      </li>
-      
-     
-      
-     
-</ul>
-  </div>
-
-  <section class="home-section " >
-    <div class="home-content" style=" background-color: #efeff3; position: fixed;">
-      <i class='bx bx-menu ' style="padding: 5px; background-color: #efeff3;" ></i>
-      </div>
-      
-  </section>
 </div>
-<div style="padding-left: 78px;">
+<div>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -743,8 +730,10 @@ body {
   
 
   <div class="container marketing animate-text">
+    <div style="text-align: center;" class="animate-text" >
+  <h2 class="fw-normal" style="padding-bottom: 30px;">Autores</h2>
 
- 
+</div>
     <div class="row animate-text">
       <div class="col-lg-4">
         <img class="bd-placeholder1-img rounded-circle" src="kevin.jpeg" width="140" height="140">
@@ -1017,5 +1006,14 @@ window.addEventListener('load', function() {
     window.addEventListener('scroll', handleScroll);
 });
     </script>
+     <script>
+  const toggleBtn = document.querySelector('.toggle-btn');
+const navMenu = document.querySelector('.nav-menu');
+
+toggleBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
+  toggleBtn.classList.toggle('open');
+});
+</script>
 </body>
 </html>
