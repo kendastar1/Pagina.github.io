@@ -183,8 +183,8 @@
 
   
 
-/* Estilos del botón */
-.toggle-btn {
+/* Estilos del botón */   
+        .toggle-btn {
   position: fixed; 
   top: 20px; 
   left: 20px; 
@@ -207,15 +207,17 @@
 
 .nav-menu {
   position: fixed;
-  top: 15px;
+  top: 0px;
   left: -200px;
   width: 200px;
-  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
+ background-color: #9c9898;
   padding: 20px;
   box-sizing: border-box;
   transition: left 0.3s ease-in-out;
   z-index: 2;
-  border-radius: 20px;
+  
+  padding-bottom: 100%;
+
 
 }
 
@@ -274,6 +276,7 @@
 .toggle-btn.open .line:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
+
     </style>
   </head>
   <body>
@@ -304,7 +307,7 @@
       <div class="line"></div>
       <div class="line"></div>
     </button>
-    <nav class="nav-menu" style="padding-top: 100px; border: 3px solid #fff;">
+    <nav class="nav-menu" style="padding-top: 100px;">
       <ul>
 
         <li><a href="index.html"><i class='bx bx-home'></i> Bienvenida</a></li>
