@@ -1,12 +1,17 @@
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Competencias</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Introducción </title>
+    <link rel="stylesheet" href="style2.css">
     <link rel="icon" href="descarga1.png" type="image/png">
-<style>
+   <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
+    rel='stylesheet'>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+ <style>
    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
      p,td{
       font-family: "Poppins", sans-serif;
@@ -206,12 +211,61 @@
 h3, h2,p,h5 {
   animation: slideUp 1s forwards;
 }
+  @media (max-width: 768px) {
+            .hola {
+                padding-left: 20px;
+                padding-top: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo img {
+                width: 40px;
+            }
+            .team {
+                font-size: 1rem;
+            }
+            video {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .text h2 {
+                font-size: 1.5rem;
+            }
+            .text h3 {
+                font-size: 1.2rem;
+            }
+            .text p {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hola {
+                padding-left: 10px;
+                padding-top: 5px;
+            }
+            .logo img {
+                width: 30px;
+            }
+            .team {
+                font-size: 0.9rem;
+            }
+            .text h2 {
+                font-size: 1.2rem;
+            }
+            .text h3 {
+                font-size: 1rem;
+            }
+            .text p {
+                font-size: 0.8rem;
+            }
+        }
 </style>
+    
+   </head>
 
-</head>
-
-<body>
-    <div class="loader-wrapper">
+<body >
+  
+   <div class="loader-wrapper">
   <div class="loader">
     <svg viewBox="0 0 80 80">
         <circle id="test" cx="40" cy="40" r="32"></circle>
@@ -231,8 +285,165 @@ h3, h2,p,h5 {
   </div>
 </div>
 <div id="content" style="display: none;">
+  <div>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-kickstarter bx-tada' style='color:#080808'></i>
+      <span class="logo_name"style='color:#080808'>Introducción</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+         <i class='bx bx-home'></i>
+
+          <span class="link_name">Bienvenida</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.html">Bienvenida</a></li>
+        </ul>
+      </li>
+       <li>
+        <div class="iocn-link">
+          <a href="index2.html">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Introducción</span>
+          </a>
+       
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index2.html">Introducción</a></li>
+         
+        </ul>
+      </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
+
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
+
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
+     
+     
+      <li>
+        <a href="index8.html">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Temáticas</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="index14.html">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Situación problema</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index8.html">Planteamiento de la<br>situacion problema</a></li>
+        </ul>
+      </li>
+       <li>
+        <a href="index15.html">
+          <i class='bx bx-line-chart'></i>
+          <span class="link_name">Desarrollo de la situación problema </span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index8.html">Desarrollo de la<br>situacion problema</a></li>
+        </ul>
+      </li>
+ <li>
+        <div class="iocn-link">
+          <a href="index7.html">
+            <i class='bx bxs-user-voice'></i>
+            <span class="link_name">Escuchanos</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index7.html">Escuchanos</a></li>
+          
+         
+        </ul>
+
+      </li>
+
+
+
+      <li>
+        <div class="iocn-link">
+          <a href="index7.html">
+            <i class='bx bxs-user-voice'></i>
+            <span class="link_name">Escuchanos</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index7.html">Escuchanos</a></li>
+          
+         
+        </ul>
+
+      </li>
+<li>
+        <div class="iocn-link">
+          <a href="index17.html">
+            <i class='bx bxs-brain'></i> 
+            <span class="link_name">Actividad</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index17.html">Actividad</a></li>
+        </ul>
+        
+      </li>
+
+       <li>
+        <div class="iocn-link">
+          <a href="index100.html">
+          <i class='bx bxs-check-circle'></i>
+            <span class="link_name">Evaluacion</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index100.html">Evaluacion</a></li>
+        </ul>
+        
+      </li>
+      
+     
+      
+     
+</ul>
+  </div>
+
+  <section class="home-section " >
+    <div class="home-content" style=" background-color: #efeff3; position: fixed;">
+      <i class='bx bx-menu ' style="padding: 5px; background-color: #efeff3;" ></i>
+      </div>
+      
+  </section>
+</div>
+   
+<div id="content">
     <section class="showcase">
-        <header class="hola">
+        <header class="hola" style="padding-left: 150px; padding-top: 100px;">
         <div class="logo">
     <img class="hola1" src="noble.png" alt="logo">
     <span class="team">Equipo/</span>
@@ -240,9 +451,9 @@ h3, h2,p,h5 {
     
 </div>
     </header>
-       <video src="JLA.mp4" muted loop autoplay></video>
+       <video src="JLA.mp4" muted loop autoplay style="padding-left: 78px; padding-top: 20px;"></video>
         <div class="overlay"></div>
-        <div class="text">
+        <div class="text" style="padding-left: 50px;">
             <h2>Utilizando Cálculo Diferencial</h2>
             <h3> para Optimizar</h3>
             <p>
@@ -253,16 +464,51 @@ h3, h2,p,h5 {
       
     </section>
 </div>
-    <script src="main.js"></script>
-    <script>
+
+  <script src="script2.js"></script>
+ <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
 
 window.addEventListener('load', function() {
   setTimeout(function() {
     document.querySelector('.loader-wrapper').style.display = 'none';
     document.getElementById('content').style.display = 'block';
-  }, 3000); 
+  }, 2000); 
 });
 </script>
+<script>
+        var enlace = document.getElementById('enlace');
+        var linkText = document.getElementById('linkText');
 
+        enlace.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script>
+        document.getElementById('background-video').addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+    </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-text');
+
+    const handleScroll = () => {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !element.classList.contains('animated')) {
+                element.classList.add('visible');
+                element.classList.add('animated'); // Marcar como animado
+            }
+        });
+    };
+
+    // Verifica inicialmente al cargar la página
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+});
+    </script>
 </body>
 </html>
