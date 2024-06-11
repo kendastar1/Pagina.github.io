@@ -304,13 +304,15 @@ h3, h2,p,h5 {
 .toggle-btn.open .line:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
-@media (max-width: 768px) {
-  /* Estilos específicos para pantallas pequeñas */
-  .nav-menu {
-    width: 100vw; /* Ancho al 100% del viewport */
-    max-width: none; /* Sin límite de ancho máximo */
-    padding: 10px; /* Menos espacio interno */
-  }
+.animate-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 4s ease-in-out;
+}
+
+.animate-text.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
     
@@ -362,7 +364,7 @@ h3, h2,p,h5 {
 </div>
    <div id="content">
     <section class="showcase">
-        <header class="hola">
+        <header class="hola animate-text">
         <div class="logo" style="padding-left: 20px;">
     <img class="hola1" src="noble.png" alt="logo">
     <span class="team">Equipo/</span>
@@ -372,7 +374,7 @@ h3, h2,p,h5 {
     </header>
        <video src="JLA.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
-        <div class="text">
+        <div class="text animate-text">
             <h2>Utilizando Cálculo Diferencial</h2>
             <h3> para Optimizar</h3>
             <p>
