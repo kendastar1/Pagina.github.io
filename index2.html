@@ -444,7 +444,7 @@ body {
   max-height: 80vh; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
   box-sizing: border-box; /* Establece el tamaño del elemento en border-box */
-  max-height: 10em; /* Establece la altura máxima para el menú */
+  
 }
 
 .nav-menu::-webkit-scrollbar {
@@ -498,7 +498,7 @@ body {
              <li><a href="index15.html"><i class='bx bx-chalkboard'></i> Desarrollo de la situación problema</a></li>
            <li><a href="index7.html"> <i class='bx bxs-user-voice'></i>Análisis de resultados</a></li>
              <li>
-  <a href="">
+  <a style="color: #fff;">
     <i class='bx bx-book-open'></i> Actividad de aprendizaje
   </a>
   <ul class="submenu" style="background-color:#c8c3c3;">
@@ -510,7 +510,7 @@ body {
   <li>
 
           
-  <a href="">
+  <a style="color: #fff;">
 <i class='bx bx-check'></i> Actividad de evaluación
   </a>
   <ul class="submenu" style="background-color:#c8c3c3;">
@@ -557,7 +557,7 @@ body {
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-         <video class="background-video" src="fondo10.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" filter: brightness(50%);  overflow: hidden;position: absolute;
+         <video class="background-video" src="fondo10.mp4" autoplay loop muted playsinline width="100%" height="100%" style=" position: absolute;
       top: 50%;
       left: 50%;
       width: 100%;
@@ -568,9 +568,9 @@ body {
       filter: brightness(50%);"></video>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Guía Completa sobre la Memoria RAM</h1>
-            <p class="opacity-75">Desde los Fundamentos hasta la Optimización</p>
-            <p><a class="btn btn-lg btn-primary" href="index3.html">Ver ahora</a></p>
+            <h1>Podras ver todas las tematicas de nuestro ova</h1>
+            <p class="opacity-75">Desde los Fundamentos hasta la situacion problema</p>
+            <p><a class="btn btn-lg btn-primary" href="index8.html">Ver ahora</a></p>
           </div>
         </div>
       </div>
@@ -590,9 +590,9 @@ body {
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>Podrás escuchar algunos conceptos sobre las derivadas</h1>
-            <p>Descubriendo la conexión de derivadas</p>
-            <p><a class="btn btn-lg btn-primary" href="index8.html">Ver ahora</a></p>
+            <h1>Podrás escuchar el análisis de resultados</h1>
+            <p>Descubriendo el análisis</p>
+            <p><a class="btn btn-lg btn-primary" href="index7.html">Ver ahora</a></p>
           </div>
         </div>
       </div>
@@ -770,7 +770,12 @@ toggleBtn.addEventListener('click', () => {
 });
 </script>
 <script>
-  
+  document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.background-video');
+    video.addEventListener('canplaythrough', function () {
+      video.style.display = 'block';
+    });
+  });
 </script>
 </body>
 </html>
