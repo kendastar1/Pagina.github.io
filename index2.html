@@ -599,6 +599,34 @@ body {
            margin-left: 50px;
         }
     }
+   .nav-menu {
+  max-height: 80vh; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto;
+  box-sizing: border-box; /* Establece el tamaño del elemento en border-box */
+  max-height: 10em; /* Establece la altura máxima para el menú */
+}
+
+.nav-menu::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra */
+  border-radius: 10px; /* Rounding de los bordes */
+  background-color: #f0f0f0; /* Color de fondo */
+}
+
+.nav-menu::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de fondo del track */
+  border-radius: 10px; /* Rounding de los bordes */
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color de fondo del botón */
+  border-radius: 4px; /* Rounding de los bordes */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombreado para dar profundidad */
+}
+
+.nav-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color de fondo del botón al pasar el mouse */
+}
+
 </style>
     
    </head>
@@ -637,15 +665,38 @@ body {
       <ul>
 
         <li><a href="index.html"><i class='bx bx-home'></i> Bienvenida</a></li>
-        <li><a href="Competencia.html"> <i class='bx bx-calculator'></i> Competencia</a></li>
+         <li><a href="index2.html"> <i class='bx bx-collection' ></i> Introducción</a></li>
+        <li><a href="index1.html"> <i class='bx bx-calculator'></i> Competencia</a></li>
         <li><a href="o.html"> <i class='bx bx-network-chart'></i> Metodología</a></li>
-        <li><a href="index2.html"> <i class='bx bx-collection' ></i> Introducción</a></li>
-         <li><a href="index3.html"><i class='bx bx-memory-card'></i> Lamemoria RAM</a></li>
           <li><a href="index8.html"><i class='bx bx-line-chart' ></i> Temáticas</a></li>
-           <li><a href="index7.html"> <i class='bx bxs-user-voice'></i> Escuchanos</a></li>
-          <li><a href="index17.html">    <i class='bx bxs-brain' style="color: white;"></i> Actividad</a></li>
-            <li><a href="index100.html">   <i class='bx bxs-check-circle'></i> Evaluacion</a></li>
-            
+            <li><a href="index14.html"><i class='bx bx-bulb'></i> Situacion Problema</a></li>
+             <li><a href="index15.html"><i class='bx bx-chalkboard'></i> Desarrollo de la situación problema</a></li>
+           <li><a href="index7.html"> <i class='bx bxs-user-voice'></i>Análisis de resultados</a></li>
+             <li>
+  <a href="">
+    <i class='bx bx-book-open'></i> Actividad de aprendizaje
+  </a>
+  <ul class="submenu" style="background-color:#c8c3c3;">
+    <li><a href="index101.html">Actividad de aprendizaje 1</a></li>
+    <li><a href="https://create.kahoot.it/details/0eee3007-1a9a-4051-b4c2-702a93796dfe">Actividad de aprendizaje 2</a></li>
+    
+  </ul>
+</li>
+  <li>
+
+          
+  <a href="">
+<i class='bx bx-check'></i> Actividad de evaluación
+  </a>
+  <ul class="submenu" style="background-color:#c8c3c3;">
+    <li><a href="index100.html">Actividad de evaluación 1</a></li>
+    <li><a href="index17.html">Actividad de evaluación 2</a></li>
+    
+  </ul>
+</li></li>
+             <li><a href="conclucion.html">   <i class='bx bx-trophy'></i> Conclucion</a></li>
+              <li><a href="index100.html">  <i class='bx bx-link'></i> Bibliografía</a></li>
+             <li><a href="autores.html">  <i class='bx bx-user'></i> Autores</a></li>
       </ul>
     </nav>
   </header>
@@ -736,77 +787,15 @@ body {
   
 
   <div class="container marketing animate-text">
-    <div style="text-align: center;" class="animate-text" >
-  <h2 class="fw-normal" style="padding-bottom: 30px;">Autores</h2>
-
-</div>
+    
     <div class="row animate-text">
-      <div class="col-lg-4">
-        <img class="bd-placeholder1-img rounded-circle" src="kevin.jpeg" width="140" height="140">
-        
-        <h2 class="fw-normal">Kevin Ortiz</h2>
-        <p>Ingeniero en Sistemas</p>
-        <p id="enlace" style="display: inline-flex;">
-          <div>
-        <a href="https://www.facebook.com/share/wSxYkQY4GRodCLhE/?mibextid=qi2Omg" style="text-decoration: none;">
-    <button class="btn" style="color: #ffffff;">Visitar</button>
-</a>
-</div>
-</p>
-      </div>
-      <div class="col-lg-4">
-          <img class="bd-placeholder1-img rounded-circle" src="lucio.jpeg" width="140" height="140">
-        <h2 class="fw-normal">Lucio Garcia</h2>
-        <p>Ingeniero en Sistemas</p>
-        <p id="enlace" style="display: inline-flex;">
-          <div>
-        <a href="https://www.instagram.com/lucioivangarciaosorio?igsh=MWN3MDJkdTM0anYzYg==" style="text-decoration: none;">
-    <button class="btn" style="color: #ffffff;">Visitar</button>
-</a>
-</div>
-</p>
-      </div>
-      <div class="col-lg-4">
-          <img class="bd-placeholder1-img rounded-circle bd-placeholder1-img66" src="ronal.jpeg" width="140" height="140">
-        <h2 class="fw-normal">Ronal Acevedo</h2>
-        <p>Ingeniero en Sistemas</p>
-        <p id="enlace" style="display: inline-flex;">
-   <div>
-        <a href="https://www.facebook.com/ronald.acevedo.52035" style="text-decoration: none;">
-    <button class="btn" style="color: #ffffff;">Visitar</button>
-</a>
-</div>
-</p>
-      </div>
-<div class="container1">
-  <div class="col-lg-4 col-md-6 col-sm-12 text-center1 col-lg-477">
-    <img class="bd-placeholder1-img rounded-circle bd-placeholder1-img66" src="pedro.jpeg" width="140" height="140">
-    <h2 class="fw-normal">Pedro Molina</h2>
-    <p>Ingeniero en Sistemas</p>
-    <p id="enlace">
-  <div>
-        <a href="https://www.instagram.com/remagenquince?utm_source=qr&igsh=MXhtMmwzNnYzYnJzZQ==" style="text-decoration: none;">
-    <button class="btn" style="color: #ffffff;">Visitar</button>
-</a>
-</div>
-    </p>
-  </div>
-  <div class="col-lg-4 col-md-6 col-sm-12 text-center1 col-lg-477">
-    <img class="bd-placeholder1-img rounded-circle bd-placeholder1-img66" src="Doris.jpeg" width="140" height="140">
-    <h2 class="fw-normal">Doris Barrera</h2>
-    <p>Profesora de calculo diferencial</p>
-    <p id="enlace">
- <div>
-    <a href="https://wa.me/+573153695448" style="text-decoration: none;">
-        <button class="btn" style="color: #ffffff;">Visitar</button>
-    </a>
-</div>
-    </p>
-  </div>
-</div>
+   
+     
+     
+
 
     </div>
-    <hr class="featurette-divider" id="optimizacion">
+   
 
     <div class="row featurette animate-text"  >
       <div class="col-md-7" style="margin-top: -50px">
@@ -882,13 +871,13 @@ body {
      <div class="row featurette">
 
 <div class="px-4 pt-5 my-5 text-center animate-text">
-    <h1 class="display-4 fw-bold text-body-emphasis" style="margin-top: -10%; ">En Conclusión</h1>
+    <h1 class="display-4 fw-bold text-body-emphasis" style="margin-top: -10%; font-size: 40px;">Derivadas para Optimizar la RAM de tu Computadora</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Las derivadas no solo son conceptos matemáticos abstractos, sino también herramientas poderosas en la optimización de la memoria RAM de tu computadora. Al aplicar estos principios, puedes mejorar significativamente el rendimiento y la velocidad de tu equipo, brindándote una experiencia informática más fluida y eficiente. </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" style="padding-bottom: 10px;">
         <div>
-    <a href="https://www.clarin.com/viste/derivada-sirven_0_qvAa6hppdf.html" style="text-decoration: none;">
-        <button class="btn" style="color: #ffffff;">Visitar Pagina</button>
+    <a href="index1.html" style="text-decoration: none;">
+        <button class="btn" style="color: #ffffff;">Continuar</button>
     </a>
 </div>
        
@@ -1020,6 +1009,9 @@ toggleBtn.addEventListener('click', () => {
   navMenu.classList.toggle('open');
   toggleBtn.classList.toggle('open');
 });
+</script>
+<script>
+  
 </script>
 </body>
 </html>

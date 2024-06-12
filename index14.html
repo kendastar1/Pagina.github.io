@@ -591,7 +591,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     }
   }
 
- .toggle-btn {
+.toggle-btn {
   position: fixed; 
   top: 20px; 
   left: 20px; 
@@ -683,6 +683,35 @@ h1, h2, .btn,p,h5,.card .col-6,li {
 .toggle-btn.open .line:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
+
+   .nav-menu {
+  max-height: 80vh; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto;
+  box-sizing: border-box; /* Establece el tamaño del elemento en border-box */
+  max-height: 10em; /* Establece la altura máxima para el menú */
+}
+
+.nav-menu::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra */
+  border-radius: 10px; /* Rounding de los bordes */
+  background-color: #f0f0f0; /* Color de fondo */
+}
+
+.nav-menu::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de fondo del track */
+  border-radius: 10px; /* Rounding de los bordes */
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color de fondo del botón */
+  border-radius: 4px; /* Rounding de los bordes */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombreado para dar profundidad */
+}
+
+.nav-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color de fondo del botón al pasar el mouse */
+}
+
 </style>
     
    </head>
@@ -720,15 +749,38 @@ h1, h2, .btn,p,h5,.card .col-6,li {
       <ul>
 
         <li><a href="index.html"><i class='bx bx-home'></i> Bienvenida</a></li>
-        <li><a href="Competencia.html"> <i class='bx bx-calculator'></i> Competencia</a></li>
+         <li><a href="index2.html"> <i class='bx bx-collection' ></i> Introducción</a></li>
+        <li><a href="index1.html"> <i class='bx bx-calculator'></i> Competencia</a></li>
         <li><a href="o.html"> <i class='bx bx-network-chart'></i> Metodología</a></li>
-        <li><a href="index2.html"> <i class='bx bx-collection' ></i> Introducción</a></li>
-         <li><a href="index3.html"><i class='bx bx-memory-card'></i> Lamemoria RAM</a></li>
           <li><a href="index8.html"><i class='bx bx-line-chart' ></i> Temáticas</a></li>
-           <li><a href="index7.html"> <i class='bx bxs-user-voice'></i> Escuchanos</a></li>
-          <li><a href="index17.html">    <i class='bx bxs-brain' style="color: white;"></i> Actividad</a></li>
-            <li><a href="index100.html">   <i class='bx bxs-check-circle'></i> Evaluacion</a></li>
-            
+            <li><a href="index14.html"><i class='bx bx-bulb'></i> Situacion Problema</a></li>
+             <li><a href="index15.html"><i class='bx bx-chalkboard'></i> Desarrollo de la situación problema</a></li>
+           <li><a href="index7.html"> <i class='bx bxs-user-voice'></i>Análisis de resultados</a></li>
+             <li>
+  <a href="">
+    <i class='bx bx-book-open'></i> Actividad de aprendizaje
+  </a>
+  <ul class="submenu" style="background-color:#c8c3c3;">
+    <li><a href="index101.html">Actividad de aprendizaje 1</a></li>
+    <li><a href="https://create.kahoot.it/details/0eee3007-1a9a-4051-b4c2-702a93796dfe">Actividad de aprendizaje 2</a></li>
+    
+  </ul>
+</li>
+  <li>
+
+          
+  <a href="">
+<i class='bx bx-check'></i> Actividad de evaluación
+  </a>
+  <ul class="submenu" style="background-color:#c8c3c3;">
+    <li><a href="index100.html">Actividad de evaluación 1</a></li>
+    <li><a href="index17.html">Actividad de evaluación 2</a></li>
+    
+  </ul>
+</li></li>
+             <li><a href="conclucion.html">   <i class='bx bx-trophy'></i> Conclucion</a></li>
+              <li><a href="index100.html">  <i class='bx bx-link'></i> Bibliografía</a></li>
+             <li><a href="autores.html">  <i class='bx bx-user'></i> Autores</a></li>
       </ul>
     </nav>
   </header>
