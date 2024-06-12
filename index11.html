@@ -16,166 +16,7 @@
       font-family: "Poppins", sans-serif;
      }
 
-  .loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-  }
-  
-  .loader {
-    --path: #2f3545;
-    --dot: #5628ee;
-    --duration: 3s;
-    width: 44px;
-    height: 44px;
-    position: relative;
-  }
-  
-  .loader:before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    position: absolute;
-    display: block;
-    background: var(--dot);
-    top: 37px;
-    left: 19px;
-    transform: translate(-18px, -18px);
-    animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-  }
-  
-  .loader svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .loader svg rect, .loader svg polygon, .loader svg circle {
-    fill: none;
-    stroke: var(--path);
-    stroke-width: 10px;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-  }
-  
-  .loader svg polygon {
-    stroke-dasharray: 145 76 145 76;
-    stroke-dashoffset: 0;
-    animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-  }
-  
-  .loader svg rect {
-    stroke-dasharray: 192 64 192 64;
-    stroke-dashoffset: 0;
-    animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-  }
-  
-  .loader svg circle {
-    stroke-dasharray: 150 50 150 50;
-    stroke-dashoffset: 75;
-    animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-  }
-  
-  .loader.triangle {
-    width: 48px;
-  }
-  
-  .loader.triangle:before {
-    left: 21px;
-    transform: translate(-10px, -18px);
-    animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-  }
-  
-  @keyframes pathTriangle {
-    33% {
-      stroke-dashoffset: 74;
-    }
-  
-    66% {
-      stroke-dashoffset: 147;
-    }
-  
-    100% {
-      stroke-dashoffset: 221;
-    }
-  }
-  
-  @keyframes dotTriangle {
-    33% {
-      transform: translate(0, 0);
-    }
-  
-    66% {
-      transform: translate(10px, -18px);
-    }
-  
-    100% {
-      transform: translate(-10px, -18px);
-    }
-  }
-  
-  @keyframes pathRect {
-    25% {
-      stroke-dashoffset: 64;
-    }
-  
-    50% {
-      stroke-dashoffset: 128;
-    }
-  
-    75% {
-      stroke-dashoffset: 192;
-    }
-  
-    100% {
-      stroke-dashoffset: 256;
-    }
-  }
-  
-  @keyframes dotRect {
-    25% {
-      transform: translate(0, 0);
-    }
-  
-    50% {
-      transform: translate(18px, -18px);
-    }
-  
-    75% {
-      transform: translate(0, -36px);
-    }
-  
-    100% {
-      transform: translate(-18px, -18px);
-    }
-  }
-  
-  @keyframes pathCircle {
-    25% {
-      stroke-dashoffset: 125;
-    }
-  
-    50% {
-      stroke-dashoffset: 175;
-    }
-  
-    75% {
-      stroke-dashoffset: 225;
-    }
-  
-    100% {
-      stroke-dashoffset: 275;
-    }
-  }
-
+ 
 
 
 body {
@@ -979,33 +820,13 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   <video id="video" autoplay muted loop style="filter: brightness(1);">
     <source src="foddoo.mp4" type="video/mp4">
   </video>
-   <div class="loader-wrapper">
-  <div class="loader">
-    <svg viewBox="0 0 80 80">
-        <circle id="test" cx="40" cy="40" r="32"></circle>
-    </svg>
-  </div>
-
-  <div class="loader triangle">
-    <svg viewBox="0 0 86 80">
-        <polygon points="43 8 79 72 7 72"></polygon>
-    </svg>
-  </div>
-
-  <div class="loader">
-    <svg viewBox="0 0 80 80">
-        <rect x="8" y="8" width="64" height="64"></rect>
-    </svg>
-  </div>
-</div>
-
-</div>
+  
 <header>
-    <button class="toggle-btn">
+    <div class="toggle-btn">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
-    </button>
+    </div>
     <nav class="nav-menu" style="padding-top: 100px;">
       <ul>
 
@@ -1510,6 +1331,14 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   </div>
 </div>
 
+<div class="px-4 pt-5 my-5 text-center animate-text">
+    <div>
+    <a href="index12.html" style="text-decoration: none;">
+        <div class="btn" style="color: #ffffff;">Continuar</div>
+    </a>
+</div>
+
+</div>
 
 
 
@@ -1526,63 +1355,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
    
   </div>
 
-<footer>
-        <div class="content" style="margin-top: 50px;">
-            <div class="top">
-                <div class="logo-details">
-                    <img src="noble.png" width="50">
-                    <span class="logo_name">EQUIPO<span style="color: blue;">/</span><span style="color: red;">KLRP</span></span>
-                </div>
-              <div class="media-icons">
-    <a href="#"><img src="kevin.jpeg" style="width: 100%; border-radius: 50%;"></a>
-    <a href="#"><img src="lucio.jpeg" style="width: 100%; border-radius: 50%;"></a>
-    <a href="#"><img src="ronal.jpeg" style="width: 100%; border-radius: 50%;"></a>
-    <a href="#"><img src="pedro.jpeg" style="width: 100%; border-radius: 50%;"></a>
-   
-</div>
 
-            </div>
-            <div class="link-boxes">
-                <ul class="box">
-                    <li class="link-name">Kevin Ortiz</li>
-                    <li><a href="https://uiverse.io/">Uiverse</a></li>
-                    <li><a href="https://www.perplexity.ai/">Perplexity</a></li>
-                    <li><a href="https://www.bing.com/images/create?FORM=GDPCLS">Bing</a></li>
-                     <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-                </ul>
-                <ul class="box">
-                    <li class="link-name">Lucio Garcia</li>
-                   
-                    <li><a href="https://pixabay.com/es/">Pixabay</a></li>
-                    <li><a href="https://co.pinterest.com/">Pinterest</a></li>
-                    <li><a href="https://www.mathway.com/es/Algebra">Mathway</a></li>
-                    <li><a href="https://helpx.adobe.com/co/photoshop/system-requirements.html">Adobe</a></li>
-                </ul>
-                <ul class="box">
-                    <li class="link-name">Ronal Acevedo</li>
-                     <li><a href="https://chatgpt.com/?model=auto">Chatgpt</a></li>
-                    <li><a href="https://www.geogebra.org/classic?lang=es">GeoGebra</a></li>
-                    <li><a href="https://codepen.io/trending">Codepen</a></li>
-                    <li><a href="https://www.uacj.mx/CGTI/CDTE/JPM/Documents/IIT/sterraza/mate2016/funcion/func_def.html">Uacj.mx</a></li>
-                </ul>
-                <ul class="box">
-                    <li class="link-name">Pedro Molina</li>
-                    <li><a href="https://www.neurochispas.com/wiki/10-ejercicios-de-derivadas-de-la-suma-y-resta-de-funciones/">Neurochispas</a></li>
-                    <li><a href="https://economipedia.com/definiciones/derivada-de-una-funcion.html">Economipedia</a></li>
-                    <li><a href="https://flexbooks.ck12.org/cbook/c%C3%A1lculo-2.0/section/4.2/primary/lesson/c%C3%B3mo-encontrar-los-m%C3%A1ximos-y-m%C3%ADnimos-extremos-de-las-funciones-calc-spn/">Flexbooks</a></li>
-                    <li><a href="https://www.funciones.xyz/derivada-de-una-raiz-funcion-radical-irracional/">Funciones.xyz</a></li>
-                </ul>
-               
-            </div>
-        </div>
-
-        <div class="bottom-details">
-            <div class="bottom-text">
-                <span class="copyright-text">Agradecemos a estas páginas por habernos ayudado a completar nuestro OVA. 
-                    </span>
-            </div>
-        </div>
-    </footer>
 
 
   </main>
@@ -1590,15 +1363,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
 </div>
   <script src="script2.js"></script>
  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-<script>
 
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    document.querySelector('.loader-wrapper').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-  }, 2000); 
-});
-</script>
 <script>
         var enlace = document.getElementById('enlace');
         var linkText = document.getElementById('linkText');
