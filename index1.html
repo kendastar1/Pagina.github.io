@@ -249,10 +249,11 @@ h3, h2,p,h5 {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-   .nav-menu {
-  max-height: 80vh; /* Ajusta la altura máxima según tus necesidades */
+ .nav-menu {
+  max-height: 100%; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Establece el tamaño del elemento en border-box */
+ margin-bottom: 100%;
 }
 
 .nav-menu::-webkit-scrollbar {
