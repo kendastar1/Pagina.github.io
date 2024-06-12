@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    z-index: 9999;
   }
   
   .loader {
@@ -247,7 +247,80 @@ body {
   }
 }
 
+.card-container {
 
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.card .front-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .front-content p {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(-45deg, #293df8 0%, #ff0f7b 100% );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background: linear-gradient(-45deg,#293df8 0%, #ff0f7b 100% );
+  color: #e8e8e8;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateY(96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+}
+
+.card:hover .front-content {
+  transform: translateY(-30%);
+}
+
+.card:hover .front-content p {
+  opacity: 0;
+}
 .btn {
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
   --border-width: 0.125em;
@@ -440,7 +513,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 400px;
+  width: 600px;
   height: 400px;
 }
 .tabs{
@@ -547,7 +620,25 @@ h1, h2, .btn,p,h5,.card .col-6,li {
 .content10 .contentBx p{
   color: #fff;
 }
+@media (max-width: 480px) {
+  .tabs .icon label {
+    font-size: 1.5em; /* Reducir el tamaño de la fuente */
+  }
 
+  .content10 {
+    width: 250px; /* Reducir el ancho del contenido */
+    height: 300px; /* Reducir la altura del contenido */
+  }
+
+  .content10 .contentBx {
+    padding: 20px; /* Reducir el padding del contenido */
+  }
+
+  .content10 .contentBx h2,
+  .content10 .contentBx p {
+    font-size: 0.8em; /* Reducir el tamaño de la fuente del contenido */
+  }
+}
 .math {
       font-family: 'Cambria Math', 'DejaVu Math TeX Gyre', serif;
       font-size: 1.5em;
@@ -643,156 +734,13 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   height: 100%;
   border-radius: 5px;
 }
- @media (max-width: 768px) {
-            .tv {
-                width: 90%;
-                max-width: none;
-            }
-            
-            .stand {
-                width: 80%;
-                height: 15px;
-                bottom: -15px;
-            }
-      }
-@media (max-width: 768px) {
-          .content10 {
-            width: 350px;
-             }
-      }
-       .toggle-btn {
-  position: fixed; 
-  top: 20px; 
-  left: 20px; 
-  z-index: 9999;
-  display: block;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.line {
-  width: 30px;
-  height: 3px;
-  background-color: #c9d7e4;
-  margin: 5px 0;
-  transition: transform 0.3s ease-in-out;
-}
-
-
-.nav-menu {
-  position: fixed;
-  top: 0px;
-  left: -200px;
-  width: 200px;
- background-color: #9c9898;
-  padding: 20px;
-  box-sizing: border-box;
-  transition: left 0.3s ease-in-out;
-  z-index: 1000;
-  
-  padding-bottom: 100%;
-
-
-}
-
-.nav-menu ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.nav-menu li {
-  margin-bottom: 10px;
-}
-
-.nav-menu a {
-  color: #fff;
-  text-decoration: none;
-  display: block; 
-  padding: 5px 10px; 
-  transition: background-color 0.3s; 
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 18px;
-}
-
-
-.nav-menu li:hover > a {
-  background-color: #C7C7C7 ; 
-  color: #fff; 
-}
-
-
-.nav-menu li ul {
-  display: none;
-  background-color: #e0e0e0;
-  padding: 10px;
-  margin-top: 5px;
-}
-
-.nav-menu li:hover > ul {
-  display: block;
-}
-
-
-.nav-menu.open {
-  left: 0;
-}
-
-.toggle-btn.open .line:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
-}
-
-.toggle-btn.open .line:nth-child(2) {
-  opacity: 0;
-}
-
-.toggle-btn.open .line:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
-@media (max-width: 768px) {
-       
-        .card-container {
-           margin-left: 50px;
-        }
-    }
-   .nav-menu {
-  max-height: 80vh; /* Ajusta la altura máxima según tus necesidades */
-  overflow-y: auto;
-  box-sizing: border-box; /* Establece el tamaño del elemento en border-box */
-  max-height: 10em; /* Establece la altura máxima para el menú */
-}
-
-.nav-menu::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra */
-  border-radius: 10px; /* Rounding de los bordes */
-  background-color: #f0f0f0; /* Color de fondo */
-}
-
-.nav-menu::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Color de fondo del track */
-  border-radius: 10px; /* Rounding de los bordes */
-}
-
-.nav-menu::-webkit-scrollbar-thumb {
-  background-color: #888; /* Color de fondo del botón */
-  border-radius: 4px; /* Rounding de los bordes */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombreado para dar profundidad */
-}
-
-.nav-menu::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Color de fondo del botón al pasar el mouse */
-}
-
-        </style>
+</style>
     
    </head>
 
 <body >
    <video id="video" autoplay muted loop style="filter: brightness(1);">
-    <source src="foddoo.mp4" type="video/mp4">
+    <source src="fondo9.mp4" type="video/mp4">
   </video>
    <div class="loader-wrapper">
   <div class="loader">
@@ -813,56 +761,113 @@ h1, h2, .btn,p,h5,.card .col-6,li {
     </svg>
   </div>
 </div>
+<div id="content" style="display: none;">
+  <div>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-kickstarter bx-tada' style='color:#080808'></i>
+      <span class="logo_name"style='color:#080808'>Sistemas</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+         <i class='bx bx-home'></i>
 
-  </div>
-<header>
-    <button class="toggle-btn">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </button>
-    <nav class="nav-menu" style="padding-top: 100px;">
-      <ul>
+          <span class="link_name">Bienvenida</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.html">Bienvenida</a></li>
+        </ul>
+      </li>
+       <li>
+        <a href="Competencia.html">
+        <i class='bx bx-calculator'></i>
 
-        <li><a href="index.html"><i class='bx bx-home'></i> Bienvenida</a></li>
-         <li><a href="index2.html"> <i class='bx bx-collection' ></i> Introducción</a></li>
-        <li><a href="index1.html"> <i class='bx bx-calculator'></i> Competencia</a></li>
-        <li><a href="o.html"> <i class='bx bx-network-chart'></i> Metodología</a></li>
-          <li><a href="index8.html"><i class='bx bx-line-chart' ></i> Temáticas</a></li>
-            <li><a href="index14.html"><i class='bx bx-bulb'></i> Situacion Problema</a></li>
-             <li><a href="index15.html"><i class='bx bx-chalkboard'></i> Desarrollo de la situación problema</a></li>
-           <li><a href="index7.html"> <i class='bx bxs-user-voice'></i>Análisis de resultados</a></li>
-             <li>
-  <a href="">
-    <i class='bx bx-book-open'></i> Actividad de aprendizaje
-  </a>
-  <ul class="submenu" style="background-color:#c8c3c3;">
-    <li><a href="index101.html">Actividad de aprendizaje 1</a></li>
-    <li><a href="https://create.kahoot.it/details/0eee3007-1a9a-4051-b4c2-702a93796dfe">Actividad de aprendizaje 2</a></li>
-    
-  </ul>
-</li>
-  <li>
+          <span class="link_name">Competencia</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Competencia.html">Competencia</a></li>
+        </ul>
+      </li>
 
+       <li>
+        <a href="o.html">
+        <i class='bx bx-network-chart'></i>
+
+          <span class="link_name">Metodología</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="o.html">Metodología</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <a href="index2.html">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Introducción</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index2.html">Introducción</a></li>
+          <li><a href="#optimizacion">Optimización</a></li>
+          <li><a href="#Estrategias">Estrategias</a></li>
+          <li><a href="#Rendimiento">Rendimiento</a></li>
+          <li><a href="#Conclusión">Conclusión</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="index3.html">
+           <i class='bx bx-memory-card'></i>
+            <span class="link_name">Lamemoria RAM</span>
+          </a>
           
-  <a href="">
-<i class='bx bx-check'></i> Actividad de evaluación
-  </a>
-  <ul class="submenu" style="background-color:#c8c3c3;">
-    <li><a href="index100.html">Actividad de evaluación 1</a></li>
-    <li><a href="index17.html">Actividad de evaluación 2</a></li>
-    
-  </ul>
-</li></li>
-             <li><a href="conclucion.html">   <i class='bx bx-trophy'></i> Conclucion</a></li>
-              <li><a href="index100.html">  <i class='bx bx-link'></i> Bibliografía</a></li>
-             <li><a href="autores.html">  <i class='bx bx-user'></i> Autores</a></li>
-      </ul>
-    </nav>
-  </header>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index3.html">Lamemoria RAM</a></li>
+         
+        </ul>
+      </li>
+      <li>
+        <a href="index8.html">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Temáticas</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index8.html">Temáticas</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="index7.html">
+            <i class='bx bxs-user-voice'></i>
+            <span class="link_name">Audio</span>
+          </a>
+        
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="index7.html">Audio</a></li>
+          
+         
+        </ul>
+      </li>
+      
+     
+      
+     
+</ul>
+  </div>
 
+  <section class="home-section " >
+    <div class="home-content" style=" background-color: #efeff3; position: fixed;">
+      <i class='bx bx-menu ' style="padding: 5px; background-color: #efeff3;" ></i>
+      </div>
+      
+  </section>
 </div>
-<div>
+<div style="padding-left: 78px;">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -922,8 +927,8 @@ h1, h2, .btn,p,h5,.card .col-6,li {
   </div>
 </div>
    <hr>
-<div class="animate-text" style="margin: 0 auto;  text-align: ">
- <div class="container10" >
+<div class="animate-text" style="margin: 0 auto; width: 600px;">
+ <div class="container10">
     <div class="tabs">
       <input id="home" type="radio" name="group" checked>
       <input id="about" type="radio" name="group">
@@ -1012,7 +1017,7 @@ h1, h2, .btn,p,h5,.card .col-6,li {
  <hr class="featurette-divider" id="Conclusión">
 <div class="tv animate-text">
   <div class="screen">
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/WFERSiEGZeU?si=7CfRg2GJgeFd9V9y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="bezel"></div>
   </div>
   <div class="stand"></div>
@@ -1035,58 +1040,59 @@ h1, h2, .btn,p,h5,.card .col-6,li {
                     <img src="noble.png" width="50">
                     <span class="logo_name">EQUIPO<span style="color: blue;">/</span><span style="color: red;">KLRP</span></span>
                 </div>
-              <div class="media-icons">
-    <a href="#"><img src="kevin.jpeg" style="width: 100%; border-radius: 50%;"></a>
-    <a href="#"><img src="lucio.jpeg" style="width: 100%; border-radius: 50%;"></a>
-    <a href="#"><img src="ronal.jpeg" style="width: 100%; border-radius: 50%;"></a>
-    <a href="#"><img src="pedro.jpeg" style="width: 100%; border-radius: 50%;"></a>
-   
-</div>
-
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
             <div class="link-boxes">
                 <ul class="box">
-                    <li class="link-name">Kevin Ortiz</li>
-                    <li><a href="https://uiverse.io/">Uiverse</a></li>
-                    <li><a href="https://www.perplexity.ai/">Perplexity</a></li>
-                    <li><a href="https://www.bing.com/images/create?FORM=GDPCLS">Bing</a></li>
-                     <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+                    <li class="link-name">Company</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Get Started</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Lucio Garcia</li>
-                   
-                    <li><a href="https://pixabay.com/es/">Pixabay</a></li>
-                    <li><a href="https://co.pinterest.com/">Pinterest</a></li>
-                    <li><a href="https://www.mathway.com/es/Algebra">Mathway</a></li>
-                    <li><a href="https://helpx.adobe.com/co/photoshop/system-requirements.html">Adobe</a></li>
+                    <li class="link-name">Service</li>
+                    <li><a href="#">App design</a></li>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Logo Design</a></li>
+                    <li><a href="#">Banner design</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Ronal Acevedo</li>
-                     <li><a href="https://chatgpt.com/?model=auto">Chatgpt</a></li>
-                    <li><a href="https://www.geogebra.org/classic?lang=es">GeoGebra</a></li>
-                    <li><a href="https://codepen.io/trending">Codepen</a></li>
-                    <li><a href="https://www.uacj.mx/CGTI/CDTE/JPM/Documents/IIT/sterraza/mate2016/funcion/func_def.html">Uacj.mx</a></li>
+                    <li class="link-name">Account</li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">My account</a></li>
+                    <li><a href="#">PreFerences</a></li>
+                    <li><a href="#">Purchase</a></li>
                 </ul>
                 <ul class="box">
-                    <li class="link-name">Pedro Molina</li>
-                    <li><a href="https://www.neurochispas.com/wiki/10-ejercicios-de-derivadas-de-la-suma-y-resta-de-funciones/">Neurochispas</a></li>
-                    <li><a href="https://economipedia.com/definiciones/derivada-de-una-funcion.html">Economipedia</a></li>
-                    <li><a href="https://flexbooks.ck12.org/cbook/c%C3%A1lculo-2.0/section/4.2/primary/lesson/c%C3%B3mo-encontrar-los-m%C3%A1ximos-y-m%C3%ADnimos-extremos-de-las-funciones-calc-spn/">Flexbooks</a></li>
-                    <li><a href="https://www.funciones.xyz/derivada-de-una-raiz-funcion-radical-irracional/">Funciones.xyz</a></li>
+                    <li class="link-name">Courses</li>
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">PhotoShop</a></li>
                 </ul>
-               
+                <ul class="box input-box">
+                    <li class="link-name">Subscribe</li>
+                    <li><input type="email" placeholder="Enter Your Email"></li>
+                    <li><input type="button" value="Subscribe"></li>
+                </ul>
             </div>
         </div>
-
         <div class="bottom-details">
             <div class="bottom-text">
-                <span class="copyright-text">Agradecemos a estas páginas por habernos ayudado a completar nuestro OVA. 
-                    </span>
+                <span class="copyright-text">copyright &#169; 2024
+                    <a href="#"> sL Code<span style="color: red;">
+                            Hub</span></a>All rights
+                    reserved</span>
             </div>
-
         </div>
     </footer>
-
 
   </main>
 
@@ -1154,14 +1160,5 @@ video.addEventListener("mouseout", function() {
   video.controls = false;
 });
   </script>
-    <script>
-  const toggleBtn = document.querySelector('.toggle-btn');
-const navMenu = document.querySelector('.nav-menu');
-
-toggleBtn.addEventListener('click', () => {
-  navMenu.classList.toggle('open');
-  toggleBtn.classList.toggle('open');
-});
-</script>
 </body>
 </html>
