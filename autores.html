@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" href="descarga1.png" type="image/png">
+    
+
+
+    
+    
+
+
+
+  
+  
+
+  <title>Autores</title>
+
+    <link rel="canonical" href="https://codepen.io/kristen17/pen/xxMpLgR">
+  
+  
+  
+  
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #1f2c3a;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+img {
+  border-radius: 50%;
+  width: clamp(100px, 40vw, 120px);
+  height: clamp(100px, 40vw, 120px);
+  object-fit: cover;
+  object-position: top;
+}
+
+.circle-top {
+  width: clamp(25rem, 30vw, 31.25rem);
+  position: absolute;
+  top: 3em;
+  left: -8em;
+  height: clamp(25rem, 30vw, 31.25rem);
+  background: #00458f;
+  background: radial-gradient(circle, #00458f8f 0%, #00458e00 60%, #ffffff00 100%);
+  background: -moz-radial-gradient(circle, #00458f8f 0%, #00458e00 60%, #ffffff00 100%);
+  background: -webkit-radial-radial-gradient(circle, #00458f8f 0%, #00458e00 60%, #ffffff00 100%);
+  border-radius: 50%;
+}
+
+.circle-bottom {
+  width: clamp(25rem, 30vw, 31.25rem);
+  position: absolute;
+  bottom: -5em;
+  right: -8em;
+  height: clamp(25rem, 30vw, 31.25rem);
+  background: #00458f;
+  background: radial-gradient(circle, #00458f8f 0%, #00458e00 65%, #ffffff00 100%);
+  background: -moz-radial-gradient(circle, #00458f8f 0%, #00458e00 65%, #ffffff00 100%);
+  background: -webkit-radial-radial-gradient(circle, #00458f8f 0%, #00458e00 65%, #ffffff00 100%);
+  border-radius: 50%;
+}
+
+header {
+  background: linear-gradient(to top, #1f2c3a 0%, #2f3c4742 100%), url("imagen2.jpg") no-repeat 50% 50%/cover;
+  width: 100%;
+  min-height: 25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+header .header-content {
+  width: min(37.5em, 90%);
+  margin-top: 5em;
+  position: relative;
+  z-index: 10;
+}
+header .header-content span {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.063rem;
+  font-size: clamp(0.8rem, 0.7625rem + 0.1875vw, 0.95rem);
+}
+header .header-content h1 {
+  font-size: clamp(1.5rem, 1.375rem + 0.625vw, 2rem);
+  font-weight: 700;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 75em;
+  margin-inline: auto;
+  gap: 0.938rem;
+  transform: translatey(-3em);
+  position: relative;
+  z-index: 10;
+}
+section .card {
+  padding: 1.875em 1.25em;
+  max-width: 18.75rem;
+  width: 90%;
+  height: 16.875rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  position: relative;
+}
+section .card::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: -1;
+  border: 0.125rem solid transparent;
+  background: linear-gradient(45deg, #1e272e, #48627a) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+section .card h2 {
+  color: #fff;
+  letter-spacing: 0.05rem;
+  font-size: clamp(1rem, 0.9375rem + 0.3125vw, 1.25rem);
+  margin-top: 0.625em;
+  margin-bottom: 0.188em;
+}
+section .card p {
+  color: #afafaf;
+  font-size: clamp(0.8rem, 0.7625rem + 0.1875vw, 0.95rem);
+}
+section .card-top {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.938rem;
+  flex-wrap: wrap;
+}
+section .card-top .card img {
+  width: clamp(7.5rem, 40vw, 9.375rem);
+  height: clamp(7.5rem, 40vw, 9.375rem);
+}
+  .toggle-btn {
+  position: fixed; 
+  top: 20px; 
+  left: 20px; 
+  z-index: 3;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.nav-menu {
+  position: fixed;
+  top: 0px;
+  left: -200px;
+  width: 200px;
+ background-color: #9c9898;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease-in-out;
+  z-index: 2;
+  
+  padding-bottom: 100%;
+
+
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block; 
+  padding: 5px 10px; 
+  transition: background-color 0.3s; 
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+}
+
+
+.nav-menu li:hover > a {
+  background-color: #C7C7C7 ; 
+  color: #fff; 
+}
+
+
+.nav-menu li ul {
+  display: none;
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.nav-menu li:hover > ul {
+  display: block;
+}
+
+
+.nav-menu.open {
+  left: 0;
+}
+
+.toggle-btn.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.toggle-btn.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+.animate-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 4s ease-in-out;
+}
+
+.animate-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.toggle-btn {
+  position: fixed; 
+  top: 20px; 
+  left: 20px; 
+  z-index: 9999;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #c9d7e4;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.nav-menu {
+  position: fixed;
+  top: 0px;
+  left: -200px;
+  width: 200px;
+ background-color: #9c9898;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  
+  padding-bottom: 100%;
+
+
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block; 
+  padding: 5px 10px; 
+  transition: background-color 0.3s; 
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+}
+
+
+.nav-menu li:hover > a {
+  background-color: #C7C7C7 ; 
+  color: #fff; 
+}
+
+
+.nav-menu li ul {
+  display: none;
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.nav-menu li:hover > ul {
+  display: block;
+}
+
+
+.nav-menu.open {
+  left: 0;
+}
+
+.toggle-btn.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.toggle-btn.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+   .nav-menu {
+  max-height: 80vh; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto;
+  box-sizing: border-box; /* Establece el tamaño del elemento en border-box */
+  max-height: 10em; /* Establece la altura máxima para el menú */
+}
+
+.nav-menu::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra */
+  border-radius: 10px; /* Rounding de los bordes */
+  background-color: #f0f0f0; /* Color de fondo */
+}
+
+.nav-menu::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de fondo del track */
+  border-radius: 10px; /* Rounding de los bordes */
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color de fondo del botón */
+  border-radius: 4px; /* Rounding de los bordes */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombreado para dar profundidad */
+}
+
+.nav-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color de fondo del botón al pasar el mouse */
+}
+.animate-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 2s ease-in-out;
+}
+
+.animate-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+
+  <div class="circle-top"></div>
+<div class="circle-bottom"></div>
+<header>
+ 
+    <button class="toggle-btn">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+    <nav class="nav-menu" style="padding-top: 100px;">
+      <ul>
+
+        <li><a href="index.html"><i class='bx bx-home'></i> Bienvenida</a></li>
+         <li><a href="index2.html"> <i class='bx bx-collection' ></i> Introducción</a></li>
+        <li><a href="index1.html"> <i class='bx bx-calculator'></i> Competencia</a></li>
+        <li><a href="o.html"> <i class='bx bx-network-chart'></i> Metodología</a></li>
+          <li><a href="index8.html"><i class='bx bx-line-chart' ></i> Temáticas</a></li>
+            <li><a href="index14.html"><i class='bx bx-bulb'></i> Situacion Problema</a></li>
+             <li><a href="index15.html"><i class='bx bx-chalkboard'></i> Desarrollo de la situación problema</a></li>
+           <li><a href="index7.html"> <i class='bx bxs-user-voice'></i>Análisis de resultados</a></li>
+             <li>
+  <a href="">
+    <i class='bx bx-book-open'></i> Actividad de aprendizaje
+  </a>
+  <ul class="submenu" style="background-color:#c8c3c3;">
+    <li><a href="index101.html">Actividad de aprendizaje 1</a></li>
+    <li><a href="https://create.kahoot.it/details/0eee3007-1a9a-4051-b4c2-702a93796dfe">Actividad de aprendizaje 2</a></li>
+    
+  </ul>
+</li>
+  <li>
+
+          
+  <a href="">
+<i class='bx bx-check'></i> Actividad de evaluación
+  </a>
+  <ul class="submenu" style="background-color:#c8c3c3;">
+    <li><a href="index100.html">Actividad de evaluación 1</a></li>
+    <li><a href="index17.html">Actividad de evaluación 2</a></li>
+    
+  </ul>
+</li></li>
+             <li><a href="conclucion.html">   <i class='bx bx-trophy'></i> Conclucion</a></li>
+              <li><a href="index100.html">  <i class='bx bx-link'></i> Bibliografía</a></li>
+             <li><a href="autores.html">  <i class='bx bx-user'></i> Autores</a></li>
+      </ul>
+    </nav>
+
+  <div class="header-content animate-text">
+    <span class="animate-text">Autores</span>
+    <h1 class="animate-text">Area - Cálculo diferencial</h1>
+  </div>
+</header>
+<section>
+  <div class="card-top " >
+    <div class="card animate-text">
+      <img src="Kevin.jpeg" alt="Alexandra Smith" style=" box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);">
+      <h2>Kevin Ortiz</h2>
+      <p>Ingeniero en sistemas </p>
+    </div>
+    <div class="card animate-text">
+      <img src="Lucio.jpeg" alt="John Smith" style=" box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);">
+      <h2>Lucio Garcia</h2>
+      <p>Ingeniero en sistemas</p>
+    </div>
+  </div>
+  <div class="card animate-text">
+    <img src="Ronal.jpeg" alt="Erik Longman" style=" box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);">
+    <h2>Ronal Acevedo</h2>
+    <p>Ingeniero en sistemas</p>
+  </div>
+  <div class="card animate-text">
+    <img src="Pedro.jpeg" alt="Matthew Foster" style=" box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);">
+    <h2>Pedro Molina</h2>
+    <p>Ingeniero en sistemas</p>
+  </div>
+  <div class="card animate-text">
+    <img src="Doris.jpeg" alt="Artur Dichter" style=" box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);">
+    <h2>Doris Barrera</h2>
+    <p>Profesora de calculo diferencial</p>
+  </div>
+  
+  
+ 
+</section>
+  
+  
+ <script>
+  const toggleBtn = document.querySelector('.toggle-btn');
+const navMenu = document.querySelector('.nav-menu');
+
+toggleBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
+  toggleBtn.classList.toggle('open');
+});
+</script>
+<script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-text');
+
+    const handleScroll = () => {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !element.classList.contains('animated')) {
+                element.classList.add('visible');
+                element.classList.add('animated'); // Marcar como animado
+            }
+        });
+    };
+
+    // Verifica inicialmente al cargar la página
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+});
+    </script></body>
+
+</html>
