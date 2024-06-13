@@ -9,28 +9,28 @@ const artistName = document.querySelector(".music-player p");
 
 const songs = [
   {
-    title: "Derivadas",
+    title: "Recomendacion practica",
     name: "Pedro Molina",
     source:
-      "derivada.m4a",
+      "pedro.m4a",
   },
   {
-    title: "Puntos críticos",
+    title: "Confirmación de la cantidad de RAM",
     name: "Ronal Acevedo",
     source:
-      "maxmin.mpeg",
+      "ronal.mp3",
   },
   {
-    title: "Grafica de una funcion",
+    title: "Resolver con la cantidad de RAM ",
     name: "Lucio Garcia",
     source:
-      "Audio .mp3",
+      "audiosisas.mp3",
   },
   {
-    title: "Funcion",
+    title: "Reducir el tiempo de ejecución un 34%",
     name: "Kevin Ortiz",
     source:
-      "Funcion.mp3",
+      "kevin.mpeg",
   },
   {
     title: "As It Was",
